@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	
+	<link rel="dns-prefetch" href="//hm.baidu.com"/>
+	<link rel="dns-prefetch" href="//s22.cnzz.com"/>
+	<link rel="dns-prefetch" href="//hzs1.cnzz.com"/>
+	<link rel="dns-prefetch" href="//disqus.com"/>
+	<link rel="dns-prefetch" href="//a.disquscdn.com"/>
+	<link rel="dns-prefetch" href="//zhuowenli.disqus.com"/>
+	<link rel="dns-prefetch" href="//www.google-analytics.com"/>
+
+	<meta name="Keywords" content="卓文理,前端,前端开发,网页设计,交互设计"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />    
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />     
+	<meta content="telephone=no" name="format-detection" />  
+	
+	<meta name="author" content="卓文理">
+
+	<link rel="alternate" type="application/rss+xml" title="卓文理 Feed" href="/rss.xml" />
+	<link rel="apple-touch-icon-precomposed" href="http://blog.yinwoods.com/img/icon.png">
+	<link rel="apple-touch-icon-precomposed" href="http://blog.yinwoods.com/img/icon-72.png" sizes="72x72" />
+	<link rel="apple-touch-icon-precomposed" href="http://blog.yinwoods.com/img/icon-76.png" sizes="76x76" />
+	<link rel="apple-touch-icon-precomposed" href="http://blog.yinwoods.com/img/icon-114.png" sizes="114x114" />
+	<link rel="apple-touch-icon-precomposed" href="http://blog.yinwoods.com/img/icon-120.png" sizes="120x120" />
+	<link rel="apple-touch-icon-precomposed" href="http://blog.yinwoods.com/img/icon-152.png" sizes="152x152" />
+	<link href="http://blog.yinwoods.com/img/icon.png" rel="Shortcut Icon" type="image/x-icon"/>
+	
+    <title>yinwoods</title>
+
+	<link rel="stylesheet" href="http://blog.yinwoods.com/css/demo.css">
+	<link rel="stylesheet" href="http://blog.yinwoods.com/css/default.min.css">
+	<script src="http://blog.yinwoods.com/js/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if IE 9]>
+		<link rel="stylesheet" href="http://blog.yinwoods.com/css/ie9.css">
+		<script src="http://blog.yinwoods.com/js/html5.js" type="text/javascript"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="container" class="container codebase modify">
+
+		<div id="content" class="content">
+			<nav class="navbar">
+				<div class="pull-left">
+				</div>
+				<ul class="pull-center">
+					<li class="active"><a href="http://blog.yinwoods.com/">HOME</a></li>
+					<li><a href="http://blog.yinwoods.com/codebase/SVGLoading.html">BACK ARTICLE</a></li>
+				</ul>
+				<div class="pull-right"></div>
+			</nav>
+
+			<link rel="stylesheet" href="./css/style.css">
+
+		<div id="loading">
+			<div class="ld-logo">
+				<svg class="ld-inner" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve" style="height:15.625em;">
+					<polyline fill="#39A239" points="506.6,217.5 171,217.5 171,241.7 395.1,241.7 141.7,523.7 171,523.7 431.6,241.7 506.6,241.8 506.6,258.2 260.8,523.7 268.1,523.7 461.8,523.7 461.8,596.6 126.2,596.6 126.2,620.7 484.2,620.7 484.6,523.9 506.6,523.7 506.6,645.1 103.8,645.1 103.8,572.9 439.4,572.9 439.4,548.3 216,548.3 209.5,548.3 469.8,265.8 439.4,265.8 178.3,548.3 103.6,548.3 103.6,532.5 350.7,265.8 149,265.8 149,193.2 484.2,193.2 484.1,168.7 126.2,168.7 126.2,265.8 103.4,265.8 103.4,145 506.6,145 "/>
+				</svg>
+			</div>
+			<div class="ld-loader">
+				<svg class="ld-inner" width="60px" height="60px" viewBox="0 0 80 80">
+					<path class="ld-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+					<path id="ld-loader-circle" class="ld-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+				</svg>
+			</div>
+		</div>
+
+<header class="header">
+	<h1>SVGLoading</h1>
+	<h2>Make yourself at home.</h2>
+</header>
+
+<div class="browser article">
+	<div class="box">
+		<span class="icon-bell"></span>
+		<p>Do Re Mi What Fa Si Ti Doi Nemo Do Re Mi What Fa Si Ti Doi Nemo</p>
+	</div>
+	<div class="box">
+		<span class="icon-heart"></span>
+		<p>E La Yo Na Ti Do Pa Pa Noah Do Re Mi What Fa Si Ti Doi Nemo</p>
+	</div>
+	<div class="box">
+		<span class="icon-cog"></span>
+		<p>No way! Hey Hey, me ok! Do Re Mi What Fa Si Ti Doi Nemo</p>
+	</div>
+</div>
+
+<!-- snap.svg -->
+<script type="text/javascript" src="./js/classie.js"></script>
+<script type="text/javascript" src="./js/PathLoader.js"></script>
+<script type="text/javascript" src="./js/pageLoading.js"></script>
+
+			<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'zhuowenli'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+		</div>
+		
+					<footer class="footer">
+				<div class="row">
+					<div class="pull-left">
+						<a class="avatar" href="/" title="卓文理">卓文理</a>
+						<p class="copyright">2014 ALL RIGHTS RESERVED</p>
+					</div>
+					<div class="pull-right">
+						<p class="powered">Powered by <a target="_blank" href="https://github.com/zhuowenli">github</a> & <a target="_blank" href="http://jekyllrb.com/">jekyll</a> | themed by <a target="_blank" href="">卓文理</a></p>
+					</div>
+				</div>
+			</footer>
+	</div>
+	
+	<!--[if lte IE 8]>
+		<script type="text/javascript" src="http://blog.yinwoods.com/js/fuckie.js"></script>
+	<![endif]-->
+	
+
+	<script type="text/javascript" src="http://blog.yinwoods.com/js/classie.js"></script>
+	<script type="text/javascript">
+		var content = document.querySelector('.content'),
+			footer = document.querySelector('.footer'),
+			footT  = footer.offsetTop,
+			footH  = footer.offsetHeight,
+			winH   = window.innerHeight;
+		if (footT - footH + 100 < winH) {
+			content.style.minHeight = winH - footH + 'px';
+		};
+	</script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?eefd87bbdb3a5e21ecb7f319769dd8b9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>

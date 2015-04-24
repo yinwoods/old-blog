@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:mobile="http://www.baidu.com/schemas/sitemap-mobile/1/"> 
+  <url>
+    <loc>http://blog.yinwoods.com</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com</html5_url>
+      </display>
+    </data>
+  </url>
+
+
+  <url>
+    <loc>http://blog.yinwoods.com/404.html</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/404.html</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/about.html</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/about.html</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/codebase.html</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/codebase.html</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/design.html</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/design.html</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/diary.html</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/diary.html</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/die.xml</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/die.xml</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/friend.html</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/friend.html</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/frontend.html</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/frontend.html</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/codebase/3DBookShowcase/index.html</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/codebase/3DBookShowcase/index.html</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/index.html</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/index.html</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/codebase/SVGButton/index.html</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/codebase/SVGButton/index.html</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/codebase/SVGLoading/index.html</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/codebase/SVGLoading/index.html</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/rss.xml</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/rss.xml</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/sitemap.xml</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/sitemap.xml</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
+    <loc>http://blog.yinwoods.com/sitemap_baidu.xml</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/sitemap_baidu.xml</html5_url>
+      </display>
+    </data>
+  </url>
+
+</urlset>
