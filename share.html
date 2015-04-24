@@ -1,16 +1,16 @@
 ---
-layout: codeskill
-title: 编程技巧 
+layout: share
+title: 兴趣分享
 ---
 <header class="header">
-	<h1 class="title">计算科学</h1>
-	<h2>CODING</h2>
+	<h1 class="title">兴趣分享</h1>
+	<h2>SHARE</h2>
 </header>
 <div class="article">
 	{% for category in site.categories %}
 		{% assign pages_list = category[1] %}
 			{% for post in pages_list %}
-				{% if post.categories contains 'frontend' %}
+				{% if post.categories contains 'design' %}
 					{% if post.title != null %}
 						{% if group == null or group == post.group %}
 	<article class="post">
