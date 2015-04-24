@@ -50,6 +50,18 @@
   </url>
 
   <url>
+    <loc>http://blog.yinwoods.com/codeskill.html</loc>
+    <lastmod>2015-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/codeskill.html</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
     <loc>http://blog.yinwoods.com/design.html</loc>
     <lastmod>2015-04-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -98,18 +110,6 @@
   </url>
 
   <url>
-    <loc>http://blog.yinwoods.com/frontend.html</loc>
-    <lastmod>2015-04-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <data>
-      <display>
-        <html5_url>http://blog.yinwoods.com/frontend.html</html5_url>
-      </display>
-    </data>
-  </url>
-
-  <url>
     <loc>http://blog.yinwoods.com/codebase/3DBookShowcase/index.html</loc>
     <lastmod>2015-04-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -122,13 +122,13 @@
   </url>
 
   <url>
-    <loc>http://blog.yinwoods.com/index.html</loc>
+    <loc>http://blog.yinwoods.com/codebase/SVGLoading/index.html</loc>
     <lastmod>2015-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <data>
       <display>
-        <html5_url>http://blog.yinwoods.com/index.html</html5_url>
+        <html5_url>http://blog.yinwoods.com/codebase/SVGLoading/index.html</html5_url>
       </display>
     </data>
   </url>
@@ -146,13 +146,13 @@
   </url>
 
   <url>
-    <loc>http://blog.yinwoods.com/codebase/SVGLoading/index.html</loc>
+    <loc>http://blog.yinwoods.com/index.html</loc>
     <lastmod>2015-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <data>
       <display>
-        <html5_url>http://blog.yinwoods.com/codebase/SVGLoading/index.html</html5_url>
+        <html5_url>http://blog.yinwoods.com/index.html</html5_url>
       </display>
     </data>
   </url>
