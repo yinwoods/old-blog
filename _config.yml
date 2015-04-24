@@ -1,0 +1,24 @@
+BASE_PATH:
+SITE_PATH: http://blog.yinwoods.com
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num" #pagination generated sub path format
+encoding: utf-8
+permalink: /:categories/:title.html
+
+markdown: redcarpet
+
+# highlighter: rouge
+highlighter: pygments
+
+name: yinwoods
+title: yinwoods的个人博客
+
+author:
+  name: 卓文理
+  email: yinwoods@163.com
+  github: zhuowenli
+  twitter: vnnlee zhuo
+  bio: 我在这里，高清有码！
+
+rss_path: rss.xml
+

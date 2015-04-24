@@ -1,0 +1,83 @@
+---
+layout: default
+---
+<header class="header">
+	<h1 class="title">WEB DESIGN AND FRONT-ENT POSTS</h1>
+	<h2>I am happy to do this stuff. Welcome and enjoy!</h2>
+	<div class="tree"></div>
+</header>
+<div class="article">
+	{% for post in paginator.posts %}
+	<article class="post">
+		<header class="entry-header">
+			<time class="entry-date" datetime="{{ post.date }}">
+			{{ post.date | date: "%Y" }}年{{ post.date | date: "%m" }}月{{ post.date | date: "%d" }}日
+			</time>
+			<h1 class="entry-title"><a href="{{ site.BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h1>
+		</header>
+		<div class="entry-content">
+			<figure class="entry-poster">
+				<a class="entry-more" href="{{ site.BASE_PATH }}{{ post.url }}"><img src="{{ site.BASE_PATH }}/img/bg/{{ post.img }}.jpg" alt=""></a>
+			</figure>
+			<div class="entry-intro">
+		    {% if post.fullview %}
+		      {{ post.content }}
+		    {% else %}
+		      {% if post.shortinfo %}
+		        {{ post.shortinfo }}
+		      {% elsif post.description %}
+		        {{ post.description }}
+		      {% else %}
+		        {{ post.excerpt }}
+		      {% endif %}
+		    {% endif %}
+		    </div>
+			<a href="{{ site.BASE_PATH }}{{ post.url }}" class="entry-more"><i class="icon icon-dot">&#xe61a;</i></a>
+		</div>
+	</article>
+	{% endfor %}
+
+	<nav id="nav-below" class="navigation">
+		<div class="SVGButton nav-previous">
+			{% if paginator.previous_page %}
+			    {% if paginator.previous_page == 1 %}
+			    <a class="nav-link" href="{{ site.BASE_PATH }}/">
+
+					<span class="button" data-morph-active="M286.5,62.5c0,27.891-22.609,50.5-50.5,50.5c0,0-64.355-6-86-6c-21.645,0-86,6-86,6c-27.891,0-50.5-22.609-50.5-50.5l0,0C13.5,34.609,36.109,12,64,12c0,0,64.355,6,86,6c21.645,0,86-6,86-6C263.891,12,286.5,34.609,286.5,62.5L286.5,62.5z">
+						<svg width="100%" height="100%" viewBox="0 0 300 125" preserveAspectRatio="none">
+							<path d="M286.5,62.5C286.5,90.39099999999999,263.891,113,236,113C236,113,171.64499999999998,113,150,113C128.355,113,64,113,64,113C36.109,113,13.5,90.39099999999999,13.5,62.5C13.5,62.5,13.5,62.5,13.5,62.5C13.5,34.609,36.109,12,64,12C64,12,128.35500000000002,12,150,12C171.645,12,236,12,236,12C263.891,12,286.5,34.609,286.5,62.5C286.5,62.5,286.5,62.5,286.5,62.5C286.5,62.5,286.5,62.5,286.5,62.5"/>
+						</svg>
+					</span>
+					<span class="text"><i class="icon icon-left">&#xe60d;</i> NEWER</span>
+
+			    </a>
+			    {% else %}
+				<a class="nav-link" href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.previous_page }}">
+
+					<span class="button" data-morph-active="M286.5,62.5c0,27.891-22.609,50.5-50.5,50.5c0,0-64.355-6-86-6c-21.645,0-86,6-86,6c-27.891,0-50.5-22.609-50.5-50.5l0,0C13.5,34.609,36.109,12,64,12c0,0,64.355,6,86,6c21.645,0,86-6,86-6C263.891,12,286.5,34.609,286.5,62.5L286.5,62.5z">
+						<svg width="100%" height="100%" viewBox="0 0 300 125" preserveAspectRatio="none">
+							<path d="M286.5,62.5C286.5,90.39099999999999,263.891,113,236,113C236,113,171.64499999999998,113,150,113C128.355,113,64,113,64,113C36.109,113,13.5,90.39099999999999,13.5,62.5C13.5,62.5,13.5,62.5,13.5,62.5C13.5,34.609,36.109,12,64,12C64,12,128.35500000000002,12,150,12C171.645,12,236,12,236,12C263.891,12,286.5,34.609,286.5,62.5C286.5,62.5,286.5,62.5,286.5,62.5C286.5,62.5,286.5,62.5,286.5,62.5"/>
+						</svg>
+					</span>
+					<span class="text"><i class="icon icon-left">&#xe60d;</i> NEWER</span>
+
+			    </a>
+				{% endif %}
+			{% endif %}
+
+			{% if paginator.next_page %}
+			<a class="nav-link" href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.next_page }}">
+
+					<span class="button" data-morph-active="M286.5,62.5c0,27.891-22.609,50.5-50.5,50.5c0,0-64.355-6-86-6c-21.645,0-86,6-86,6c-27.891,0-50.5-22.609-50.5-50.5l0,0C13.5,34.609,36.109,12,64,12c0,0,64.355,6,86,6c21.645,0,86-6,86-6C263.891,12,286.5,34.609,286.5,62.5L286.5,62.5z">
+						<svg width="100%" height="100%" viewBox="0 0 300 125" preserveAspectRatio="none">
+							<path d="M286.5,62.5C286.5,90.39099999999999,263.891,113,236,113C236,113,171.64499999999998,113,150,113C128.355,113,64,113,64,113C36.109,113,13.5,90.39099999999999,13.5,62.5C13.5,62.5,13.5,62.5,13.5,62.5C13.5,34.609,36.109,12,64,12C64,12,128.35500000000002,12,150,12C171.645,12,236,12,236,12C263.891,12,286.5,34.609,286.5,62.5C286.5,62.5,286.5,62.5,286.5,62.5C286.5,62.5,286.5,62.5,286.5,62.5"/>
+						</svg>
+					</span>
+					<span class="text">OLDER <i class="icon icon-right">&#xe611;</i></span>
+
+			    </a>
+			{% endif %}
+		</div>
+	</nav>
+
+</div>

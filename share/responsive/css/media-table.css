@@ -1,0 +1,56 @@
+/*
+Error: File to import not found or unreadable: ../../lib/sassCore/base.
+       Load path: D:/yun/zhuowenli.github.io/share/responsive/css
+        on line 9 of D:\yun\zhuowenli.github.io\share\responsive\css\media-table.scss
+
+4: * @Email: 531840344@qq.com
+5: * @Date:   2014-10-20 15:03:19
+6: * @Last Modified by:   卓文理(zwlme.com)
+7: * @Last Modified time: 2014-10-20 16:03:41
+8: *\/
+9: @import '../../lib/sassCore/base';
+10: @import '../../lib/sassCore/core/reset';
+11: 
+12: body{
+13: 	background: #fff;
+14: }
+
+Backtrace:
+D:\yun\zhuowenli.github.io\share\responsive\css\media-table.scss:9
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:66:in `rescue in import'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:45:in `import'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:28:in `imported_file'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:37:in `css_import?'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:301:in `visit_import'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `map'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:157:in `visit'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:8:in `visit'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:36:in `css_tree'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:20:in `render'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:268:in `render'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:404:in `run'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+D:/Application/Koala/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+D:/Application/Koala/bin/sass:18:in `load'
+D:/Application/Koala/bin/sass:18:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: ../../lib/sassCore/base.\A        Load path: D:/yun/zhuowenli.github.io/share/responsive/css\A         on line 9 of D:\yun\zhuowenli.github.io\share\responsive\css\media-table.scss\A \A 4: * @Email: 531840344@qq.com\A 5: * @Date:   2014-10-20 15:03:19\A 6: * @Last Modified by:   卓文理(zwlme.com)\A 7: * @Last Modified time: 2014-10-20 16:03:41\A 8: */\A 9: @import '../../lib/sassCore/base';\A 10: @import '../../lib/sassCore/core/reset';\A 11: \A 12: body{\A 13: 	background: #fff;\A 14: }"; }
