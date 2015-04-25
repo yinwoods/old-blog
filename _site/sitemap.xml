@@ -7,5 +7,57 @@
     <atom:link href="http://blog.yinwoods.com/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
     
+      <item>
+        <title>yinwoods个人博客搭建成功</title>
+        <description>&lt;h2&gt;yinwoods个人博客搭建成功&lt;/h2&gt;
+</description>
+        <pubDate>Sun, 26 Apr 2015 00:00:00 +0800</pubDate>
+        <link>http://blog.yinwoods.com/coding/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F.html</link>
+        <guid isPermaLink="true">http://blog.yinwoods.com/coding/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F.html</guid>
+        <content>&lt;h2&gt;yinwoods个人博客搭建成功&lt;/h2&gt;
+
+&lt;p&gt;这两天在和小强忙着使用BNU OJ在GitHub上的源代码构建我们的ZZU OJ有兴趣的朋友请移步&lt;a href=&quot;https://github.com/ZZUACM/ZZUOJ-BASEON-BNUOJ&quot;&gt;ZZUOJ-BASEON-BNUOJ From GitHub&lt;/a&gt;,今晚算是差不多完成了，所以破格熬个夜吧:)&lt;/p&gt;
+
+&lt;p&gt;其实博客都搭建好多天了，一直没有时间写教程，不过搭建过程确实很简单，所以我写这篇文章也是出于学习jekyll编写博客的目的吧。&lt;/p&gt;
+
+&lt;p&gt;客观的说CSDN的博客现在是越做越好了，可是感觉自己的博客放在别人的站点上总是怪怪的。。。&lt;/p&gt;
+
+&lt;p&gt;在搭建这个博客的过程中，用了整整一天的时间，主要是因为安装jekyll时老是出错。&lt;/p&gt;
+
+&lt;p&gt;下面是详细步骤：&lt;/p&gt;
+
+&lt;p&gt;搭建博客前，可以视个人需求考虑要不要购买域名，本人是在+&lt;a href=&quot;http://www.godaddy.com/&quot;&gt;GOdday&lt;/a&gt;上购买的域名（yinwoods@163.com）
+160￥使用两年&lt;/p&gt;
+
+&lt;p&gt;后来听朋友说在&lt;a href=&quot;http://www.net.cn/?spm=5334.642894.2.3.8W3O0N&quot;&gt;万网&lt;/a&gt;上买第一年29￥，第二年49￥，而且还可以使用阿里云两年的免费虚拟主机。&lt;/p&gt;
+
+&lt;p&gt;有兴趣的同学可以考虑下。&lt;/p&gt;
+
+&lt;p&gt;解析域名我是在&lt;a href=&quot;https://www.dnspod.cn/&quot;&gt;DNSPod&lt;/a&gt;上做的，免费的，只需要注册一个账号而已。&lt;/p&gt;
+
+&lt;p&gt;接下来就是利用GitHub Pages配置个人博客页面了，这个很简单&lt;/p&gt;
+
+&lt;p&gt;可以参考以下几篇文章：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://beiyuu.com/github-pages/&quot;&gt;使用Github Pages建独立博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/&quot;&gt;Setting up a custom domain with GitHub Pages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;上面的文章已经足够详细了，相信大家在这些步骤上不会遇到问题。&lt;/p&gt;
+
+&lt;p&gt;在安装jekyll之前要先装Ruby，如果你在安装过程中遇到问题，可以参考下面这篇文章：
+    +&lt;a href=&quot;http://ruby.taobao.org/&quot;&gt;RubyGems 镜像 - 淘宝网&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;我之所以花费一天的时间搭建博客，很大一部分功夫都是花费在安装jekyll&lt;/p&gt;
+
+&lt;p&gt;千万记住不要使用
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+ 语句安装，用这种方法安装会导致各种问题。。。&lt;/p&gt;
+
+&lt;p&gt;熬不住了。。。未完待续。。。&lt;/p&gt;
+</content>
+      </item>
+    
   </channel>
 </rss>

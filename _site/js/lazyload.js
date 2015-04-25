@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var FALLBACK_IMAGE = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEElEQVR42gEFAPr/AP///wAI/AL+Sr4t6gAAAABJRU5ErkJggg==';
+  var FALLBACK_IMAGE = '../img/icon.png';//'data:image/png;base64,ivborw0kggoaaaansuheugaaaaeaaaabcayaaaaffcsjaaaaeeleqvr42gefapr/ap///wai/al+sr4t6gaaaabjrU5ErkJggg==';
   var DEFAULT_OFFSET = 300;
 
   /**

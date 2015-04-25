@@ -1,16 +1,16 @@
 ---
-layout: codebase
-title: 代码库
+layout: coding
+title: 编程之路 
 ---
 <header class="header">
-	<h1 class="title">代码库</h1>
-    <h2>在这里我会分享自己的代码,并努力建立自己的代码仓库</h2>
+	<h1 class="title">编程之路</h1>
+	<h2>CODING</h2>
 </header>
 <div class="article">
 	{% for category in site.categories %}
 		{% assign pages_list = category[1] %}
 			{% for post in pages_list %}
-				{% if post.categories contains 'codebase' %}
+				{% if post.categories contains 'frontend' %}
 					{% if post.title != null %}
 						{% if group == null or group == post.group %}
 	<article class="post">
