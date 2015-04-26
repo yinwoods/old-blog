@@ -4,13 +4,13 @@ title: 我的分享
 ---
 <header class="header">
 	<h1 class="title">我的分享</h1>
-	<h2>SHARE</h2>
+	<h2>MY SHARE</h2>
 </header>
 <div class="article">
 	{% for category in site.categories %}
 		{% assign pages_list = category[1] %}
 			{% for post in pages_list %}
-				{% if post.categories contains 'design' %}
+				{% if post.categories contains 'myshare' %}
 					{% if post.title != null %}
 						{% if group == null or group == post.group %}
 	<article class="post">

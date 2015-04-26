@@ -10,7 +10,7 @@ title: 编程之路
 	{% for category in site.categories %}
 		{% assign pages_list = category[1] %}
 			{% for post in pages_list %}
-				{% if post.categories contains 'frontend' %}
+				{% if post.categories contains 'coding' %}
 					{% if post.title != null %}
 						{% if group == null or group == post.group %}
 	<article class="post">
