@@ -86,6 +86,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://blog.masr.in/geek/add_comment_to_jekyll.html&quot;&gt;jekyll+github构建简约博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions&quot;&gt;Jekyll Installation Instructions&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;当然对于初学者，你完全可以去 &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt; 上 fork 别人的代码，删除_post下所有文章后当做自己的主题使用。&lt;/p&gt;

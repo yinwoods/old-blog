@@ -5,7 +5,7 @@
 		<atom:link href="http://blog.yinwoods.com/rss.xml" rel="self" type="application/rss+xml"/>
 		<link>http://blog.yinwoods.com</link>
 		<description></description>
-		<lastBuildDate>Sun, 26 Apr 2015 10:39:35 +0800</lastBuildDate>
+		<lastBuildDate>Sun, 26 Apr 2015 10:42:16 +0800</lastBuildDate>
 		<language>zh-CN</language>
 		<sy:updatePeriod>daily</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
@@ -97,6 +97,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://blog.masr.in/geek/add_comment_to_jekyll.html&quot;&gt;jekyll+github构建简约博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions&quot;&gt;Jekyll Installation Instructions&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;当然对于初学者，你完全可以去 &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt; 上 fork 别人的代码，删除_post下所有文章后当做自己的主题使用。&lt;/p&gt;
