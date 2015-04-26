@@ -2,28 +2,26 @@
 <html lang="cn">
 {% include head.html %}
 <body>
-	<div id="container" class="container">
-		{% include loading.html %}
-
+	<div id="container" class="container modify">
 		<div id="content" class="content">
 			{% include navbar.html %}
 
 			{% include post.html %}
 
 		</div>
-		
+
 		{% include footer.html %}
 
 		{% include menu.html %}
-		
+
 	</div>
-	
+
 	<!--[if lte IE 8]>
 		<script type="text/javascript" src="{{ site.BASE_PATH }}/js/fuckie.js"></script>
 	<![endif]-->
-	
+
 	<script type="text/javascript" src="{{ site.BASE_PATH }}/js/classie.js"></script>
-	
+
 	<script type="text/javascript" src="{{ site.BASE_PATH }}/js/snap.svg-min.js"></script>
 	<script type="text/javascript" src="{{ site.BASE_PATH }}/js/menuTriggle.js"></script>
 	<script type="text/javascript" src="{{ site.BASE_PATH }}/js/SVGButton.js"></script>
@@ -38,7 +36,7 @@
 			footH  = footer.offsetHeight,
 			winH   = window.innerHeight,
 			post   = document.querySelectorAll('p');
-		
+
 		if (footT - footH + 100 < winH) {
 			content.style.height = '100%';
 		};

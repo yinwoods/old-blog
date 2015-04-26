@@ -7,7 +7,6 @@ permalink: /:categories/:title.html
 
 markdown: redcarpet
 
-# highlighter: rouge
 highlighter: pygments
 
 name: yinwoods
@@ -21,4 +20,3 @@ author:
   bio: 我在这里，高清有码！
 
 rss_path: rss.xml
-
