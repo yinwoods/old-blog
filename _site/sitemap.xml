@@ -8,13 +8,65 @@
     <language>zh-CN</language>
     
       <item>
+        <title>又是一个失眠的夜晚</title>
+        <description>&lt;h1&gt;又是一个失眠的夜晚&lt;/h1&gt;
+</description>
+        <pubDate>Mon, 27 Apr 2015 00:00:00 +0800</pubDate>
+        <link>http://blog.yinwoods.com/diary/%E5%8F%88%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A4%B1%E7%9C%A0%E7%9A%84%E5%A4%9C%E6%99%9A.html</link>
+        <guid isPermaLink="true">http://blog.yinwoods.com/diary/%E5%8F%88%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A4%B1%E7%9C%A0%E7%9A%84%E5%A4%9C%E6%99%9A.html</guid>
+        <content>&lt;h1&gt;又是一个失眠的夜晚&lt;/h1&gt;
+
+&lt;p&gt;可能是昨晚熬夜的缘故吧，今晚又失眠了。&lt;/p&gt;
+
+&lt;p&gt;说起我的失眠还真是很奇怪，开始于大二下的时候，那个时候总觉得寝室不够安静，刚好了解到ACM实验室可以住人且环境比较好，所以经过深思熟虑后决定搬过去住。&lt;/p&gt;
+
+&lt;p&gt;实验室不是安静，而是异常地安静！奇怪就奇怪在搬过去之后反而失眠更严重了。。。尤其是上学期，好多次都是坐在电脑旁做到天亮&lt;/p&gt;
+
+&lt;p&gt;其实我习惯于在不好的事情中看到其有价值的地方，因此在我看来，失眠也并不是一无是处&lt;/p&gt;
+
+&lt;p&gt;失眠的人都知道：很多事情只有在夜晚才能够静下心来思考，才能够反思自己的问题&lt;/p&gt;
+
+&lt;p&gt;失眠的时候把这一天所遇到的人和事在脑海里过一遍，总是会很有收获。&lt;/p&gt;
+
+&lt;p&gt;从上学期寒假开始就很少失眠了，因为每天比较累，可能经过这段时间的休整，整个人又缓过来了，所以又开始失眠了&lt;/p&gt;
+
+&lt;p&gt;不过这以后的失眠我不会再想以前那样浪费时间，而是学着高效地利用这段时间学习一些新知识&lt;/p&gt;
+
+&lt;p&gt;其实话说回来，这几天并不轻松，总有一种与时间赛跑的感觉&lt;/p&gt;
+
+&lt;p&gt;原因在于：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;课程多，任务重，时间少；这就不得不吐槽一下我们的课程安排了，大一、大二课程轻松，时间少；等到大三下学期了，大家都在为自己的选择而奔波忙碌的时候，反倒是各种专业课，又赶上这学期只有18周（含两周实习、两周考试周）。。。&lt;/li&gt;
+&lt;li&gt;这学期由我和郭伟强来负责ACM实验室的管理，又赶上老师发放新设备，赞助商赞助等各种事情，刚忙完ACM新生杯，又迎来了河南省省赛。。。&lt;/li&gt;
+&lt;li&gt;要为保研做准备，准备材料、关注学校、联系导师等等&lt;/li&gt;
+&lt;li&gt;最坑的是赶上专业认证。。。所以各种实验报告一个不能少（我还被学长蛊惑选了所有选修课，一周21节课你敢信O_o）&lt;/li&gt;
+&lt;li&gt;以前只有中澳才有的工程设计今年也为我们设置了。。。&lt;/li&gt;
+&lt;li&gt;要把BNU OJ的源码移到我们的平台上，这几天还想再改改博客的页面。&lt;/li&gt;
+&lt;li&gt;还要考驾照（科目二已跪一次T_T）&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;列出来的这一部分就可以知道我根本闲不下来啊。。。失眠也可能是因为这几天压力比较大吧&lt;/p&gt;
+
+&lt;p&gt;话不多说了，趁着夜深人静的时候发发牢骚，该干什么还干什么去吧。。。&lt;/p&gt;
+
+&lt;p&gt;最后卖个萌，测一下Markdown 图片显示效果&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/post/%E5%8D%96%E8%90%8C.jpg&quot; alt=&quot;卖个萌&quot;&gt;&lt;/p&gt;
+</content>
+      </item>
+    
+      <item>
         <title>yinwoods个人博客搭建成功</title>
-        <description>&lt;h2&gt;yinwoods个人博客搭建成功&lt;/h2&gt;
+        <description>&lt;h1&gt;yinwoods个人博客搭建成功&lt;/h1&gt;
 </description>
         <pubDate>Sun, 26 Apr 2015 00:00:00 +0800</pubDate>
         <link>http://blog.yinwoods.com/coding/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F.html</link>
         <guid isPermaLink="true">http://blog.yinwoods.com/coding/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F.html</guid>
-        <content>&lt;h2&gt;yinwoods个人博客搭建成功&lt;/h2&gt;
+        <content>&lt;h1&gt;yinwoods个人博客搭建成功&lt;/h1&gt;
 
 &lt;p&gt;这两天在和小强忙着使用BNU OJ在GitHub上的源代码构建我们的ZZU OJ有兴趣的朋友请移步&lt;a href=&quot;https://github.com/ZZUACM/ZZUOJ-BASEON-BNUOJ&quot;&gt;ZZUOJ-BASEON-BNUOJ From GitHub&lt;/a&gt;,今晚算是差不多完成了，所以破格熬个夜吧:)&lt;/p&gt;
 
