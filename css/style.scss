@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 
+/*
 * @Author: 卓文理 www.zwlme.com
 * @Email:  531840344@qq.com
 * @Date:   2014-11-20 16:52:57
@@ -162,102 +162,6 @@ $green: #39A239;
 	%animLoadedContent{
 		@include animation(animLoadedContent 1s cubic-bezier(0.7,0,0.3,1) both);
 		@include transition-delay(0.15s);
-	}
-//-----------------------------------------------------
-
-// 类型: loading
-// 说明: 页面进度条及动画效果
-//-----------------------------------------------------
-	#loading{
-		position: fixed;
-		top: 0;
-		z-index: 8000;
-		min-height: 480px;
-		width: 100%;
-		height: 100%;
-		background: #f1f1f1;
-		.ld-inner{
-			display: block;
-			margin: 0 auto;
-		}
-		.ld-loader svg path{
-			fill:none;
-			stroke-width: 6;
-			&.ld-loader-circlebg{
-				stroke: #ddd;
-			}
-			&.ld-loader-circle{
-				stroke-dasharray: 192px;
-				stroke-dashoffset: 192px;
-				@include transition(stroke-dashoffset 0.2s);
-				stroke: #39A239;
-			}
-		}
-	}
-	.ld-logo,.ld-loader{
-		position: absolute;
-		left: 50%;
-		opacity: 0;
-		cursor: default;
-		pointer-events:none;
-	}
-	.ld-logo{
-		@include inline-block;
-		top: 40%;
-		@include transform(translate3d(-50%,-50%,0));
-		@include transition(opacity 0.3s cubic-bezier(0.7,0,0.3,1));
-	}
-	.ld-loader{
-		bottom: 20%;
-		@include transform(translate3d(-50%,0,0));
-	}
-	.loading{
-		.ld-logo,.ld-loader{
-			opacity: 1;
-		}
-		.ld-logo{
-			@include animation(animInitialLogo 0.5s cubic-bezier(0.7,0,0.3,1) both);
-		}
-		.ld-loader{
-			@include animation(animInitialLoader 0.5s cubic-bezier(0.7,0,0.3,1) both);
-		}
-	}
-	.loaded{
-		.content {
-			.article{
-				@extend %animLoadedContent;
-			}
-			.header h1,.post-header h1{
-				@extend %animLoadedContent;
-			}
-			.header h2{
-				@extend %animLoadedContent;
-				line-height: 1.5;
-			}
-			.friend{
-				@extend %animLoadedContent;
-			}
-		}
-		#loading{
-			@include animation(animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards);
-			pointer-events: none;
-		}
-		.ld-logo, .ld-loader{
-			opacity: 1;
-			pointer-events: none;
-		}
-		.ld-logo{
-			@include transform-origin(50% 0);
-			@include animation(animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards);
-		}
-		.ld-loader{
-			@include animation(animLoadedLoader 1s cubic-bezier(0.7,0,0.3,1) forwards);
-		}
-	}
-	.layout-switch{
-		#loading{
-			position: absolute;
-		}
 	}
 //-----------------------------------------------------
 
@@ -784,7 +688,7 @@ $green: #39A239;
 		    color: #777
 		}
 
-		code,tt{			
+		code,tt{
 			padding: 0;
 			padding-top: 0.2em;
 			padding-bottom: 0.2em;
@@ -1063,7 +967,7 @@ $green: #39A239;
 //-----------------------------------------------------
 
 // 类型: codebase
-// 说明: 
+// 说明:
 //-----------------------------------------------------
 	.codebase{
 		.header{
@@ -1122,7 +1026,7 @@ $green: #39A239;
 //-----------------------------------------------------
 
 // 类型: @media 1200
-// 说明: 
+// 说明:
 //-----------------------------------------------------
 	@include max-screen(1200px){
 		.footer{
@@ -1141,7 +1045,7 @@ $green: #39A239;
 //-----------------------------------------------------
 
 // 类型: @media 800
-// 说明: 
+// 说明:
 //-----------------------------------------------------
 	@include max-screen(800px){
 		.article{
@@ -1163,7 +1067,7 @@ $green: #39A239;
 //-----------------------------------------------------
 
 // 类型: @media 640
-// 说明: 
+// 说明:
 //-----------------------------------------------------
 	@include max-screen(640px){
 		body{
@@ -1246,7 +1150,7 @@ $green: #39A239;
 
 
 // 类型: 冬天皮肤
-// 说明: 
+// 说明:
 //-----------------------------------------------------
 	.tree{
 		position: absolute;
