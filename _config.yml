@@ -7,7 +7,7 @@ permalink: /:categories/:title.html
 
 markdown: redcarpet
 
-highlighter: pygments
+highlighter: 
 
 name: yinwoods
 title: yinwoods的个人博客

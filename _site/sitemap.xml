@@ -8,6 +8,198 @@
     <language>zh-CN</language>
     
       <item>
+        <title>sublime配置浏览器打开页面</title>
+        <description>&lt;h1&gt;sublime配置浏览器&lt;/h1&gt;
+</description>
+        <pubDate>Sun, 24 May 2015 00:00:00 +0800</pubDate>
+        <link>http://blog.yinwoods.com/coding/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html</link>
+        <guid isPermaLink="true">http://blog.yinwoods.com/coding/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html</guid>
+        <content>&lt;h1&gt;sublime配置浏览器&lt;/h1&gt;
+
+&lt;p&gt;其实以前对sublime也有所耳闻，但一说总是前端开发利器，因此一直没有接触。&lt;/p&gt;
+
+&lt;p&gt;这几天在学习bootstrap框架，因此装了sublime 3试用了下，确实用起来体验很好，而且各种快捷键、插件用起来都很便捷舒服。&lt;/p&gt;
+
+&lt;p&gt;由于学习bootstrap的过程中难免要编写网页，这个时候一个可以打开对应浏览器调试页面的插件则显得相当重要。&lt;/p&gt;
+
+&lt;p&gt;了解到有一个插件view in browser，试用了下，发现只能打开默认浏览器（也可能是自己没有发现打开多个浏览器的方法），所以果断卸载不用【另外说一下安装sublime插件的方法是先安装Package Control插件，网上教程很多，还请自行google；安装完成后，使用ctrl+shift+P调出命令窗口，输入install即可看到install package选项，点击后进入安装插件模式，输入对应插件名称回车安装即可】&lt;/p&gt;
+
+&lt;p&gt;言归正传，经过不懈的google发现了一份python代码可以实现自己的需求，代码如下：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;import sublime
+import sublime_plugin
+import subprocess
+import tempfile
+
+class OpenInBrowserAltCommand(sublime_plugin.ApplicationCommand):
+    def run(self, **kwargs):
+        browser = kwargs[&amp;#39;browser&amp;#39;]
+
+        browser_cmd_map = {
+            &amp;#39;chrome&amp;#39;: [r&amp;#39;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&amp;#39;],
+            &amp;#39;iexplore&amp;#39;: [r&amp;#39;C:\Program Files (x86)\Internet Explorer\iexplore.exe&amp;#39;] 
+        }
+
+        if browser in browser_cmd_map:
+            cmd = browser_cmd_map[browser]
+            view = sublime.Window.active_view(sublime.active_window())
+            if view.file_name():
+                cmd.append(view.file_name())
+                subprocess.Popen(cmd)
+            else:
+                temp = tempfile.NamedTemporaryFile(delete=False)
+                content = view.substr(sublime.Region(0, view.size()))
+                temp.write(content.encode(&amp;#39;utf-8&amp;#39;))
+                temp.flush()
+                cmd.append(temp.name)
+                subprocess.Popen(cmd)
+                temp.close()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;可以发现在这里我设置了chrome和ie两款浏览器，如果想设置更多浏览器，设置对应名称路径即可（注意格式！名字可以随便起）&lt;/p&gt;
+
+&lt;p&gt;将上述代码保存为open_browser.py（名字不重要）；这时点击sublime的 Preferences -&amp;gt; browser packages 发现插件安装路径，将上述python文件保存到当前的user目录下&lt;/p&gt;
+
+&lt;p&gt;接着我们设置一下对应的调用快捷键即可，打开 Preferences -&amp;gt; key binding - user
+编辑内容为：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;[
+    { &amp;quot;keys&amp;quot;: [&amp;quot;f4&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;open_in_browser_alt&amp;quot;, &amp;quot;args&amp;quot;: {&amp;quot;browser&amp;quot;: &amp;quot;chrome&amp;quot;} },
+    { &amp;quot;keys&amp;quot;: [&amp;quot;f3&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;open_in_browser_alt&amp;quot;, &amp;quot;args&amp;quot;: {&amp;quot;browser&amp;quot;: &amp;quot;iexplore&amp;quot;} }
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;当然这里的浏览器名字要与你在上述文件中起的名字一致，在这里我设置的快捷键为 F3 F4，当然你可以根据自己的习惯设置，当添加更多浏览器按照上述格式添加即可&lt;/p&gt;
+
+&lt;p&gt;一切就绪，现在打开一个html文件，按下快捷键发现完美调用浏览器！&lt;/p&gt;
+</content>
+      </item>
+    
+      <item>
+        <title>简单的等式（数学题）</title>
+        <description>&lt;h1&gt;简单的等式（数学题）&lt;/h1&gt;
+</description>
+        <pubDate>Wed, 29 Apr 2015 00:00:00 +0800</pubDate>
+        <link>http://blog.yinwoods.com/coding/%E7%AE%80%E5%8D%95%E7%9A%84%E7%AD%89%E5%BC%8F.html</link>
+        <guid isPermaLink="true">http://blog.yinwoods.com/coding/%E7%AE%80%E5%8D%95%E7%9A%84%E7%AD%89%E5%BC%8F.html</guid>
+        <content>&lt;h1&gt;简单的等式（数学题）&lt;/h1&gt;
+
+&lt;p&gt;题意是有一个等式：x^2+s(x, m)*x-n = 0&lt;/p&gt;
+
+&lt;p&gt;s(x, m)表示把x写成m进制时，每个位数相加的和&lt;/p&gt;
+
+&lt;p&gt;找到满足条件的最小正整数x，如果不存在，输出-1&lt;/p&gt;
+
+&lt;p&gt;很容易想到把等式转换为x+s(x, m) = n/x&lt;/p&gt;
+
+&lt;p&gt;所以可以知道n是x的整数倍，且n&amp;gt;x*x&lt;/p&gt;
+
+&lt;p&gt;但仅仅是这样时间复杂度是降不下来的&lt;/p&gt;
+
+&lt;p&gt;做比赛的时候一直没有想出来，快结束的时候小伙伴王烯想出了一个办法：枚举s(x, m)的值，可以发现这个值的范围是很小的&lt;/p&gt;
+
+&lt;p&gt;我们令k = s(x, m), 则可以将上式转为一个二元一次方程:x^2+kx-n = 0&lt;/p&gt;
+
+&lt;p&gt;枚举k后，解出x，判断是否满足原方程即可&lt;/p&gt;
+
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;#include &amp;lt;cstdio&amp;gt;
+#include &amp;lt;cmath&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+#define LL long long
+using namespace std;
+
+LL n, m;
+
+LL ss(LL x, LL m) {
+    LL ans = 0;
+    while(x) {
+        ans += x%m;
+        x /= m;
+    }
+    return ans;
+}
+
+int main(void) {
+    int T;
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;T);
+    while(T--) {
+        cin &amp;gt;&amp;gt; n &amp;gt;&amp;gt; m;
+
+        bool ok = true;
+        for(LL s=1; s&amp;lt;=2000; ++s) {
+            LL x = (-s+sqrt(s*s+4*n))/2;
+
+            if(x*x + ss(x, m)*x == n) {
+                cout &amp;lt;&amp;lt; x &amp;lt;&amp;lt; endl;
+                ok = false;
+                break;
+            } 
+        }
+        if(ok) cout &amp;lt;&amp;lt; -1 &amp;lt;&amp;lt; endl;
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+      </item>
+    
+      <item>
+        <title>Ilya and Escalator</title>
+        <description>&lt;h1&gt;Ilya and Escalator(概率DP)&lt;/h1&gt;
+</description>
+        <pubDate>Tue, 28 Apr 2015 00:00:00 +0800</pubDate>
+        <link>http://blog.yinwoods.com/coding/IIya-and-Escalator-%E6%A6%82%E7%8E%87DP.html</link>
+        <guid isPermaLink="true">http://blog.yinwoods.com/coding/IIya-and-Escalator-%E6%A6%82%E7%8E%87DP.html</guid>
+        <content>&lt;h1&gt;Ilya and Escalator(概率DP)&lt;/h1&gt;
+
+&lt;p&gt;题意是电梯前有n个人，每个人进电梯的概率位p，问在p秒时电梯内人数的期望&lt;/p&gt;
+
+&lt;p&gt;题目有一个地方要注意的是电梯外的人是在排队的，当最前面的人这个时刻不进电梯时后面的人等在排队等着。&lt;/p&gt;
+
+&lt;p&gt;可以定义DP状态：dp[i][j] //表示前i秒进j个人的概率&lt;/p&gt;
+
+&lt;p&gt;初始状态很容易定义：dp[i][0] = dp[i-1][0]*(1-p);&lt;/p&gt;
+
+&lt;p&gt;可以知道dp[i][j] = dp[i-1][j-1]&lt;em&gt;p + dp[i-1][j]&lt;/em&gt;(1-p)&lt;/p&gt;
+
+&lt;p&gt;而这个状态对于j==n并不适应，当j==n时，已经没有人在排队，状态转移方程变为：&lt;/p&gt;
+
+&lt;p&gt;dp[i][n] = dp[i-1][j-1]*p + dp[i-1][n];&lt;/p&gt;
+
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;
+#include &amp;lt;cstdio&amp;gt;
+#include &amp;lt;cstring&amp;gt;
+#include &amp;lt;iostream&amp;gt;
+#define MAXN 2100
+using namespace std;
+
+double dp[MAXN][MAXN];
+
+int main(void) {
+    int t, n;
+    double p;
+    double ans;
+    cin &amp;gt;&amp;gt; n &amp;gt;&amp;gt; p &amp;gt;&amp;gt; t;
+    dp[0][0] = 1;
+    for(int i=1; i&amp;lt;=t; ++i) {
+        dp[i][0] = (1-p)*dp[i-1][0];
+        for(int j=1; j&amp;lt;n; ++j) {
+            dp[i][j] = dp[i-1][j-1]*p + dp[i-1][j]*(1-p);
+        }
+        dp[i][n] = p*dp[i-1][n-1]+dp[i-1][n];
+    }
+    ans = 0.0;
+    for(int i=1; i&amp;lt;=n; ++i) {
+        ans += dp[t][i]*i;
+    }
+    printf(&amp;quot;%.6lf\n&amp;quot;, ans);
+
+    return 0;
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+      </item>
+    
+      <item>
         <title>又是一个失眠的夜晚</title>
         <description>&lt;h1&gt;又是一个失眠的夜晚&lt;/h1&gt;
 </description>
@@ -102,7 +294,7 @@
 
 &lt;p&gt;安装过程中千万记住不要使用&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; sudo apt-get install jekyll&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install jekyll&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;语句安装，用这种方法安装会导致各种问题。。。&lt;/p&gt;
 
