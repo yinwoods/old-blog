@@ -5,22 +5,22 @@
 		<atom:link href="http://blog.yinwoods.com/rss.xml" rel="self" type="application/rss+xml"/>
 		<link>http://blog.yinwoods.com</link>
 		<description></description>
-		<lastBuildDate>Mon, 25 May 2015 00:01:39 +0800</lastBuildDate>
+		<lastBuildDate>Mon, 25 May 2015 12:56:23 +0800</lastBuildDate>
 		<language>zh-CN</language>
 		<sy:updatePeriod>daily</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 		
 		<item>
 			<title>sublime配置浏览器打开页面</title>
-			<link>http://blog.yinwoods.com/coding/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html</link>
-			<comments>http://blog.yinwoods.com/coding/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html#disqus_thread</comments>
+			<link>http://blog.yinwoods.com/myshare/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html</link>
+			<comments>http://blog.yinwoods.com/myshare/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html#disqus_thread</comments>
 			<pubDate>Sun, 24 May 2015 00:00:00 +0800</pubDate>
 			<dc:creator><![CDATA[卓文理]]></dc:creator>
-			<category><![CDATA[coding]]></category>
+			<category><![CDATA[myshare]]></category>
 			
 			<category><![CDATA[yinwoods]]></category>
 			
-			<guid isPermaLink="true">http://blog.yinwoods.com/coding/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html</guid>
+			<guid isPermaLink="true">http://blog.yinwoods.com/myshare/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html</guid>
 			<description><![CDATA[&lt;h1&gt;sublime配置浏览器&lt;/h1&gt;
 ]]></description>
 			<content:encoded><![CDATA[&lt;h1&gt;sublime配置浏览器&lt;/h1&gt;

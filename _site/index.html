@@ -26,21 +26,24 @@
 	<link rel="apple-touch-icon-precomposed" href="/img/icon-96.png" sizes="96x96" />
 	<link rel="apple-touch-icon-precomposed" href="/img/icon-128.png" sizes="128x128" />
 	<link href="/img/icon.png" rel="Shortcut Icon" type="image/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 
     <title>yinwoods</title>
 
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/rouge.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	
 
 </head>
+
 
 <body>
 	<div id="container" class="container modify">
 		<div id="content" class="content">
 						<nav class="navbar">
 				<div class="pull-left">
-					<button id="btnMenu" class="btn-menu"><i class="icon icon-menu">&#xe618;</i>菜单</button>
+					<button id="btnMenu" class="btn-menu"><i class="glyphicon glyphicon-th-list"></i> 菜单</button>
 				</div>
 				<ul class="pull-center">
 					<li class="active"><a href="/">博客</a></li>
@@ -62,11 +65,11 @@
 			<time class="entry-date" datetime="2015-05-24 00:00:00 +0800">
 			2015年05月24日
 			</time>
-			<h1 class="entry-title"><a href="/coding/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html">sublime配置浏览器打开页面</a></h1>
+			<h1 class="entry-title"><a href="/myshare/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html">sublime配置浏览器打开页面</a></h1>
 		</header>
 		<div class="entry-content">
 			<figure class="entry-poster">
-				<a class="entry-more" href="/coding/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html"><img src="/img/bg/5.jpg" alt=""></a>
+				<a class="entry-more" href="/myshare/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html"><img src="/img/bg/5.jpg" alt=""></a>
 			</figure>
 			<div class="entry-intro">
 		    
@@ -76,7 +79,7 @@
 		      
 		    
 		    </div>
-			<a href="/coding/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html" class="entry-more"><i class="icon icon-dot">&#xe61a;</i></a>
+			<a href="/myshare/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html" class="entry-more"><i class="icon icon-dot">&#xe61a;</i></a>
 		</div>
 	</article>
 	
@@ -204,14 +207,24 @@
 
 				<nav id="menu" class="menu">
 			<ul>
-				<li><a href="/"><i class="icon">&#xe612;</i>首页</a></li>
-				<li><a href="/codebase.html"><i class="icon">&#xe60b;</i>代码库</a></li>
-				<li><a href="/coding.html"><i class="icon">&#xe60c;</i>编程之路</a></li>
-				<li><a href="/myshare.html"><i class="icon">&#xe60c;</i>我的分享</a></li>
-				<li><a href="/diary.html"><i class="icon">&#xe60c;</i>生活日志</a></li>
-				<li><a target="_blank" href="/about.html"><i class="icon">&#xe61c;</i>关于博主</a></li>
-				<li><a href="/friend.html"><i class="icon">&#xe61d;</i>友链</a></li>
-				<li><a target="_blank" href="/rss.xml"><i class="icon">&#xe61f;</i>RSS</a></li>
+				<li class="text-center"><a href="/index.html"><span class="glyphicon glyphicon-home"></span></i> 首页 </a></li>
+				
+				
+				<li class="text-center"><a href="/codebase.html"><span class="glyphicon glyphicon-inbox"></span></i>  代码库 </a></li>
+				
+
+				<li class="text-center"><a href="/coding.html"><span class="glyphicon glyphicon-road"></span></i>  编程之路 </a></li>
+				
+				<li class="text-center"><a href="/myshare.html"><span class="glyphicon glyphicon-gift"></span>  我的分享 </a></li>
+				
+				<li class="text-center"><a href="/diary.html"><span class="glyphicon glyphicon-calendar"></span></i>  生活日志 </a></li>
+				
+				<li class="text-center"><a href="/about.html"><span class="glyphicon glyphicon-sunglasses"></span></i>  关于博主 </a></li>
+
+				<li class="text-center"><a href="/friend.html"><span class="glyphicon glyphicon-send"></span></i> 我的朋友 </a></li>
+
+				<li class="text-center"><a href="/rss.xml"><span class="glyphicon glyphicon-registration-mark"></span></i> RSS </a></li>
+
 			</ul>
 			<button id="btnClose" class="btn-close"></button>
 
@@ -232,7 +245,8 @@
 	<!--[if lte IE 8]>
 		<script type="text/javascript" src="/js/fuckie.js"></script>
 	<![endif]-->
-
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/classie.js"></script>
 	<!-- snap.svg -->
 	<script type="text/javascript" src="/js/snap.svg-min.js"></script>
