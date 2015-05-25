@@ -8,6 +8,30 @@
     <language>zh-CN</language>
     
       <item>
+        <title>制作专属关注微博按钮</title>
+        <description>&lt;h1&gt;制作微博关注按钮&lt;/h1&gt;
+</description>
+        <pubDate>Sun, 24 May 2015 00:00:00 +0800</pubDate>
+        <link>http://blog.yinwoods.com/coding/%E5%88%B6%E4%BD%9C%E4%B8%93%E5%B1%9E%E5%85%B3%E6%B3%A8%E5%BE%AE%E5%8D%9A%E6%8C%89%E9%92%AE.html</link>
+        <guid isPermaLink="true">http://blog.yinwoods.com/coding/%E5%88%B6%E4%BD%9C%E4%B8%93%E5%B1%9E%E5%85%B3%E6%B3%A8%E5%BE%AE%E5%8D%9A%E6%8C%89%E9%92%AE.html</guid>
+        <content>&lt;h1&gt;制作微博关注按钮&lt;/h1&gt;
+
+&lt;p&gt;今天学会了一个小技能，制作自己的微博关注按钮，效果如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/post/weibo.jpg&quot; alt=&quot;关注我的微博&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;其实很简单，只用把下面这段代码放到你想放的位置即可&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-HTML&quot; data-lang=&quot;HTML&quot;&gt;&amp;lt;iframe allowtransparency=&amp;quot;&amp;quot; border=&amp;quot;0&amp;quot; frameborder=&amp;quot;0&amp;quot; height=&amp;quot;22&amp;quot; marginheight=&amp;quot;0&amp;quot; marginwidth=&amp;quot;0&amp;quot; scrolling=&amp;quot;no&amp;quot; src=&amp;quot;http://widget.weibo.com/relationship/followbutton.php?width=200&amp;amp;height=22&amp;amp;uid=3090938041&amp;amp;style=5&amp;amp;btn=red&amp;amp;dpc=1&amp;quot; style=&amp;quot;width: 64px; height: 22px;&amp;quot; width=&amp;quot;200&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;把这里的 src = &amp;quot;&amp;quot; 与剧中的uid对应值该为自己的即可&lt;/p&gt;
+
+&lt;p&gt;要想知道自己微博对应的uid，用浏览器打开自己的微博主页在地址栏就可以看到了&lt;/p&gt;
+
+&lt;p&gt;例如我打开自己的微博主页 &lt;a href=&quot;http://weibo.com/3090938041&quot;&gt; http://weibo.com/3090938041 &lt;/a&gt;  weibo.com后面的数字即为对应的uid&lt;/p&gt;
+</content>
+      </item>
+    
+      <item>
         <title>sublime配置浏览器打开页面</title>
         <description>&lt;h1&gt;sublime配置浏览器&lt;/h1&gt;
 </description>
