@@ -194,18 +194,6 @@
   </url>
 
   <url>
-    <loc>http://blog.yinwoods.com/index.html</loc>
-    <lastmod>2015-05-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <data>
-      <display>
-        <html5_url>http://blog.yinwoods.com/index.html</html5_url>
-      </display>
-    </data>
-  </url>
-
-  <url>
     <loc>http://blog.yinwoods.com/codebase/SVGButton/index.html</loc>
     <lastmod>2015-05-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -230,6 +218,18 @@
   </url>
 
   <url>
+    <loc>http://blog.yinwoods.com/index.html</loc>
+    <lastmod>2015-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <data>
+      <display>
+        <html5_url>http://blog.yinwoods.com/index.html</html5_url>
+      </display>
+    </data>
+  </url>
+
+  <url>
     <loc>http://blog.yinwoods.com/myshare.html</loc>
     <lastmod>2015-05-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -237,18 +237,6 @@
     <data>
       <display>
         <html5_url>http://blog.yinwoods.com/myshare.html</html5_url>
-      </display>
-    </data>
-  </url>
-
-  <url>
-    <loc>http://blog.yinwoods.com/rss.xml</loc>
-    <lastmod>2015-05-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <data>
-      <display>
-        <html5_url>http://blog.yinwoods.com/rss.xml</html5_url>
       </display>
     </data>
   </url>
