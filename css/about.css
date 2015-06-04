@@ -2,9 +2,17 @@
 #what-i-do .deets{
 	padding:0 0 0 6em
 }
-.social {
-	padding-right: 100px;
-	padding-left: 100px;
-	background-size:100% 100%
-}
 #i-want-new article .btn-hldr .btn-email-link{display:inline-block}#design,#devlop{padding-left:12%}}@media screen and (min-width: 1140px){.container{max-width:970px}}
+
+.socialweibo {
+	width: 280px;
+	height: 550px;
+}
+
+.socialweibo iframe {
+	background-size: 100% 100%
+}
+
+.socialweibo h1 {
+	text-align: center;
+}
