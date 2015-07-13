@@ -7,6 +7,9 @@ permalink: /:categories/:title.html
 
 markdown: redcarpet
 
+redcarpet: 
+    extensions: ["fenced_code_blocks", "tables", "highlight", "with_toc_data", "strikethrough", "underline"]
+
 highlighter: pygments
 
 name: yinwoods
