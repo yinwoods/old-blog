@@ -1,7 +1,7 @@
 BASE_PATH:
 SITE_PATH: http://blog.yinwoods.com
 paginate: 10 # pagination based on number of posts
-paginate_path: "/blog/page:5" #pagination generated sub path format
+paginate_path: "BASE_PATH/page:num" #pagination generated sub path format
 encoding: utf-8
 permalink: /:categories/:title.html
 
