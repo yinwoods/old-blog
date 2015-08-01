@@ -120,10 +120,10 @@ a:hover,a:focus{color:#74777b;};
 .htmleaf-links::after {
 	position: absolute;
 	top: 0;
-	left: 50%;
+	left: 48%;
 	margin-left: 10px;
 	margin-right: 10px;
-	width: 2px;
+	width: 3px;
 	height: 100%;
 	background: #dbdbdb;
 	content: '';
@@ -225,7 +225,7 @@ a:hover,a:focus{color:#74777b;};
 
 .mark {
 	text-align: center;
-	margin-left: 36%;
+	font-size: 20px;
 }
 
 .marked {
