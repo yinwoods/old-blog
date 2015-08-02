@@ -12,12 +12,12 @@ img { vertical-align: middle; }
      display: inline-block; 
      margin: 0 auto;
      width: 47em;
-     background-color: lightyellow;
 }
+
 /* start commented backslash hack \*/
 * html .gallery-container { height: 1%; }
 .gallery-container { display: block; }
-.column { float: left; margin-right: 10px; padding: 0; }
+.column { float: left; margin-left margin-right: 5px; padding: 0; }
 
 .span-1  { width: 30px;}
 .span-2  { width: 70px;}
@@ -43,9 +43,25 @@ img { vertical-align: middle; }
 .span-22 { width: 870px;}
 .span-23 { width: 910px;}
 .span-24 { width: 950px;}
-.span-30 {width: 1190px;}
+.span-30 {width: 1200px;}
 
-.last { margin-right: 0; }
+@media screen and (max-width: 970px) {
+     .gallery-container {width: 38em;}
+     .span-30 {width: 950px;}
+}
+
+@media screen and (max-width: 730px) {
+     .gallery-container {width: 30em;}
+     .span-30 {width: 710px;}
+}
+
+@media screen and (max-width: 500px) {
+     .gallery-container {width: 20em;}
+     .span-30 {width: 470px;}
+}
+
+
+.last {margin-right: 0;}
 section { margin-top: 2em; }
 
 a.polaroid { -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; display: block; background: #fff; padding: 10px; margin:5px; -moz-box-shadow: #ccc 5px 5px 20px; -webkit-box-shadow: #ccc 5px 5px 20px; margin-bottom:1em; }

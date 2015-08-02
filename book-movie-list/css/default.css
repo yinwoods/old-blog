@@ -64,6 +64,7 @@ a:hover,a:focus{color:#74777b;};
 	overflow: hidden;
 }
 .content {
+	width: 100%;
 	font-size: 150%;
 	padding: 3em 0;
 }
@@ -219,7 +220,8 @@ a:hover,a:focus{color:#74777b;};
 	content: "\e736";
 }
 
-.book-title {
+.book-movie-title {
+	color: #3d4444;
 	text-align: center;
 }
 
