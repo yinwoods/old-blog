@@ -88,7 +88,7 @@ a:hover,a:focus{color:#74777b;};
 .bgcolor-8 { background: #3d4444; color: #fff; }
 /* Header */
 .htmleaf-header{
-	padding: 3em 190px 4em;
+	padding: 1em 20px 1em;
 	letter-spacing: -1px;
 	text-align: center;
 }

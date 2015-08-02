@@ -9,9 +9,10 @@ img { vertical-align: middle; }
      height: 0;
      }
 .gallery-container { 
-	width: 30em;
-	display: inline-block; 
-	margin: 0 auto;
+     display: inline-block; 
+     margin: 0 auto;
+     width: 47em;
+     background-color: lightyellow;
 }
 /* start commented backslash hack \*/
 * html .gallery-container { height: 1%; }
@@ -41,7 +42,8 @@ img { vertical-align: middle; }
 .span-21 { width: 830px;}
 .span-22 { width: 870px;}
 .span-23 { width: 910px;}
-.span-24 { width: 950px; margin: 0; }
+.span-24 { width: 950px;}
+.span-30 {width: 1190px;}
 
 .last { margin-right: 0; }
 section { margin-top: 2em; }
