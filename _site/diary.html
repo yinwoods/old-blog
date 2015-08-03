@@ -45,15 +45,22 @@
 
 						<nav class="navbar">
 				<div class="pull-left">
-					<button id="btnMenu" class="btn-menu"><i class="glyphicon glyphicon-th-list"></i> 菜单</button>
+					<button id="btnMenu" type="button" class="btn btn-default btn-sm btn-menu">
+						<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>	菜 单
+					</button>
 				</div>
 				<ul class="pull-center">
 					<li class="active"><a href="/">博客</a></li>
-                    <li><a href="/about.html">关于我</a></li>
+                    		<li><a href="/about.html">关于我</a></li>
 				</ul>
-				<div class="pull-right"></div>
+				<div class="pull-right">
+					<button type="button" class="btn btn-default btn-sm btn-list">
+						<a href="/book-movie-list/booklist.html">
+							<span class="glyphicon glyphicon-list-alt"></span> 书单/影单  
+						</a>
+					</button>
+				</div>
 			</nav>
-
 
 			<header class="header">
 	<h1 class="title">生活日志</h1>
@@ -210,24 +217,23 @@
 
 				<nav id="menu" class="menu">
 			<ul>
-				<li class="text-center logo"><a href="about.html"><img  class="img-circle" alt="140*140" height="100px" width="100px" src="/img/about/me.png"></a></li>
+				<li class="logo"><a href="about.html"><img  class="img-circle" height="100px" width="100px" src="/img/about/me.png"></a></li>
 
-				<li class="text-center"><a href="/index.html"><span class="glyphicon glyphicon-home"></span></i> 首页 </a></li>
+				<li><a href="/index.html"><span class="glyphicon glyphicon-home"></span></i> 首页 </a></li>
 				
+				<li><a href="/book-movie-list/booklist.html"><span class="glyphicon glyphicon-inbox"></span></i>  书单/影单  </a></li>
 				
-				<li class="text-center"><a href="/book-movie-list/booklist.html"><span class="glyphicon glyphicon-inbox"></span></i>  书单/影单  </a></li>
-				
-				<li class="text-center"><a href="/coding.html"><span class="glyphicon glyphicon-road"></span></i>  编程之路 </a></li>
+				<li><a href="/coding.html"><span class="glyphicon glyphicon-road"></span></i>  编程之路 </a></li>
 
-				<li class="text-center"><a href="/myshare.html"><span class="glyphicon glyphicon-gift"></span>  我的分享 </a></li>
+				<li><a href="/myshare.html"><span class="glyphicon glyphicon-gift"></span>  我的分享 </a></li>
 				
-				<li class="text-center"><a href="/diary.html"><span class="glyphicon glyphicon-calendar"></span></i>  生活日志 </a></li>
+				<li><a href="/diary.html"><span class="glyphicon glyphicon-calendar"></span></i>  生活日志 </a></li>
 				
-				<li class="text-center"><a href="/about.html"><span class="glyphicon glyphicon-sunglasses"></span></i>  关于博主 </a></li>
+				<li><a href="/about.html"><span class="glyphicon glyphicon-sunglasses"></span></i>  关于博主 </a></li>
 
-				<li class="text-center"><a href="/friend.html"><span class="glyphicon glyphicon-send"></span></i> 我的朋友 </a></li>
+				<li><a href="/friend.html"><span class="glyphicon glyphicon-send"></span></i> 我的朋友 </a></li>
 
-				<li><img style="margin-top:20px;" class="img-rounded" height="100px" width="100%" src="/img/about/footer.png"></li>
+				<li><img class="img-rounded" height="100px" width="100%" src="/img/about/footer.png"></li>
 
 			</ul>
 			<button id="btnClose" class="btn-close"></button>
