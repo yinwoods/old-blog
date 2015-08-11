@@ -4,14 +4,41 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="Keywords" content="yinwoods,殷成涛,个人博客,郑州大学{% if page.tags %}{% for tag in page.tags %},{{ tag }}{% endfor %}{% endif %}"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+
 	<title>书单</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/default.css">
 	<link rel="stylesheet" type="text/css" href="css/demo.css">
-	<!--[if IE]>
-		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
-	<![endif]-->
+	<link rel="dns-prefetch" href="//disqus.com"/>
+	<link rel="dns-prefetch" href="//a.disquscdn.com"/>
+
+	<link rel="alternate" type="application/rss+xml" title="yinwoods Feed" href="{{ site.BASE_PATH }}/rss.xml" />
+	<link rel="apple-touch-icon-precomposed" href="{{ site.BASE_PATH }}/img/icon.png">
+	<link rel="apple-touch-icon-precomposed" href="{{ site.BASE_PATH }}/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="{{ site.BASE_PATH }}/img/icon-24.png" sizes="24x24" />
+	<link rel="apple-touch-icon-precomposed" href="{{ site.BASE_PATH }}/img/icon-32.png" sizes="32x32" />
+	<link rel="apple-touch-icon-precomposed" href="{{ site.BASE_PATH }}/img/icon-48.png" sizes="48x48" />
+	<link rel="apple-touch-icon-precomposed" href="{{ site.BASE_PATH }}/img/icon-64.png" sizes="64x64" />
+	<link rel="apple-touch-icon-precomposed" href="{{ site.BASE_PATH }}/img/icon-72.png" sizes="72x72" />
+	<link rel="apple-touch-icon-precomposed" href="{{ site.BASE_PATH }}/img/icon-96.png" sizes="96x96" />
+	<link rel="apple-touch-icon-precomposed" href="{{ site.BASE_PATH }}/img/icon-128.png" sizes="128x128" />
+	<link href="{{ site.BASE_PATH }}/img/icon.png" rel="Shortcut Icon" type="image/x-icon"/>
+
+    	<script type="text/javascript">
+  		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  		e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  		})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  		_st('install','csxq-8xzb6tiaQ1dQaGs','2.0.0');
+	</script>
 </head>
+
 <body>
 	<div class="container">
 		<header class="htmleaf-header">
