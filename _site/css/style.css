@@ -173,22 +173,23 @@
 ::-webkit-scrollbar-thumb{background-color:#99cc99;border-radius:5px;border:2px solid #f6f7f9;}
 ::-webkit-scrollbar-thumb:hover{background-color:#00C208;}
 
+.share_button {
+	width: 45px;
+	top: 15px;
+}
 
-.jiathis_style .jiathis_button_weixin{
-	width: 45px;
-	top: 15px;
-	content:url(../img/about/weixin.png);
-}
-.jiathis_style .jiathis_button_tsina{
-	width: 45px;
-	top: 15px;
-	content:url(../img/about/sina.png);
-}
-.jiathis_style .jiathis_button_qzone{
-	width: 45px;
-	top: 15px;
-	content:url(../img/about/qzone.png);
-}
+.jiathis_style .jiathis_button_weixin{content:url(../img/about/weixin.png);}
+.jiathis_style .jiathis_button_tsina{content:url(../img/about/sina.png);}
+.jiathis_style .jiathis_button_qzone{content:url(../img/about/qzone.png);}
+.jiathis_style .jiathis_button_douban{content:url(../img/about/douban.png);}
+.jiathis_style .jiathis_button_renren{content:url(../img/about/renren.png);}
+.jiathis_style .jiathis_button_fb{content:url(../img/about/facebook.png);}
+.jiathis_style .jiathis_button_ydnote{content:url(../img/about/ydnote.png);}
+.jiathis_style .jiathis_button_googleplus{content:url(../img/about/googleplus.png);}
+.jiathis_style .jiathis_button_pocket{content:url(../img/about/pocket.png);}
+.jiathis_style .jiathis_button_tumblr{content:url(../img/about/tumblr.png);}
+.jiathis_style .jiathis_button_linkedin{content:url(../img/about/linkedin.png);}
+.jiathis_style .jiathis_button_evernote{content:url(../img/about/evernote.png);}
 
 .jiathis_style .jiathis_counter_style {
 	top: 7px;
