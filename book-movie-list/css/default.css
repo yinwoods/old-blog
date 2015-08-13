@@ -223,6 +223,7 @@ a:hover,a:focus{color:#74777b;};
 .book-movie-title {
 	color: #3d4444;
 	text-align: center;
+	margin-top: -1em;
 }
 
 .mark {
@@ -233,6 +234,28 @@ a:hover,a:focus{color:#74777b;};
 .bigger {
 	width: 600px;
 	height: 800px;
+}
+
+#totop {
+	position: fixed; 
+	bottom: 35px; 
+	right: 35px; 
+	width: 130px;
+	height: 50px;
+	cursor: pointer; 
+	z-index: 999999; 
+	display: block; 
+	opacity: 1;
+}
+
+#totop a{
+	display:block;
+	width:50px;
+	height:50px;
+	float: right;
+	overflow:hidden;
+	text-indent:-999em;
+	background:url(../../img/totop.png) no-repeat right;
 }
 
 @media screen and (max-width: 50em) {
