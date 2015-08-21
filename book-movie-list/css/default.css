@@ -231,6 +231,11 @@ a:hover,a:focus{color:#74777b;};
 	font-size: 20px;
 }
 
+.bigger_book {
+	width: 450px;
+	height: 600px;
+}
+
 .bigger {
 	width: 600px;
 	height: 800px;
