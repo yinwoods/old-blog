@@ -2,7 +2,7 @@
 layout: post
 title: LeetCode 1 Two Sum（哈希）
 categories: ['coding']
-tags: ['yinwoods', 'blog']
+tags: ['algorithm']
 published: True
 img: 17
 

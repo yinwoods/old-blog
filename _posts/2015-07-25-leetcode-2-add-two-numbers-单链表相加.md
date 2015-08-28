@@ -2,7 +2,7 @@
 layout: post
 title: LeetCode 2 Add Two Numbers （单链表相加）
 categories: ['coding']
-tags: ['yinwoods', 'blog']
+tags: ['algorithm']
 published: True
 img: 18
 

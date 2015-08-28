@@ -2,7 +2,7 @@
 layout: post
 title: 解决ubuntu不能访问windows磁盘问题
 categories: ['myshare']
-tags: ['yinwoods', 'blog']
+tags: ['linux']
 published: True
 img: 9
 

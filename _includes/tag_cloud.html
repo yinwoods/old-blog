@@ -1,0 +1,10 @@
+<script type="text/javascript" src="{{ site.BASE_PATH }}/js/jquery.tagcloud.js"></script>
+
+<div class='tag_cloud'>
+    <h2>标签云：</h2>
+
+        {% for tag in site.tags  %}
+        <a class="tag" href="{{ site.BASE_PATH  }}/tags/{{ tag[0]  }}/" title="{{ tag[1].size  }} posts" rel="{{ tag[1].size  }}">
+            {{ tag[0] }}</a>
+        {% endfor  %}
+</div>

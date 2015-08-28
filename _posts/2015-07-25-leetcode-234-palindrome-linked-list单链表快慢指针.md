@@ -2,7 +2,7 @@
 layout: post
 title: LeetCode 234 Palindrome Linked List（单链表+快慢指针）
 categories: ['coding']
-tags: ['yinwoods', 'blog']
+tags: ['algorithm']
 published: True
 img: 16
 
@@ -18,7 +18,7 @@ img: 16
 
 这样的思路虽然是正确的，但是太慢了，代码如下：
 
-```CPP
+{% highlight CPP linenos %}
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -70,7 +70,7 @@ class Solution {
             } else return judge(head, cnt);
         }
 };
-```
+{% endhighlight %}
 
 题目中提示存在时间O（n）、空间O（1）的算法
 
@@ -82,7 +82,7 @@ class Solution {
 
 改进后代码如下：
 
-```CPP
+{% highlight CPP linenos %}
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -140,6 +140,6 @@ class Solution {
             return true;
         }
 };
-```
+{% endhighlight %}
 
 这份代码值得一说的就是在判断完成后又将链表逆置了一遍，从而保证不改变原链表结构

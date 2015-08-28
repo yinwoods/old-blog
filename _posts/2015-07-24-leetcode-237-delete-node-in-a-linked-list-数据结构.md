@@ -2,7 +2,7 @@
 layout: post
 title: LeetCode 237 Delete Node in a Linked List （数据结构）
 categories: ['coding']
-tags: ['yinwoods', 'blog']
+tags: ['algorithm']
 published: True
 img: 13
 

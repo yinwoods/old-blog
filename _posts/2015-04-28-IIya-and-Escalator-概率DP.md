@@ -3,7 +3,7 @@ layout: post
 title: "Ilya and Escalator"
 subline: 概率DP
 categories: coding
-tags: [codeforces, DP]
+tags: ['algorithm']
 img: 3
 ---
 

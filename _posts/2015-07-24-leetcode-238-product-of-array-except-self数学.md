@@ -2,7 +2,7 @@
 layout: post
 title: LeetCode 238 Product of Array Except Self（数学）
 categories: ['coding']
-tags: ['yinwoods', 'blog']
+tags: ['algorithm']
 published: True
 img: 12
 

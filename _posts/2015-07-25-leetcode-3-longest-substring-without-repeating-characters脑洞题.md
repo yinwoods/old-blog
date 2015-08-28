@@ -2,7 +2,7 @@
 layout: post
 title: LeetCode 3 Longest Substring Without Repeating Characters（脑洞题）
 categories: ['coding']
-tags: ['yinwoods', 'blog']
+tags: ['algorithm']
 published: True
 img: 19
 
