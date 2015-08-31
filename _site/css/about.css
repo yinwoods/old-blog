@@ -4,20 +4,12 @@
 }
 #i-want-new article .btn-hldr .btn-email-link{display:inline-block}#design,#devlop{padding-left:12%}}@media screen and (min-width: 1140px){.container{max-width:970px}}
 
-.socialweibo {
-	width: 280px;
-	height: 550px;
-}
+#totop {position: fixed; bottom: 35px; right: 35px; width: 130px;height: 50px;cursor: pointer; z-index: 999999; display: block; opacity: 1;}
+#totop a{display:block;width:50px;height:50px;float: right;overflow:hidden;text-indent:-999em;background:url(../img/totop.png) no-repeat right;}
 
-.socialweibo img {
-	width: 40px;
-	height: 40px;
-}
 
-.socialweibo iframe {
-	background-size: 100% 100%
-}
-
-.socialweibo h1 {
-	text-align: center;
-}
+/*微博框样式*/
+.socialweibo {width: 280px;height: 550px;}
+.socialweibo img {width: 40px;height: 40px;}
+.socialweibo iframe {background-size: 100% 100%}
+.socialweibo h1 {text-align: center;}
