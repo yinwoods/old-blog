@@ -20,8 +20,18 @@
 </div>
 
     <article class="post-content">
+        <hr class="post-end-left"><p class="post-end">开始</p><hr class="post-end-right"/>
         <div>
             {{ content }}
+        </div>
+        <hr class="post-end-left"><p class="post-end">结束</p><hr class="post-end-right"/>
+        <div class="post-footer">
+            {% if page.previous %}
+            <p class="post-footer-previous">上一篇 ： <a class="entry-more" href="{{ page.previous.url }}">{{ page.previous.title }}</a></p>
+            {% endif %}
+            {% if page.next %}
+            <p class="post-footer-next">下一篇 ： <a class="entry-more" href="{{ page.next.url }}">{{ page.next.title }}</a></p>
+            {% endif %}
         </div>
     <!-- JiaThis Button BEGIN -->
     <div class="jiathis_style">
