@@ -11,7 +11,7 @@
 	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
 	<meta content="telephone=no" name="format-detection" />
 	{% if page.description %}
-	<meta name="description" content="{{ page.description }}">
+		<meta name="description" content="{{ page.description }}">
 	{% endif %}
 	<meta name="author" content="{{ site.author.name }}">
 
@@ -31,6 +31,7 @@
     <title>{% if page.title %}{{ page.title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
   
 	<link rel="stylesheet" href="{{ site.BASE_PATH }}/css/style.css">
+	<link rel="stylesheet" href="{{ site.BASE_PATH }}/css/code.css">
 	<link rel="stylesheet" href="{{ site.BASE_PATH }}/css/rouge.css">
 	<link rel="stylesheet" type="text/css" href="{{ site.BASE_PATH }}/css/bootstrap.min.css">
 	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
@@ -43,3 +44,4 @@
 		_st('install','csxq-8xzb6tiaQ1dQaGs','2.0.0');
 	</script>
 </head>
+

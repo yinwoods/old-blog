@@ -202,3 +202,7 @@ zzu.getGrades()
 
 
 {% endhighlight %}
+
+xia mian shi wo de yun xing jie guo
+
+![教务系统](../img/post/教务5.png)

@@ -10,6 +10,10 @@ markdown: redcarpet
 name: yinwoods
 title: yinwoods的个人博客
 
+popular: 10
+
+unpopular: 3
+
 author:
   name: yinwoods
   email: yinwoods@163.com

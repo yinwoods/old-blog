@@ -16,8 +16,13 @@
 	<p>作者: <a target="_blank" href="{{ site.SITE_PATH }}/"><strong>{{ site.author.name }}</strong></a>&nbsp;&nbsp;&nbsp;
 		分类: <a target="_blank" href="{{ site.SITE_PATH }}/{{ page.categories }}.html"><strong>{{ page.categories }}</strong></a>&nbsp;&nbsp;&nbsp;
 		日期: <strong>{{ page.date | date: "%Y" }}年{{ page.date | date: "%m" }}月{{ page.date | date: "%d" }}日</strong>&nbsp;&nbsp;&nbsp;
-		标签: {% for tag in page.tags %}<a target="_black" href="{{ site.BASE_PATH }}/tags/{{ tag }}/index.html" <strong>{{ tag }}</strong></a>&nbsp;&nbsp;{% endfor %}</p>
+         <ul class="tags post-tags">
+            {% for tag in page.tags %}
+              <li><a href="{{ site.BASE_PATH  }}/tags/{{ tag  }}/index.html">{{ tag }}<span>{{ tag.size }}</span></a></li>
+            {% endfor %}
+            </ul></p>
 </div>
+    
 
     <article class="post-content">
         <hr class="post-end-left"><p class="post-end">开始</p><hr class="post-end-right"/>

@@ -1,13 +1,27 @@
-<div class='tag_cloud'>
-	<h2 style="color: #ed4156">标签云</h2>
-{% for tag in site.tags %}
-{% if tag[0].size() < 8 %}
-	<a class="tag" href="{{ site.BASE_PATH  }}/tags/{{ tag[0]  }}/" title="{{ tag[1].size  }} posts" rel="{{ tag[1].size  }}">{{ tag[0] }}</a>
-{% endif %}
-{% endfor  %}
-{% for tag in site.tags %}
-{% if tag[0].size() >= 8 %}
-	<a class="tag" href="{{ site.BASE_PATH  }}/tags/{{ tag[0]  }}/" title="{{ tag[1].size  }} posts" rel="{{ tag[1].size  }}">{{ tag[0] }}</a>
-{% endif %}
-{% endfor  %}
+<div class="tag_cloud">
+	<h2 class="tag_h2">标签云</h2>
+	<ul class="tags">
+	{% for tag in site.tags %}
+	{% if tag[1].size >= {{site.popular}} %}
+	  <li><a href="{{ site.BASE_PATH  }}/tags/{{ tag[0]  }}/">{{ tag[0] }}<span>{{ tag[1].size }}</span></a></li>
+	{% endif %}
+    {% endfor %}
+    </ul>
+
+    <ul class="tags green">
+    {% for tag in site.tags %}
+	{% if tag[1].size >= site.unpopular and tag[1].size < {{site.popular}} %}
+	  <li><a href="{{ site.BASE_PATH  }}/tags/{{ tag[0]  }}/">{{ tag[0] }}<span>{{ tag[1].size }}</span></a></li>
+	{% endif %}
+    {% endfor %}
+    </ul>
+
+    <ul class="tags blue">
+    {% for tag in site.tags %}
+	{% if tag[1].size < {{site.unpopular}} %}
+	  <li><a href="{{ site.BASE_PATH  }}/tags/{{ tag[0]  }}/">{{ tag[0] }}<span>{{ tag[1].size }}</span></a></li>
+	{% endif %}
+    {% endfor %}
+    </ul>
+
 </div>
