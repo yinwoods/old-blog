@@ -1,6 +1,6 @@
 ---
 layout: post
-title: python实战之爬取郑州大学个人成绩
+title: python实战之郑州大学GPA计算器
 categories: ['coding']
 tags: ['python', '爬虫']
 published: True
