@@ -203,6 +203,6 @@ zzu.getGrades()
 
 {% endhighlight %}
 
-xia mian shi wo de yun xing jie guo
+下面是我的GPA查询结果:
 
 ![教务系统](../img/post/教务5.png)
