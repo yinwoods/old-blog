@@ -1,4 +1,19 @@
-.lineno {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;-ms-user-select: none; user-select: none; color: #2c8bbe }
+.lineno {
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none; 
+	user-select: none; 
+	-moz-user-copy: -moz-none;
+	-khtml-user-copy: none;
+	-webkit-user-copy: none;
+	-ms-user-copy: none; 
+	user-copy: none; 
+	color: #2c8bbe;
+	content: none;
+}
+
+
 pre .hll { background-color: #ffffcc }
 pre  { background-color: #fdf6e3;
 	  color: #657b83;
@@ -104,3 +119,5 @@ pre .bp { color: #0F00A1 } /* Name.Builtin.Pseudo */
 .highlight pre .sr { color: #009C00 } /* Literal.String.Regex */
 .highlight pre .s1 { color: #009C00 } /* Literal.String.Single */
 .highlight pre .ss { color: #009C00 } /* Literal.String.Symbol */
+
+pre > code.language-text {color: #031353}

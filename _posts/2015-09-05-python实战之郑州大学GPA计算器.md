@@ -130,11 +130,11 @@ class ZZU:
     def __init__(self):
         self.cookies = http.cookiejar.CookieJar()
         self.postdata = urllib.parse.urlencode({
-            'nianji': '',	#填写你的年级
-            'xuehao': '',	#填写你的学号
-            'mima': '',		#填写你的密码
+            'nianji': '2012',    #填写你的年级
+            'xuehao': '20122480207',    #填写你的学号
+            'mima': '6011600132',      #填写你的密码
             'selec': 'http://jw.zzu.edu.cn/scripts/qscore.dll/search'
-        }).encode()
+            }).encode()
         self.size = 0   #课程数目
         self.opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.cookies))
         self.courses = []   #课程名称
@@ -145,21 +145,21 @@ class ZZU:
         self.urls_Set = []  #各学期成绩URL页面集合
 
 
-    def getPage(self):  #返回self.current_Url所对应页面的源代码
+    def getPage(self):
         request = urllib.request.Request(
-            url = self.current_Url,
-            data = self.postdata
-        )
+                url = self.current_Url,
+                data = self.postdata
+                )
         res = self.opener.open(request)
         return res.read().decode('GBK')
 
 
-    def getGrades(self):    #提取所有课程成绩信息
+    def getGrades(self):
         self.size = 0
         for url in zzu.urls_Set:
             self.current_Url = url
             page = self.getPage()
-            
+
             #提取成绩表每行信息
             regx = re.compile('<td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td>', re.U)
             myItems = regx.findall(page)
@@ -175,10 +175,12 @@ class ZZU:
         sum_credits = 0
         sum_points = 0.0
         while(cnt < self.size):
-            if self.points[cnt] != '---':	#没有绩点的课程不计在内
+            if self.points[cnt] != '---': #没有绩点的课程不计在内
                 sum_credits += float(self.credits[cnt])
                 sum_points += float(self.credits[cnt])*float(self.points[cnt])
             cnt += 1
+        print("大学期间总学分： " + str(sum_credits))
+        print("大学期间总绩点：" + str(sum_points))
         print("大学期间平均绩点为：" + str(sum_points/sum_credits))
 
     def print_info(self):   #打印所有课程信息
@@ -194,9 +196,17 @@ class ZZU:
 url = 'http://jw.zzu.edu.cn/scripts/qscore.dll/search'
 zzu = ZZU()
 zzu.current_Url = url
+regx = re.compile('href="(http://jw.zzu.edu.cn/scripts/qscore.dll/search.*?)">')
+List = regx.search(zzu.getPage())
+url = List.group()[6:-2] #截取url
+
+zzu.urls_Set.append(url)
+
+zzu.current_Url = url
 page = zzu.getPage()
 regx = re.compile('href="(http://jw.zzu.edu.cn/scripts/qscore.dll/search.*?)">')
 zzu.urls_Set += regx.findall(page)
+
 zzu.getGrades()
 #zzu.print_info()
 
