@@ -1,6 +1,6 @@
 ---
 layout: post
-title: LeetCode 236 Lowest Common Ancestor of a Binary Tree （数据结构+DFS）
+title: LeetCode 236 （数据结构+DFS）
 categories: ['coding']
 tags: ['algorithm']
 published: True

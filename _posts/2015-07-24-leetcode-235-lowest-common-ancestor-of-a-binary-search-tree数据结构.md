@@ -1,6 +1,6 @@
 ---
 layout: post
-title: LeetCode 235 Lowest Common Ancestor of a Binary Search Tree（数据结构）
+title: LeetCode 235（数据结构）
 categories: ['coding']
 tags: ['algorithm']
 published: True

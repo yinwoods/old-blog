@@ -9,11 +9,13 @@
 
 
 pre .hll { background-color: #ffffcc }
-pre  { background-color: #fdf6e3;
-	  color: #657b83;
-	  border: 1pt solid #93a1a1;
-	  padding: 1em;
-	  box-shadow: 5pt 5pt 8pt #eee8d5; 
+pre  { 
+	background-color: #fdf6e3;
+	color: #657b83;
+	border: 1pt solid #93a1a1;
+	padding: 1em;
+	box-shadow: 5pt 5pt 8pt #eee8d5; 
+	letter-spacing: 1px;
 }
 pre code {
   background-color: #fdf6e3;

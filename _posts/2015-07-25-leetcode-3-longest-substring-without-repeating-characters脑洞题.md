@@ -1,6 +1,6 @@
 ---
 layout: post
-title: LeetCode 3 Longest Substring Without Repeating Characters（脑洞题）
+title: LeetCode 3 （脑洞题）
 categories: ['coding']
 tags: ['algorithm']
 published: True

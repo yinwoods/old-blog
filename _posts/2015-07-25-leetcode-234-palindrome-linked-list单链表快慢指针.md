@@ -1,6 +1,6 @@
 ---
 layout: post
-title: LeetCode 234 Palindrome Linked List（单链表+快慢指针）
+title: LeetCode 234（单链表+快慢指针）
 categories: ['coding']
 tags: ['algorithm']
 published: True
