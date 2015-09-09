@@ -50,9 +50,9 @@ img: 27
 
 > - 打开教务系统，进入登录界面，利用`F12`查看网页源码信息，提取表单域内容：
 
-![教务系统](../img/post/教务1.png)
+![教务系统](http://7xlnl2.com1.z0.glb.clouddn.com/post27-教务1.png)
 
-![教务系统](../img/post/教务2.png)
+![教务系统](http://7xlnl2.com1.z0.glb.clouddn.com/post27-教务2.png)
 
 > - 从上面的图片可以看出，我们需要填写的内容有：`nianji（年级）`、`xuehao（学号）`、`mima（密码）`、`selec（登录页面）`几个选项，在这里我们选择令`selec`为`http://jw.zzu.edu.cn/scripts/qscore.dll/search`即进入选课系统。
 
@@ -90,7 +90,7 @@ img: 27
 
 > - 这里需要我们能够有效提取出所有学期页面`url`的共同特征，之后才能完成匹配
 
-![教务系统](../img/post/教务3.png)
+![教务系统](http://7xlnl2.com1.z0.glb.clouddn.com/post27-教务3.png)
 
 > - 对于我校郑州大学的系统，可以发现不同学期`url`只是`search?userid=`后面的参数不同而已；因此我们可以利用`regx = re.compile('href="(http://jw.zzu.edu.cn/scripts/qscore.dll/search.*?)">')`来匹配所有的`url`
 
@@ -102,7 +102,7 @@ img: 27
 
 > - 同上一步，我们先来提取课程、成绩信息的特征，
 
-![教务系统成绩特征](../img/post/教务4.png)
+![教务系统成绩特征](http://7xlnl2.com1.z0.glb.clouddn.com/post27-教务4.png)
 
 > - 可以发现课程、成绩信息是分别被五个`<td>`标签包住的，因此我们可以这样匹配`re.compile('<td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td>', re.U)`,不了解`re.U`含义的可以移步这里[python爬虫基础教程](http://blog.yinwoods.com/coding/python%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html)巩固下。
 
@@ -215,4 +215,4 @@ zzu.getGrades()
 
 下面是我的GPA查询结果:
 
-![教务系统](../img/post/教务5.png)
+![教务系统](http://7xlnl2.com1.z0.glb.clouddn.com/post27-教务5.png)
