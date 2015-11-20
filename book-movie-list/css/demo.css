@@ -45,17 +45,20 @@ img { vertical-align: middle; }
 .span-24 { width: 950px;}
 .span-30 {width: 1200px;}
 
-@media screen and (max-width: 970px) {
+/*显示四张图片*/
+@media screen and (max-width: 1200px) {
      .gallery-container {width: 38em;}
      .span-30 {width: 950px;}
 }
 
-@media screen and (max-width: 730px) {
+/*显示三张图片*/
+@media screen and (max-width: 950px) {
      .gallery-container {width: 30em;}
      .span-30 {width: 710px;}
 }
 
-@media screen and (max-width: 500px) {
+/*显示两张图片*/
+@media screen and (max-width: 720px) {
      .gallery-container {width: 20em;}
      .span-30 {width: 470px;}
 }

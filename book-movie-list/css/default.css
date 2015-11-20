@@ -23,7 +23,7 @@ a:hover,a:focus{color:#74777b;};
 
 .container{margin: 0 auto;text-align: center;overflow: hidden;}
 
-.content {width: 100%;font-size: 150%;padding: 3em 0;}
+.content {width: 100%;font-size: 150%;padding: 0.5em 0;}
 .content h2 {margin: 0 0 2em;opacity: 0.1;}
 .content p {margin: 1em 0;padding: 5em 0 0 0;font-size: 0.65em;}
 
@@ -36,12 +36,12 @@ a:hover,a:focus{color:#74777b;};
 .bgcolor-7 { background: #d0d6d6; }
 .bgcolor-8 { background: #3d4444; color: #fff; }
 /* Header */
-.htmleaf-header{padding: 1em 20px 1em;letter-spacing: -1px;text-align: center;}
+.htmleaf-header{padding: 0.5em 5px 0em;letter-spacing: -1px;text-align: center;}
 .htmleaf-header h1 {/*font-family: "微软雅黑";*/font-weight: 650;font-size: 1.5em;line-height: 1;margin-bottom: 0;}
 .htmleaf-header h1 span {font-family: 'Raleway';display: block;font-size: 60%;font-weight: 400;padding: 0.8em 0 0.5em 0;color: #c3c8cd;}
 
 /* Top Navigation Style */
-.htmleaf-links {position: relative;display: inline-block;white-space: nowrap;font-size: 1.25em;text-align: center;}
+.htmleaf-links {position: relative;display:inline-block; white-space: nowrap;font-size: 1.25em; text-align: center; left:10%;}
 .htmleaf-links::after {position: absolute;top: 0;left: 48%;margin-left: 10px;margin-right: 10px;width: 3px;height: 100%;background: #dbdbdb;content: '';-webkit-transform: rotate3d(0,0,1,22.5deg);transform: rotate3d(0,0,1,22.5deg);}
 
 .htmleaf-icon {display: inline-block;margin: 0.5em;padding: 0em 0;width: 3.0em;text-decoration: none;}
@@ -68,7 +68,7 @@ a:hover,a:focus{color:#74777b;};
 .icon-arrow-down-left3:before {content: "\e735";}
 .icon-arrow-left3:before {content: "\e736";}
 
-.book-movie-title {color: #3d4444;text-align: center;margin-top: -1em;}
+.book-movie-title {color: #3d4444; position: relative; display: inline-block; text-align: center; bottom: 1.7em;}
 
 .mark {text-align: center;font-size: 20px;}
 
@@ -81,10 +81,15 @@ a:hover,a:focus{color:#74777b;};
 @media screen and (max-width: 50em) {
 	.htmleaf-header {padding: 3em 10% 4em;}
 	.htmleaf-header h1 {font-size:2em;}
+	.htmleaf-links {left:27%;}
 }
 @media screen and (max-width: 40em) {
 	.htmleaf-header h1 {font-size: 1.5em;}
+	.htmleaf-links {left: 0;}
+	.book-movie-title {display: none;}
 }
 @media screen and (max-width: 30em) {
 	.htmleaf-header h1 {font-size:1.2em;}
+	.htmleaf-links {left: 0;}
+	.book-movie-title {display: none;}
 }
