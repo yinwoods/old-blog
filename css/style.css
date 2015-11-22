@@ -30,7 +30,7 @@
 }
 @media screen and (max-width: 640px){
 	body{font-size:14px}.header{padding-top:20px;min-height:128px}
-	.navbar{height:68px}.navbar .btn-menu .btn-list{margin-top:20px}.navbar .pull-center{position:absolute;top:0;right:5px;margin-top:28px}.navbar .pull-center li a{margin:0 6px}
+	.navbar{height:68px}.navbar .btn-menu .btn-list{margin-top:20px}.navbar .pull-center{position:absolute;top:0;right:35%;margin-top:28px}.navbar .pull-center li a{margin:0 6px}
 	.post-header .title h1{font-size:2.5em}.post-title{padding:8em 1em 0}.post-title h1{font-size:2.5em}.post-title .sublime{font-size:1.5em}
 	.post-content{padding-top:0}.post-content blockquote p{padding-left:1em}.footer{height:auto;padding:2em}.footer .row{text-align:center}
 	.footer .row .pull-left,.footer .row .pull-right{position:relative;padding:0;left:0;right:0}
@@ -44,6 +44,8 @@
 	#disqus_thread{
 		padding-bottom:10em;
 	}
+	.head-left {display: none}
+	.head-right{display: none}
 }
 /*评论窗样式*/
 #disqus_thread {padding-left: 10%;padding-right: 10%;height: 60%;}
