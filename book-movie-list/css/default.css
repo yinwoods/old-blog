@@ -41,7 +41,7 @@ a:hover,a:focus{color:#74777b;};
 .htmleaf-header h1 span {font-family: 'Raleway';display: block;font-size: 60%;font-weight: 400;padding: 0.8em 0 0.5em 0;color: #c3c8cd;}
 
 /* Top Navigation Style */
-.htmleaf-links {position: relative;display:inline-block; white-space: nowrap;font-size: 1.25em; text-align: center; left:10%; z-index: 100;}
+.htmleaf-links {position: relative;display:inline-block; white-space: nowrap;font-size: 1.25em; text-align: center; left:10%; z-index: 0;}
 .htmleaf-links::after {position: absolute;top: 0;left: 48%;margin-left: 10px;margin-right: 10px;width: 3px;height: 100%;background: #dbdbdb;content: '';-webkit-transform: rotate3d(0,0,1,22.5deg);transform: rotate3d(0,0,1,22.5deg);}
 
 .htmleaf-icon {display: inline-block;margin: 0.5em;padding: 0em 0;width: 3.0em;text-decoration: none;}
@@ -68,12 +68,12 @@ a:hover,a:focus{color:#74777b;};
 .icon-arrow-down-left3:before {content: "\e735";}
 .icon-arrow-left3:before {content: "\e736";}
 
-.book-movie-title {color: #3d4444; position: relative; display: inline-block; text-align: center; bottom: 1.7em;}
+.book-movie-title {color: #3d4444; position: relative; display: inline-block; text-align: center; bottom: 1.7em; z-index: -100;}
 
 .mark {text-align: center;font-size: 20px;}
 
-.bigger_book {width: 450px;height: 600px;}
-.bigger {width: 600px;height: 800px;}
+.bigger_book {width: 450px;height: 600px; z-index: 1000;}
+.bigger {width: 600px;height: 800px; z-index: 1000;}
 
 #totop {position: fixed; bottom: 35px; right: 35px; width: 130px;height: 50px;cursor: pointer; z-index: 999999; display: block; opacity: 1;}
 #totop a{display:block;width:50px;height:50px;float: right;overflow:hidden;text-indent:-999em;background:url(../../img/totop.png) no-repeat right;}
