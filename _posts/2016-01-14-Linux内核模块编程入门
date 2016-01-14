@@ -1,0 +1,90 @@
+---
+layout: post
+title: Linux
+categories: ['coding']
+tags: ['linux', 'cpp']
+published: True
+img:  42
+
+---
+
+# Linux 内核学
+
+标签（空格分隔）： linux内核
+
+---
+
+首先我们要明确linux下内核编程与平时我们在linux下写的C程序之间的区别，在这里我们把在linux下写一般C程序的过程称之为用户层编程，与之相对的就是我们要学习的内核编程。
+
+首先介绍linux内核，**内核**指的是一个提供硬件抽象层、磁盘、文件系统控制及多任务等功能的系统软件。我们可以把内核理解为操作系统的核心部分（**注意：内核不等于操作系统**）。而linux内核就是linux操作系统的内核。
+
+内核由负责不同功能的内核模块组成，内核模块可以被单独编译，但是不能单独运行，它必须要链接到内核作为内核的一部分在内核空间中运行。内核之所以采用这种结构方式是因为这体现了模块化的思想，在保证内核不会太大的同时，又可以做到模块一旦被加载就和内核中的其他部分完全一样。
+
+用户层编程和内核模块编程的区别：
+
+![用户层编程与内核模块编程区别](http://7xlnl2.com1.z0.glb.clouddn.com/post42-difference.jpg)
+
+```
+#include <linux/init.h>
+#include <linux/module.h>
+#include <linux/kernel.h>
+//这里的三个头文件是编写内核模块程序所必须的
+
+MODULE_LICENSE("Dual BSD/GPL");
+
+/*可选
+MODULE_AUTHOR("yinwoods");
+MODULE_DESCRIPTION("This is a simple example!\n");
+MODULE_ALIAS("A simplest example");
+*/
+
+static int hello_init(void) {
+    printk(KERN_ALERT "hello, I am yinwoods");
+    //printk是内核态信息打印函数，功能上与printf类似。不同的是printk具有消息打印机别，这里的KERN_ALERT即为一个消息级别。
+    return 0;
+}
+
+static void hello_exit(void) {
+    printk(KERN_ALERT "good bye, kernel\n");
+}
+
+module_init(hello_init);
+module_exit(hello_exit);
+```
+
+###module_init()函数和module_exit()函数
+
+module_init(hello_init)是指模块程序从这里开始执行，函数参数就是注册函数的函数名。
+
+同理，module_exit(hello_exit)是指模块程序从这里离开，函数参数就是卸载函数的函数名。
+
+这里可以类比C++类中的构造函数与析构函数；也就是说我们一般在module_init()动态申请内存、中断等资源；而模块卸载函数则用来回收这些资源。
+
+###简要介绍make的使用以及makefile的编写：、
+
+linux下内核编程的编译运行：在linux下对内核程序进行编译运行与普通程序是不同的，而是需要我们编写makefile脚本并使用make命令来实现多文件的编译。
+
+makefile是一种脚本，这种脚本主要是用于多文件的编译。它定义了一系列的规则来指定哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译等等。
+
+make是一个解释makefile中指令的命令工具，可以维护具有相互依赖性的源文件，当某些文件发生改变时，它能自动识别出，并只对改动后的文件进行编译。
+
+###简单介绍一下如何编写makefile：
+makefile的规则大体上就是以下格式：
+```
+target:dependency-file
+    command
+```
+target是一个目标文件，可以是Object File（linux下的.o文件），也可以是最终的执行文件。
+而dependency-file是生成相应target所需要依赖的文件或者其它的target。
+command就是最终由make执行的命令。
+
+也就是说我们告诉了make程序需要生成的文件target和它所依赖的dependency-file文件还有执行命令command，那么make程序只需要按照这种方式解析makefile即可。
+
+###内核程序的编译运行
+
+1、使用make进行编译
+2、编译后使用sudo insmod *.ko 加载模块
+3、使用dmesg查看运行结果
+4、使用rmmod tiger卸载模块
+5、使用dmesg查看结果
+6、使用make clean删除中间生成的文件
