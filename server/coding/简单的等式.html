@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<link rel="dns-prefetch" href="//hm.baidu.com"/>
+	<link rel="dns-prefetch" href="//disqus.com"/>
+	<link rel="dns-prefetch" href="//a.disquscdn.com"/>
+
+	<meta name="Keywords" content="yinwoods,殷成涛,个人博客,郑州大学,math,algorithm"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	
+	<meta name="author" content="yinwoods">
+
+	<link rel="alternate" type="application/rss+xml" title="yinwoods Feed" href="/rss.xml" />
+	<link rel="apple-touch-icon-precomposed" href="/img/icon.png">
+	<link rel="apple-touch-icon-precomposed" href="/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/img/icon-24.png" sizes="24x24" />
+	<link rel="apple-touch-icon-precomposed" href="/img/icon-32.png" sizes="32x32" />
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+
+    <title>简单的等式（数学题） | yinwoods</title>
+  
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/rouge.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+		e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+		})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+		_st('install','csxq-8xzb6tiaQ1dQaGs','2.0.0');
+	</script>
+</head>
+
+
+<body>
+	<div id="container" class="container">
+		<div id="content" class="content">
+						<nav class="navbar">
+				<div class="pull-left">
+					<button id="btnMenu" type="button" class="btn btn-default btn-sm btn-menu">
+						<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>	菜 单
+					</button>
+				</div>
+				<ul class="pull-center">
+					<li class="active"><a href="/">博客</a></li>
+                    <li><a href="/about.html">关于我</a></li>
+				</ul>
+				<div class="pull-right">
+					<button type="button" class="btn btn-default btn-sm btn-list">
+						<a href="/book-movie-list/booklist.html">
+							<span class="glyphicon glyphicon-list-alt"></span> 书单/影单  
+						</a>
+					</button>
+				</div>
+			</nav>
+
+			<header class="post-header">
+        <div class="hd-img">
+                <img src="http://7xlh6u.com1.z0.glb.clouddn.com/bg4.jpg" alt="背景图片">
+        </div>
+
+        <div class="title">
+           <h1>简单的等式（数学题）</h1>
+        </div>
+</header>
+<button id="btnArrow" class="btn-arrow" data-info="点击显示文章"><i class="icon icon-arrow-down">&#xe619;</i></button>
+<div class="post-title">
+	<h1>简单的等式（数学题）</h1>
+	
+		<p class="subline">数学</p>
+	
+	<p>作者: <a target="_blank" href="http://blog.yinwoods.com/"><strong>yinwoods</strong></a>&nbsp;&nbsp;&nbsp;
+		分类: <a target="_blank" href="http://blog.yinwoods.com/coding.html"><strong>coding</strong></a>&nbsp;&nbsp;&nbsp;
+		日期: <strong>2015年04月29日</strong>&nbsp;&nbsp;&nbsp;
+         <ul class="tags post-tags">
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+                    <li><a href="/tags/algorithm/index.html">algorithm<span>10</span></a></li>
+                
+            
+            
+            
+                
+                    <li><a href="/tags/math/index.html">math<span>1</span></a></li>
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            </ul></p>
+</div>
+    
+
+    <article class="post-content">
+        <hr class="post-end-left"><p class="post-end">开始</p><hr class="post-end-right"/>
+        <div>
+            <p>题意是有一个等式：x^2+s(x, m)*x-n = 0</p>
+
+<p>s(x, m)表示把x写成m进制时，每个位数相加的和</p>
+
+<p>找到满足条件的最小正整数x，如果不存在，输出-1</p>
+
+<p>很容易想到把等式转换为x+s(x, m) = n/x</p>
+
+<p>所以可以知道n是x的整数倍，且n&gt;x*x</p>
+
+<p>但仅仅是这样时间复杂度是降不下来的</p>
+
+<p>做比赛的时候一直没有想出来，快结束的时候小伙伴王烯想出了一个办法：枚举s(x, m)的值，可以发现这个值的范围是很小的</p>
+
+<p>我们令k = s(x, m), 则可以将上式转为一个二元一次方程:x^2+kx-n = 0</p>
+
+<p>枚举k后，解出x，判断是否满足原方程即可</p>
+
+<p>代码如下：</p>
+
+<p>```cpp</p>
+
+<h1>include <cstdio></h1>
+
+<h1>include <cmath></h1>
+
+<h1>include <vector></h1>
+
+<h1>include <iostream></h1>
+
+<h1>include <algorithm></h1>
+
+<h1>define LL long long</h1>
+
+<p>using namespace std;</p>
+
+<p>LL n, m;</p>
+
+<p>LL ss(LL x, LL m) {
+    LL ans = 0;
+    while(x) {
+        ans += x%m;
+        x /= m;
+    }
+    return ans;
+}</p>
+
+<p>int main(void) {
+    int T;
+    scanf(&quot;%d&quot;, &amp;T);
+    while(T--) {
+        cin &gt;&gt; n &gt;&gt; m;</p>
+
+<pre><code>    bool ok = true;
+    for(LL s=1; s&lt;=2000; ++s) {
+        LL x = (-s+sqrt(s*s+4*n))/2;
+
+        if(x*x + ss(x, m)*x == n) {
+            cout &lt;&lt; x &lt;&lt; endl;
+            ok = false;
+            break;
+        } 
+    }
+    if(ok) cout &lt;&lt; -1 &lt;&lt; endl;
+}
+return 0;
+</code></pre>
+
+<p>}
+```</p>
+
+        </div>
+        <hr class="post-end-left"><p class="post-end">结束</p><hr class="post-end-right"/>
+        <div class="post-footer">
+            
+            <p class="post-footer-previous">上一篇 ： <a class="entry-more" href="/coding/IIya-and-Escalator-%E6%A6%82%E7%8E%87DP.html">Ilya and Escalator</a></p>
+            
+            
+            <p class="post-footer-next">下一篇 ： <a class="entry-more" href="/myshare/sublime%E9%85%8D%E7%BD%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2.html">sublime配置浏览器打开页面</a></p>
+            
+        </div>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span style="font-family:sans-serif; color:#009966">分享到：</span>
+        <a class="jiathis_button_weixin share_button" href="#"></a>
+        <a class="jiathis_button_tsina share_button" href="#"></a>
+        <a class="jiathis_button_qzone share_button" href="#"></a>
+        <a class="jiathis_button_evernote share_button" href="#"></a>
+        <a class="jiathis_button_ydnote share_button" href="#"></a>
+        <a class="jiathis_button_pocket share_button" href="#"></a>
+        <a class="jiathis_button_douban share_button" href="#"></a>
+        <a class="jiathis_button_renren share_button" href="#"></a>
+        <a class="jiathis_button_fb share_button" href="#"></a>
+        <a class="jiathis_button_linkedin share_button" href="#"></a>
+        <a class="jiathis_button_googleplus share_button" href="#"></a>
+        <a class="jiathis_button_tumblr share_button" href="#"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/totop.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'yinwoods'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+
+
+		</div>
+					<footer class="footer">
+				<div class="row">
+					<div class="pull-left">
+						<a class="avatar" href="/" title="yinwoods">yinwoods</a>
+                        			<p class="copyright">2015 ALL RIGHTS RESERVED</p>
+					</div>
+					
+					<div class="pull-center">
+						<h4>Powered by <a target="_blank" href="https://github.com/yinwoods">github</a> && <a target="_blank" href="http://jekyllrb.com/">jekyll</a></h4>
+					</div>
+				</div>
+			</footer>
+
+				<nav id="menu" class="menu">
+			<ul>
+				<li class="logo"><a href="about.html"><img  class="img-circle" height="100px" width="100px" src="/img/about/me.png"></a></li>
+
+				<li><a href="/index.html"><span class="glyphicon glyphicon-home"></span></i> 首页 </a></li>
+				
+				<li><a href="/coding.html"><span class="glyphicon glyphicon-road"></span></i>  编程之路 </a></li>
+
+				<li><a href="/myshare.html"><span class="glyphicon glyphicon-gift"></span>  我的分享 </a></li>
+				
+				<li><a href="/diary.html"><span class="glyphicon glyphicon-calendar"></span></i>  生活日志 </a></li>
+				
+				<li><a href="/book-movie-list/booklist.html"><span class="glyphicon glyphicon-inbox"></span></i>  书单/影单  </a></li>
+
+				<li><a href="/about.html"><span class="glyphicon glyphicon-sunglasses"></span></i>  关于博主 </a></li>
+
+				<li><a href="/friend.html"><span class="glyphicon glyphicon-send"></span></i> 我的朋友 </a></li>
+
+				<li><img class="img-rounded" height="100px" width="100%" src="/img/about/footer.png"></li>
+
+			</ul>
+			<button id="btnClose" class="btn-close"></button>
+
+			<div id="SVGMenu" class="svg-menu" 
+                data-menu-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z" 
+                data-menu-close="M-6,0h101c0,0-90,153.603-90,396.167C2.167,627.579,100,800,100,800H-1V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+					<path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+				</svg>
+			</div>
+
+		</nav>
+
+
+		<div id="totop">
+    			<a title="返回顶部">返回顶部</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/js/classie.js"></script>
+
+	<script type="text/javascript" src="/js/snap.svg-min.js"></script>
+	<script type="text/javascript" src="/js/menuTriggle.js"></script>
+	<script type="text/javascript" src="/js/SVGButton.js"></script>
+
+	<script type="text/javascript" src="/js/postTriggle.js"></script>
+
+	
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/js/totop.js"></script>
+	<script type="text/javascript">
+		var content = document.querySelector('.content'),
+			footer = document.querySelector('.footer'),
+			footT  = footer.offsetTop,
+			footH  = footer.offsetHeight,
+			winH   = window.innerHeight,
+			post   = document.querySelectorAll('p');
+
+		if (footT - footH + 100 < winH) {
+			content.style.height = '100%';
+		};
+
+		for (var i = 0; i < post.length; i++) {
+			if (post.item(i).querySelector('img')) {
+				post.item(i).style.textIndent = 0;
+			};
+		};
+
+	</script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?eefd87bbdb3a5e21ecb7f319769dd8b9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>

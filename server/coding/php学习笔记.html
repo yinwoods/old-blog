@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<link rel="dns-prefetch" href="//hm.baidu.com"/>
+	<link rel="dns-prefetch" href="//disqus.com"/>
+	<link rel="dns-prefetch" href="//a.disquscdn.com"/>
+
+	<meta name="Keywords" content="yinwoods,殷成涛,个人博客,郑州大学,php"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	
+	<meta name="author" content="yinwoods">
+
+	<link rel="alternate" type="application/rss+xml" title="yinwoods Feed" href="/rss.xml" />
+	<link rel="apple-touch-icon-precomposed" href="/img/icon.png">
+	<link rel="apple-touch-icon-precomposed" href="/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/img/icon-24.png" sizes="24x24" />
+	<link rel="apple-touch-icon-precomposed" href="/img/icon-32.png" sizes="32x32" />
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+
+    <title>php学习笔记 | yinwoods</title>
+  
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/rouge.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+		e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+		})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+		_st('install','csxq-8xzb6tiaQ1dQaGs','2.0.0');
+	</script>
+</head>
+
+
+<body>
+	<div id="container" class="container">
+		<div id="content" class="content">
+						<nav class="navbar">
+				<div class="pull-left">
+					<button id="btnMenu" type="button" class="btn btn-default btn-sm btn-menu">
+						<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>	菜 单
+					</button>
+				</div>
+				<ul class="pull-center">
+					<li class="active"><a href="/">博客</a></li>
+                    <li><a href="/about.html">关于我</a></li>
+				</ul>
+				<div class="pull-right">
+					<button type="button" class="btn btn-default btn-sm btn-list">
+						<a href="/book-movie-list/booklist.html">
+							<span class="glyphicon glyphicon-list-alt"></span> 书单/影单  
+						</a>
+					</button>
+				</div>
+			</nav>
+
+			<header class="post-header">
+        <div class="hd-img">
+                <img src="http://7xlh6u.com1.z0.glb.clouddn.com/bg10.jpg" alt="背景图片">
+        </div>
+
+        <div class="title">
+           <h1>php学习笔记</h1>
+        </div>
+</header>
+<button id="btnArrow" class="btn-arrow" data-info="点击显示文章"><i class="icon icon-arrow-down">&#xe619;</i></button>
+<div class="post-title">
+	<h1>php学习笔记</h1>
+	
+	<p>作者: <a target="_blank" href="http://blog.yinwoods.com/"><strong>yinwoods</strong></a>&nbsp;&nbsp;&nbsp;
+		分类: <a target="_blank" href="http://blog.yinwoods.com/coding.html"><strong>coding</strong></a>&nbsp;&nbsp;&nbsp;
+		日期: <strong>2015年07月12日</strong>&nbsp;&nbsp;&nbsp;
+         <ul class="tags post-tags">
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+                    <li><a href="/tags/php/index.html">php<span>3</span></a></li>
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            </ul></p>
+</div>
+    
+
+    <article class="post-content">
+        <hr class="post-end-left"><p class="post-end">开始</p><hr class="post-end-right"/>
+        <div>
+            <p>php是一种弱的面向对象语言，所以很多东西与c++、java都有类似之处，写这篇博客的目的是记录学习中的重点、难点；而不是入门教程。</p>
+
+<blockquote>
+<ul>
+<li>1、 php中单、双引号都可以用来定义字符串，这在一定程度上解决了字符串嵌套问题；但二者并不完全等价，区别在双引号中可以包含字符串变量，例如以下代码</li>
+</ul>
+
+<blockquote>
+<p><code>PHP
+    &lt;?php
+            $str = &#39;hello world&#39;;
+            echo &#39;str is $str&lt;br/&gt;&#39;;
+            echo &quot;str is $str&quot;;
+    ?&gt;
+    输出结果为：
+        str is $str
+        str is hello world
+</code></p>
+</blockquote>
+
+<ul>
+<li><p>2、<code>strlen($str)</code>用于获取$str长度，对于非ascii编码，可以使用 <strong><code>mb_strlen($str, &quot;UTF8&quot;)</code>获取以UTF8编码时$str的长度</strong></p></li>
+<li><p>3、<code>substr($str, $start, $len)</code>用于截取$str字符串从$start位置开始的$len个字符，同理对于非ascii编码，可以使用 <strong><code>mb_strlen($str, $start, $len, &quot;UTF8&quot;)</code>获取以UTF8编码时$str的长度</strong></p></li>
+<li><p>4、<code>preg_match($pre, $str)</code>用于对$str执行一个$pre正则表达式；例如<code>preg_match(&quot;/apple&quot;, &quot;apple banana&quot;)</code>会返回true表示&quot;apple banana&quot;中含有&quot;apple&quot;字符串</p></li>
+</ul>
+</blockquote>
+
+<h3>PHP中超全局变量</h3>
+
+<blockquote>
+<ul>
+<li>PHP超全局变量，常见的有以下：</li>
+</ul>
+
+<blockquote>
+<p><code>$GLOBALS</code>用于访问PHP中的全局变量，形如<code>GLOBALS[&#39;x&#39;]</code></p>
+
+<p><code>$_SERVER[]</code>用于访问保存关于报头、路径和脚本位置的信息</p>
+
+<p><code>$_REQUEST</code>用于收集HTML表单提交的数据</p>
+
+<p><code>$_POST</code>用于收集提交 <code>method=&quot;post&quot;</code>的HTML表单后的表单数据</p>
+
+<p>同上<code>$_GET</code>用于收集提交<code>method=&quot;get&quot;</code>的HTML表单后的表单数据</p>
+</blockquote>
+</blockquote>
+
+<h3>PHP中的输出</h3>
+
+<blockquote>
+<p>较常见的PHP输出有<code>echo</code>、<code>print</code>、<code>print_r()</code>、<code>var_dump()</code>几种形式</p>
+
+<blockquote>
+<ul>
+<li><p><code>echo</code>是一个语言结构，无返回值</p></li>
+<li><p><code>print</code>也是一个语言结构，速度稍慢于<code>echo</code></p></li>
+<li><p><code>print_r()</code>用于打印变量的易于理解的信息</p></li>
+</ul>
+</blockquote>
+</blockquote>
+
+<h3><code>GET</code>与<code>POST</code>的区别</h3>
+
+<blockquote>
+<p><code>GET</code>方法从表单发送的信息对任何人都是可见的（显示在URL中）；且对发送信息数量有限制；且便于添加到书签中下次访问</p>
+
+<p><code>POST</code>方法从表单发送的信息对任何人都是不可见的；保存书签后下次访问表单信息会丢失。</p>
+</blockquote>
+
+<h3>PHP日期</h3>
+
+<blockquote>
+<ul>
+<li>PHP中使用<code>date(format, timestamp)</code>返回固定格式时间；其中<code>format（格式）</code>必需，<code>timestamp（时间，默认为当前时间）</code>可选；</li>
+</ul>
+
+<blockquote>
+<p>这里有一个很有趣的小细节就是网站的版本年份，我之前一直以为是没到过年的时候由维护人员手动更新。。。学到了这里当然知道用<code>start_year - &lt;?php echo date(&#39;Y&#39;); ?&gt;</code>实现</p>
+
+<p>另外说一下几个常用的时间格式：</p>
+
+<blockquote>
+<ul>
+<li><p>Y：表示年（四位数）</p></li>
+<li><p>m：表示月（01-12）</p></li>
+<li><p>d：表示月里的某天（01-31）</p></li>
+<li><p>h：表示带有首位零的12小时小时格式</p></li>
+<li><p>i：带有首位零的分钟（00-59）</p></li>
+<li><p>s：带有首位零的秒（00-59）</p></li>
+<li><p>a ：小写的午前和午后（am、pm）</p></li>
+</ul>
+</blockquote>
+
+<p><strong>注意：对于服务器在境外的情况需要设置时区</strong>；例如：<code>date_default_timezone_set(&quot;Asia/Shanghai&quot;);</code></p>
+</blockquote>
+
+<ul>
+<li><p>PHP中也可以通过<code>mktime(hour, minute, second, month, day, year)</code>来创建日期时间；例如<code>mktime(13, 38, 20, 7, 14, 2015)</code>对应的时间为2015年7月14日13:38:20;</p></li>
+<li><p>还可以通过<code>shrtotime($str)</code>创建时间，这里的$str为一个由时间组成的可读的字符串；这里相比之下建议在对<code>shrtotime()</code>不熟练时使用<code>mktime</code>好一些，以免出现不能正确设置时间的情况。</p></li>
+</ul>
+</blockquote>
+
+<h3>include与require语句</h3>
+
+<blockquote>
+<ul>
+<li>- 通过<code>require</code>或<code>include</code>语句都可以将PHP文件内容插入另一个PHP文件中，但是在错误处理方面，<code>require</code>会停止脚本，而<code>include</code>则声称警告并继续执行脚本。</li>
+</ul>
+</blockquote>
+
+<h3>PHP文件操作</h3>
+
+<blockquote>
+<ul>
+<li><p>使用<code>readfile(&#39;文件位置&#39;)</code>对文件进行读取并写入输出缓冲</p></li>
+<li><p>其他函数如：<code>fopen()</code>、<code>fread()</code>、<code>fwrite()</code>、<code>fclose()</code>、<code>fgets()</code>、<code>feof()</code>、<code>fgetc()</code>同C语言使用方法类似</p></li>
+<li><p>使用form表单实现文件上传，指定一个php程序处理上传的文件，需要说明的是要在form表单中添加<code>enctype = &quot;&quot;</code>属性以指定上传文件类型；文件上传后访问文件可以使用<code>$_FILES</code>访问文件属性</p></li>
+</ul>
+</blockquote>
+
+<h3>cookie 和 session</h3>
+
+<blockquote>
+<ul>
+<li><p>cookie是服务器留在用户计算机中的小文件（<strong>存在于客户端</strong>）;每当计算机通过浏览器请求页面时，会同时发送cookie</p></li>
+<li><p>cookie只支持字符串类型，对于安全性要求较高的数据，cookie需要进行格式化和加密存储。</p></li>
+</ul>
+
+<blockquote>
+<ul>
+<li><p>使用<code>setcookie(name, value, [expire], [path], [domain])</code>函数来设置cookie</p></li>
+<li><p>使用<code>$_COOKIE</code>取回cookie的值</p></li>
+</ul>
+</blockquote>
+
+<ul>
+<li><p>session用于存储有关用户会话的信息，或更改会话设置。session保存的信息是单一用户的且可供应用程序中所有页面使用</p></li>
+<li><p>session可以用来存储多种类型的数据，因此具有很多用途，常用来存储用户登录信息、购物车数据、或者一些临时使用的暂存数据等。</p></li>
+</ul>
+
+<blockquote>
+<ul>
+<li><p>session的工作机制是：为每个访问者创建一个唯一的id,并基于这个id来存储变量。</p></li>
+<li><p>在把用户信息存储到PHP session中之前必须启动会话，注意：<strong>启动会话函数session_start()必须位于&lt;html&gt;标签之前</strong></p></li>
+<li><p>使用<code>$_SESSION</code>来对session变量存储和取回</p></li>
+<li><p>当希望删除某些session数据时，可以使用<code>unset()</code>释放制定的session变量或<code>session_destory</code>彻底终结session</p></li>
+</ul>
+</blockquote>
+</blockquote>
+
+<h3>PHP 发送邮件</h3>
+
+<blockquote>
+<p><code>mail(to, subject, message, [headers], [parameters])</code>函数用来从脚本中发送电子邮件</p>
+
+<p>为了防止E-mail注入，可以对文本框中输入内容使用<code>filter_var($field, FILTER_VALIDATE_EMAIL)</code>进行过滤</p>
+</blockquote>
+
+<h3>PHP文件操作</h3>
+
+<blockquote>
+<p>使用<code>file_get_contents(path)</code>读取文件所有内容；同时支持C语言文件操作方法，如<code>fopen</code>、<code>fgets</code>、<code>fread</code>等。若使用<code>fopen</code>，之后最好使用<code>fclose</code>关闭文件指针。</p>
+
+<p>PHP中判断文件是否存在使用<code>file_exists</code>；使用<code>is_file</code>判断是否是一个文件；使用<code>is_readable</code>、<code>is_writeable</code>判断文件在是否存在基础上，判断是否可读可写。</p>
+
+<p>使用<code>file_put_contents(filename, content)</code>对文件进行写操作；同样也支持C语言文件操作方法。</p>
+
+<p>文件有很多多元属性，包括</p>
+
+<blockquote>
+<ul>
+<li><p><code>fileowner</code>获得文件所有者</p></li>
+<li><p><code>filectime</code>获得文件创建时间</p></li>
+<li><p><code>filemtime</code>获得文件修改时间</p></li>
+<li><p><code>fileatime</code>获得文件访问时间</p></li>
+</ul>
+</blockquote>
+
+<p>其中文件修改时间常用来判断文件时效性，经常用在静态文件或者缓存数据的更新。</p>
+
+<p>使用<code>filesize</code>获取文件大小（以<code>字节</code>为单位）</p>
+
+<p>PHP使用<code>unlink</code>函数进行文件删除；删除文件夹使用<code>rmdir</code>函数（文件夹为空时）；</p>
+
+<p>如果文件夹中存在文件，可以递归删除，循环删除可使用<code>glob函数</code>遍历所有文件</p>
+
+<blockquote>
+<p><code>foreach (glob(&quot;*&quot;) as $filename) {  unlink($filename);  }</code></p>
+</blockquote>
+</blockquote>
+
+<h3>日期和时间</h3>
+
+<blockquote>
+<p>PHP中使用<code>time()</code>获取当前时间（时间为1970年1月1日00:00:00到当前时间秒数之和）</p>
+
+<p><code>date(time_stamp, [time])</code>获取规定格式的时间，默认为当前时间</p>
+
+<p>使用<code>strtotime(time_stamp)</code>函数获取<code>time_stamp</code>对应的秒数。</p>
+</blockquote>
+
+<h3>PHP中的<code>GD(Graphic Device)</code>库</h3>
+
+<blockquote>
+<p>GD库常用在图片加水印、验证码生成等方面。</p>
+
+<p>在绘制之前要先使用<code>imagecreatetruecolor(width, height)</code>新建一个画布。</p>
+
+<p>使用<code>image+(type of image)</code>函数输出图像到浏览器或保存到文件。如<code>imagepng</code>、<code>imagejpeg</code>、<code>imagegif</code>等</p>
+
+<p>数字验证码的原理就是使用<code>imagestring()</code>函数输出随机验证码，并用<code>imagesetpixel()函数</code>做一定的噪点干扰处理</p>
+</blockquote>
+
+<h3>PHP数据库操作</h3>
+
+<blockquote>
+<p>一般使用官方的<code>mysql_connect(&#39;mysql_host&#39;, &#39;mysql_user&#39;, &#39;mysql_password&#39;)</code>或增强版的<code>mysqli_connect(&#39;mysql_host&#39;, &#39;mysql_user&#39;, &#39;mysql_password&#39;)</code>进行数据库的连接。</p>
+
+<p>使用<code>mysql_query(string)</code>进行数据库查询、插入、更新、删除操作</p>
+
+<p>在mysql中，插入语句后，可以通过<code>mysql_insert_id()</code>函数获取自增主键<code>id</code></p>
+
+<p>常用<code>mysql_fetch_array(result, [MYSQL_NUM])</code>获取一行结果，等同于<code>mysql_fetch_row(result)</code></p>
+
+<p><code>mysql_affected_rows()</code>返回改变行数</p>
+
+<p>尽管PHP会在执行完毕后自动关闭数据库连接，但直接关闭<code>mysql_close()</code>可以节省资源，提高性能</p>
+</blockquote>
+
+        </div>
+        <hr class="post-end-left"><p class="post-end">结束</p><hr class="post-end-right"/>
+        <div class="post-footer">
+            
+            <p class="post-footer-previous">上一篇 ： <a class="entry-more" href="/coding/php--mysql-%E5%AE%9E%E7%8E%B0%E5%88%86%E9%A1%B5%E5%8A%9F%E8%83%BD.html">php + mysql 实现分页</a></p>
+            
+            
+            <p class="post-footer-next">下一篇 ： <a class="entry-more" href="/coding/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0.html">正则表达式学习</a></p>
+            
+        </div>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span style="font-family:sans-serif; color:#009966">分享到：</span>
+        <a class="jiathis_button_weixin share_button" href="#"></a>
+        <a class="jiathis_button_tsina share_button" href="#"></a>
+        <a class="jiathis_button_qzone share_button" href="#"></a>
+        <a class="jiathis_button_evernote share_button" href="#"></a>
+        <a class="jiathis_button_ydnote share_button" href="#"></a>
+        <a class="jiathis_button_pocket share_button" href="#"></a>
+        <a class="jiathis_button_douban share_button" href="#"></a>
+        <a class="jiathis_button_renren share_button" href="#"></a>
+        <a class="jiathis_button_fb share_button" href="#"></a>
+        <a class="jiathis_button_linkedin share_button" href="#"></a>
+        <a class="jiathis_button_googleplus share_button" href="#"></a>
+        <a class="jiathis_button_tumblr share_button" href="#"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/totop.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'yinwoods'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+
+
+		</div>
+					<footer class="footer">
+				<div class="row">
+					<div class="pull-left">
+						<a class="avatar" href="/" title="yinwoods">yinwoods</a>
+                        			<p class="copyright">2015 ALL RIGHTS RESERVED</p>
+					</div>
+					
+					<div class="pull-center">
+						<h4>Powered by <a target="_blank" href="https://github.com/yinwoods">github</a> && <a target="_blank" href="http://jekyllrb.com/">jekyll</a></h4>
+					</div>
+				</div>
+			</footer>
+
+				<nav id="menu" class="menu">
+			<ul>
+				<li class="logo"><a href="about.html"><img  class="img-circle" height="100px" width="100px" src="/img/about/me.png"></a></li>
+
+				<li><a href="/index.html"><span class="glyphicon glyphicon-home"></span></i> 首页 </a></li>
+				
+				<li><a href="/coding.html"><span class="glyphicon glyphicon-road"></span></i>  编程之路 </a></li>
+
+				<li><a href="/myshare.html"><span class="glyphicon glyphicon-gift"></span>  我的分享 </a></li>
+				
+				<li><a href="/diary.html"><span class="glyphicon glyphicon-calendar"></span></i>  生活日志 </a></li>
+				
+				<li><a href="/book-movie-list/booklist.html"><span class="glyphicon glyphicon-inbox"></span></i>  书单/影单  </a></li>
+
+				<li><a href="/about.html"><span class="glyphicon glyphicon-sunglasses"></span></i>  关于博主 </a></li>
+
+				<li><a href="/friend.html"><span class="glyphicon glyphicon-send"></span></i> 我的朋友 </a></li>
+
+				<li><img class="img-rounded" height="100px" width="100%" src="/img/about/footer.png"></li>
+
+			</ul>
+			<button id="btnClose" class="btn-close"></button>
+
+			<div id="SVGMenu" class="svg-menu" 
+                data-menu-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z" 
+                data-menu-close="M-6,0h101c0,0-90,153.603-90,396.167C2.167,627.579,100,800,100,800H-1V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+					<path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+				</svg>
+			</div>
+
+		</nav>
+
+
+		<div id="totop">
+    			<a title="返回顶部">返回顶部</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/js/classie.js"></script>
+
+	<script type="text/javascript" src="/js/snap.svg-min.js"></script>
+	<script type="text/javascript" src="/js/menuTriggle.js"></script>
+	<script type="text/javascript" src="/js/SVGButton.js"></script>
+
+	<script type="text/javascript" src="/js/postTriggle.js"></script>
+
+	
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/js/totop.js"></script>
+	<script type="text/javascript">
+		var content = document.querySelector('.content'),
+			footer = document.querySelector('.footer'),
+			footT  = footer.offsetTop,
+			footH  = footer.offsetHeight,
+			winH   = window.innerHeight,
+			post   = document.querySelectorAll('p');
+
+		if (footT - footH + 100 < winH) {
+			content.style.height = '100%';
+		};
+
+		for (var i = 0; i < post.length; i++) {
+			if (post.item(i).querySelector('img')) {
+				post.item(i).style.textIndent = 0;
+			};
+		};
+
+	</script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?eefd87bbdb3a5e21ecb7f319769dd8b9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<link rel="dns-prefetch" href="//hm.baidu.com"/>
+	<link rel="dns-prefetch" href="//disqus.com"/>
+	<link rel="dns-prefetch" href="//a.disquscdn.com"/>
+
+	<meta name="Keywords" content="yinwoods,殷成涛,个人博客,郑州大学,php,爬虫"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	
+	<meta name="author" content="yinwoods">
+
+	<link rel="alternate" type="application/rss+xml" title="yinwoods Feed" href="/rss.xml" />
+	<link rel="apple-touch-icon-precomposed" href="/img/icon.png">
+	<link rel="apple-touch-icon-precomposed" href="/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/img/icon-24.png" sizes="24x24" />
+	<link rel="apple-touch-icon-precomposed" href="/img/icon-32.png" sizes="32x32" />
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+
+    <title>PHP中cURL学习 | yinwoods</title>
+  
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/rouge.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+		e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+		})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+		_st('install','csxq-8xzb6tiaQ1dQaGs','2.0.0');
+	</script>
+</head>
+
+
+<body>
+	<div id="container" class="container">
+		<div id="content" class="content">
+						<nav class="navbar">
+				<div class="pull-left">
+					<button id="btnMenu" type="button" class="btn btn-default btn-sm btn-menu">
+						<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>	菜 单
+					</button>
+				</div>
+				<ul class="pull-center">
+					<li class="active"><a href="/">博客</a></li>
+                    <li><a href="/about.html">关于我</a></li>
+				</ul>
+				<div class="pull-right">
+					<button type="button" class="btn btn-default btn-sm btn-list">
+						<a href="/book-movie-list/booklist.html">
+							<span class="glyphicon glyphicon-list-alt"></span> 书单/影单  
+						</a>
+					</button>
+				</div>
+			</nav>
+
+			<header class="post-header">
+        <div class="hd-img">
+                <img src="http://7xlh6u.com1.z0.glb.clouddn.com/bg24.jpg" alt="背景图片">
+        </div>
+
+        <div class="title">
+           <h1>PHP中cURL学习</h1>
+        </div>
+</header>
+<button id="btnArrow" class="btn-arrow" data-info="点击显示文章"><i class="icon icon-arrow-down">&#xe619;</i></button>
+<div class="post-title">
+	<h1>PHP中cURL学习</h1>
+	
+	<p>作者: <a target="_blank" href="http://blog.yinwoods.com/"><strong>yinwoods</strong></a>&nbsp;&nbsp;&nbsp;
+		分类: <a target="_blank" href="http://blog.yinwoods.com/coding.html"><strong>coding</strong></a>&nbsp;&nbsp;&nbsp;
+		日期: <strong>2015年09月01日</strong>&nbsp;&nbsp;&nbsp;
+         <ul class="tags post-tags">
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+                    <li><a href="/tags/php/index.html">php<span>3</span></a></li>
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+                    <li><a href="/tags/爬虫/index.html">爬虫<span>4</span></a></li>
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            </ul></p>
+</div>
+    
+
+    <article class="post-content">
+        <hr class="post-end-left"><p class="post-end">开始</p><hr class="post-end-right"/>
+        <div>
+            <h2>简介</h2>
+
+<p>cURL(Client URL Library Functions)：使用URL语法传输数据的命令行工具；通过cURL你可以实现与各种服务器使用各种类型协议进行连接和通讯。</p>
+
+<h3>cURL栗子</h3>
+
+<p>以下是一个爬取网页代码的简单栗子：</p>
+
+<p><strong>注：可以直接在命令行中执行<code>php -f index.php</code>来执行php程序</strong></p>
+
+<div>
+  <pre><code class='PHP'>&lt;?php
+        //初始化cURL
+    $url = curl_init();
+    
+    //设定cURL要访问网站
+    curl_setopt($url, CURLOPT_URL, &quot;www.baidu.com&quot;);
+
+    //把cURL返回值转为string类型
+    curl_setopt($url, CURLOPT_RETURNTRANSFER, 1);
+
+    //执行cURL
+    $output = curl_exec($url);
+    
+    //关闭cURL释放资源！不要忘记！！！
+    curl_close($url);
+    
+    print $output;
+
+?&gt;</code></pre>
+</div>
+
+<p>下面是一个利用cURL爬取网站图片的例子,爬取的图片会默认保存到当前目录下。</p>
+
+<div>
+  <pre><code class='PHP'>&lt;?php
+
+        function get_imgs_url($html) {
+            //匹配图片url
+            preg_match_all('/http:.*?(.*?\.jpg)/', $html, $res);
+            /*preg_match_all('&lt;img.*?src=[\'|\&quot;](.*?(?:[\.jpg]))[\'|\&quot;].*?[\/]?&gt;', $html, $res);*/
+            
+            for($i=0; $i&lt;count($res[0]); $i++) {
+                    $filename = $i.&quot;.jpg&quot;;
+                    $file = @fopen($filename, &quot;a&quot;);
+                    $curl = curl_init();
+                    curl_setopt($curl, CURLOPT_URL, $res[0][$i]);
+                    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+                    $imgData = curl_exec($curl);
+                    curl_close($curl);
+                    fwrite($file, $imgData);
+                    fclose($file);
+            }
+        }
+
+
+        $url = &quot;http://blog.yinwoods.com&quot;;
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        //读取页面内容
+        $html = curl_exec($curl);
+        curl_close($curl);
+        get_imgs_url($html);
+?&gt;
+
+?&gt;</code></pre>
+</div>
+
+<p>使用<code>php -f name.php</code>会爬取我的博客首页的10张图片</p>
+
+        </div>
+        <hr class="post-end-left"><p class="post-end">结束</p><hr class="post-end-right"/>
+        <div class="post-footer">
+            
+            <p class="post-footer-previous">上一篇 ： <a class="entry-more" href="/myshare/jekyll%E5%8D%9A%E5%AE%A2%E6%A0%87%E7%AD%BE%E4%BA%91tag-cloud%E5%AE%9E%E7%8E%B0.html">Jekyll博客标签云（tag_cloud）实现</a></p>
+            
+            
+            <p class="post-footer-next">下一篇 ： <a class="entry-more" href="/coding/python%E5%AE%9E%E6%88%98%E4%B9%8B%E7%88%AC%E5%8F%96%E7%BD%91%E7%AB%99%E5%9B%BE%E7%89%87%E5%88%B0%E6%9C%AC%E5%9C%B0.html">python实战之爬取网站图片到本地</a></p>
+            
+        </div>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span style="font-family:sans-serif; color:#009966">分享到：</span>
+        <a class="jiathis_button_weixin share_button" href="#"></a>
+        <a class="jiathis_button_tsina share_button" href="#"></a>
+        <a class="jiathis_button_qzone share_button" href="#"></a>
+        <a class="jiathis_button_evernote share_button" href="#"></a>
+        <a class="jiathis_button_ydnote share_button" href="#"></a>
+        <a class="jiathis_button_pocket share_button" href="#"></a>
+        <a class="jiathis_button_douban share_button" href="#"></a>
+        <a class="jiathis_button_renren share_button" href="#"></a>
+        <a class="jiathis_button_fb share_button" href="#"></a>
+        <a class="jiathis_button_linkedin share_button" href="#"></a>
+        <a class="jiathis_button_googleplus share_button" href="#"></a>
+        <a class="jiathis_button_tumblr share_button" href="#"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/totop.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'yinwoods'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+
+
+		</div>
+					<footer class="footer">
+				<div class="row">
+					<div class="pull-left">
+						<a class="avatar" href="/" title="yinwoods">yinwoods</a>
+                        			<p class="copyright">2015 ALL RIGHTS RESERVED</p>
+					</div>
+					
+					<div class="pull-center">
+						<h4>Powered by <a target="_blank" href="https://github.com/yinwoods">github</a> && <a target="_blank" href="http://jekyllrb.com/">jekyll</a></h4>
+					</div>
+				</div>
+			</footer>
+
+				<nav id="menu" class="menu">
+			<ul>
+				<li class="logo"><a href="about.html"><img  class="img-circle" height="100px" width="100px" src="/img/about/me.png"></a></li>
+
+				<li><a href="/index.html"><span class="glyphicon glyphicon-home"></span></i> 首页 </a></li>
+				
+				<li><a href="/coding.html"><span class="glyphicon glyphicon-road"></span></i>  编程之路 </a></li>
+
+				<li><a href="/myshare.html"><span class="glyphicon glyphicon-gift"></span>  我的分享 </a></li>
+				
+				<li><a href="/diary.html"><span class="glyphicon glyphicon-calendar"></span></i>  生活日志 </a></li>
+				
+				<li><a href="/book-movie-list/booklist.html"><span class="glyphicon glyphicon-inbox"></span></i>  书单/影单  </a></li>
+
+				<li><a href="/about.html"><span class="glyphicon glyphicon-sunglasses"></span></i>  关于博主 </a></li>
+
+				<li><a href="/friend.html"><span class="glyphicon glyphicon-send"></span></i> 我的朋友 </a></li>
+
+				<li><img class="img-rounded" height="100px" width="100%" src="/img/about/footer.png"></li>
+
+			</ul>
+			<button id="btnClose" class="btn-close"></button>
+
+			<div id="SVGMenu" class="svg-menu" 
+                data-menu-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z" 
+                data-menu-close="M-6,0h101c0,0-90,153.603-90,396.167C2.167,627.579,100,800,100,800H-1V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+					<path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+				</svg>
+			</div>
+
+		</nav>
+
+
+		<div id="totop">
+    			<a title="返回顶部">返回顶部</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/js/classie.js"></script>
+
+	<script type="text/javascript" src="/js/snap.svg-min.js"></script>
+	<script type="text/javascript" src="/js/menuTriggle.js"></script>
+	<script type="text/javascript" src="/js/SVGButton.js"></script>
+
+	<script type="text/javascript" src="/js/postTriggle.js"></script>
+
+	
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/js/totop.js"></script>
+	<script type="text/javascript">
+		var content = document.querySelector('.content'),
+			footer = document.querySelector('.footer'),
+			footT  = footer.offsetTop,
+			footH  = footer.offsetHeight,
+			winH   = window.innerHeight,
+			post   = document.querySelectorAll('p');
+
+		if (footT - footH + 100 < winH) {
+			content.style.height = '100%';
+		};
+
+		for (var i = 0; i < post.length; i++) {
+			if (post.item(i).querySelector('img')) {
+				post.item(i).style.textIndent = 0;
+			};
+		};
+
+	</script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?eefd87bbdb3a5e21ecb7f319769dd8b9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>
