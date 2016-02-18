@@ -32,7 +32,7 @@ img: 27
 
 并设置以下成员：
 
-{% highlight python linenos %}
+```PYTHON
 		
 		#部分ZZU类成员
 		self.cookies 	#cookie
@@ -43,8 +43,7 @@ img: 27
 		self.grades = []    #课程成绩
 		self.points = []    #课程绩点
 		self.urls_Set = []  #各学期成绩URL页面集合
-
-{% endhighlight %}
+```
 
 ###第一步：获取登录页面`url`及表单信息
 
@@ -58,7 +57,7 @@ img: 27
 
 > - 因此我们可以为`ZZU`添加一个变量叫做`postdata`用来存储以上信息，内容为：
 
->> {% highlight python linenos %}
+```PYTHON
 	#ZZU类登录表单信息
 	self.current_Url = http://jw.zzu.edu.cn/scripts/qscore.dll/search
 	self.postdata = urllib.parse.urlencode({
@@ -68,13 +67,13 @@ img: 27
             'selec': 'http://jw.zzu.edu.cn/scripts/qscore.dll/search'
         }).encode()
 
-{% endhighlight %}
+```
 
 ###第二步：设置`cookie`并登录
 
 > - 这里可能看起来比较难，其实只用调用相关函数即可
 
->> {% highlight python linenos %}
+```PYTHON
 	#ZZU类cookie
 	self.cookies = http.cookiejar.CookieJar()	#设置cookie
 	self.opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.cookies))
@@ -84,7 +83,7 @@ img: 27
     )
     res = self.opener.open(request)	#提交表单内容，登录系统
     print(res.read().decode('GBK'))	#可以发现打印的网页源码为登录后的源码，说明登录成功
-{% endhighlight %}
+```
 
 ###第三步：利用正则表达式获取所有学期页面的`url`
 
@@ -94,9 +93,9 @@ img: 27
 
 > - 对于我校郑州大学的系统，可以发现不同学期`url`只是`search?userid=`后面的参数不同而已；因此我们可以利用`regx = re.compile('href="(http://jw.zzu.edu.cn/scripts/qscore.dll/search.*?)">')`来匹配所有的`url`
 
->> {% highlight python linenos %}
+```PYTHON
 	regx = re.compile('href="(http://jw.zzu.edu.cn/scripts/qscore.dll/search.*?)">')
-{% endhighlight %}
+```
 
 ###第四步：利用正则表达式获取课程、成绩相关信息
 
@@ -106,10 +105,10 @@ img: 27
 
 > - 可以发现课程、成绩信息是分别被五个`<td>`标签包住的，因此我们可以这样匹配`re.compile('<td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td>', re.U)`,不了解`re.U`含义的可以移步这里[python爬虫基础教程](http://blog.yinwoods.com/coding/python%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html)巩固下。
 
->> {% highlight python linenos %}
+```PYTHON
 	#ZZU类匹配课程、成绩信息
 	regx = re.compile('<td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td>', re.U)
-{% endhighlight %}
+```
 
 ###第五步：计算平均绩点
 
@@ -117,7 +116,7 @@ img: 27
 
 上面说的零零碎碎，可能不是很清楚，下面附上完整代码以及必要注释：
 
-{% highlight python linenos %}
+```PYTHON
 
 import urllib
 import urllib.request
@@ -211,7 +210,7 @@ zzu.getGrades()
 #zzu.print_info()
 
 
-{% endhighlight %}
+```
 
 下面是我的GPA查询结果:
 
