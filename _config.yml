@@ -6,7 +6,6 @@ encoding: utf-8
 permalink: /:categories/:title.html
 
 markdown: redcarpet
-highlighter: rouge
 
 name: yinwoods
 title: yinwoods的个人博客
