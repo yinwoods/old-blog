@@ -22,7 +22,7 @@ img: 15
 
 > 1、这里是我最开始的想法，大量重复查找因此超时
 >
-```CPP
+{% highlight cpp %}
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -52,11 +52,11 @@ public:
         return root;
     }
 };
-```
+{% endhighlight %}
 
 > 2、深搜找到路径从而求LCA
 >
-```CPP
+{% highlight cpp %}
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -104,11 +104,11 @@ class Solution {
             return root;
         }
 };
-```
+{% endhighlight %}
 
 > 3、对于上面的代码，答案虽然是对的，但是写的不好，使用的栈明显多余；看下面这份网友 mako 的 [代码](https://leetcode.com/discuss/46563/c-solution-with-simple-dfs)：
 >
-```CPP
+{% highlight cpp %}
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -145,6 +145,6 @@ class Solution {
             return ans;
         }
 };
-```
+{% endhighlight %}
 
 虽然后面两份代码跑的样例都是28ms，但理论上来说第三份代码优化地更好，而且具有更好的易读性

@@ -22,7 +22,7 @@ img: 14
 
 代码如下：
 
-```CPP
+{% highlight cpp %}
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -45,4 +45,4 @@ public:
             return root;
     }
 };
-```
+{% endhighlight %}

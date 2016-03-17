@@ -22,7 +22,7 @@ img: 19
 
 代码如下：
 
-```CPP
+{% highlight cpp %}
 class Solution {
     public:
         int lengthOfLongestSubstring(string s) {
@@ -47,4 +47,4 @@ class Solution {
             return res;
         }
 };
-```
+{% endhighlight %}

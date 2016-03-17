@@ -22,7 +22,7 @@ img: 17
 
 代码如下：
 
-```CPP
+{% highlight cpp %}
 class Solution {
     public:
         vector<int> twoSum(vector<int>& nums, int target) {
@@ -49,7 +49,7 @@ class Solution {
             }
         }
 };
-```
+{% endhighlight %}
 
 看答案讨论区有一个很好的想法，就是`hash`处理
 
@@ -59,7 +59,7 @@ class Solution {
 
 想发很巧妙，但因为使用了map，导致效率不如第一份代码效率高
 
-```CPP
+{% highlight cpp %}
 class Solution {
     public:
         vector<int> twoSum(vector<int>& nums, int target) {
@@ -78,4 +78,4 @@ class Solution {
             }
         }
 };
-```
+{% endhighlight %}
