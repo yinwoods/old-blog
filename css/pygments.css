@@ -5,7 +5,7 @@
 .l { color: #ae81ff } /* Literal */
 .n { color: #f8f8f2 } /* Name */
 .o { color: #f92672 } /* Operator */
-.p { color: #f8f8f2 } /* Punctuation */
+.p { color: #000000 } /* Punctuation */
 .ch { color: #75715e } /* Comment.Hashbang */
 .cm { color: #75715e } /* Comment.Multiline */
 .cp { color: #75715e } /* Comment.Preproc */

@@ -23,7 +23,7 @@ dp[i][n] = dp[i-1][j-1]*p + dp[i-1][n];
 
 代码如下：
 
-```cpp
+{% highlight cpp %}
 
 #include <cstdio>
 #include <cstring>
@@ -55,4 +55,4 @@ int main(void) {
     return 0;
 }
 
-```
+{% endhighlight %}
