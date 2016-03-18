@@ -1,6 +1,6 @@
 .hll { background-color: #49483e }
 .c { color: #75715e } /* Comment */
-.err { color: #960050; background-color: #1e0010; word-break: break-all; } /* Error */
+.err { color: #960050; } /* Error */
 .k { color: #66d9ef } /* Keyword */
 .l { color: #ae81ff } /* Literal */
 .n { color: #f8f8f2 } /* Name */
@@ -8,7 +8,7 @@
 .p { color: #000000 } /* Punctuation */
 .ch { color: #75715e } /* Comment.Hashbang */
 .cm { color: #75715e } /* Comment.Multiline */
-.cp { color: #75715e; display:block } /* Comment.Preproc */
+.cp { color: #75715e } /* Comment.Preproc */
 .cpf { color: #75715e } /* Comment.PreprocFile */
 .c1 { color: #75715e } /* Comment.Single */
 .cs { color: #75715e } /* Comment.Special */
