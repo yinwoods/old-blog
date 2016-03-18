@@ -18,7 +18,7 @@ img: 16
 
 这样的思路虽然是正确的，但是太慢了，代码如下：
 
-{% highlight CPP linenos %}
+{% highlight CPP %}
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -82,7 +82,7 @@ class Solution {
 
 改进后代码如下：
 
-{% highlight CPP linenos %}
+{% highlight CPP %}
 /**
  * Definition for singly-linked list.
  * struct ListNode {

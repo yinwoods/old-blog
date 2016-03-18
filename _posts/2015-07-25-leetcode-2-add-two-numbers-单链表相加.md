@@ -28,7 +28,7 @@ img: 18
 
 代码如下：
 
-```CPP
+{% highlight cpp %}
 //time:40ms
 class Solution {
     public:
@@ -82,13 +82,13 @@ class Solution {
             return res;
         }
 };
-```
+{% endhighlight %}
 
 其实完全可以不用`vector`的，依次遍历并处理即可，遵循一个原则`每次需要时对存答案的单链表进行扩展`
 
 代码如下：
 
-```CPP
+{% highlight cpp %}
 //time:36ms
 class Solution {
     public:
@@ -152,4 +152,4 @@ class Solution {
             return end;
         }
 };
-```
+{% endhighlight %}

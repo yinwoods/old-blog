@@ -22,7 +22,7 @@ img: 12
 
 代码如下：
 
-```CPP
+{% highlight cpp %}
 class Solution {
 	public:
 		vector<int> productExceptSelf(vector<int>& nums) {
@@ -43,4 +43,4 @@ class Solution {
 			retuan ans;
 		}
 };
-```
+{% endhighlight %}
