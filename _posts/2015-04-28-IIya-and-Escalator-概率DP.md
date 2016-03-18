@@ -26,9 +26,13 @@ dp[i][n] = dp[i-1][j-1]*p + dp[i-1][n];
 {% highlight c++ %}
 
 #include <cstdio>
+
 #include <cstring>
+
 #include <iostream>
+
 #define MAXN 2100
+
 using namespace std;
 
 double dp[MAXN][MAXN];
