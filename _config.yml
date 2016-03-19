@@ -5,7 +5,7 @@ paginate_path: "BASE_PATH/page:num" #pagination generated sub path format
 encoding: utf-8
 permalink: /:categories/:title.html
 
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
 
 name: yinwoods
