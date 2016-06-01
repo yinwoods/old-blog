@@ -6,7 +6,9 @@ encoding: utf-8
 permalink: /:categories/:title.html
 
 markdown: kramdown
-highlighter: pygments
+kramdown:
+  input: GFM
+highlighter: rouge
 
 name: yinwoods
 title: yinwoods的个人博客
