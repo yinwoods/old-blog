@@ -1,11 +1,14 @@
 ---
-title: 404
+title: 404错误
 permalink: /404.html
 ---
 <!DOCTYPE html>
 <html lang="cn">
 {% include head.html %}
-<meta charset="utf-8"; http-equiv="refresh"; content="5"; url="/">
+<link rel="canonical" href="http://blog.yinwoods.com"/>
+<noscript>
+    <meta charset="utf-8" http-equiv="refresh" content="5;URL='http://blog.yinwoods.com'">
+</noscript>
 <body>
 	<div id="container" class="container modify error">
 
@@ -14,28 +17,44 @@ permalink: /404.html
 
 			<section class="error-item">
 				<div class="error-pic">
-					<img src="/img/error.png" alt="">
+					<img src="/static/img/error.png" alt="">
 					<a href="{{ site.BASE_PATH }}/">对不起，您所请求的页面不存在，请返回<strong>主页</strong>!</a>
 				</div>
 			</section>
 
 			{% include footer.html %}
+			{% include menu.html %}
 		</div>
-
-		<nav id="menu" class="menu">
-			<ul>
-				<li><a href="{{ site.BASE_PATH }}/">首页</a></li>
-				<li><a href="{{ site.BASE_PATH }}/codeskill.html">CODING</a></li>
-				<li><a href="{{ site.BASE_PATH }}/share.html">SHARING</a></li>
-				<li><a href="{{ site.BASE_PATH }}/diary.html">生活日志</a></li>
-				<li><a href="{{ site.BASE_PATH }}/about.html">关于我</a></li>
-				<li><a href="{{ site.BASE_PATH }}/friend.html">友链</a></li>
-			</ul>
-		</nav>
 	</div>
 	
-	<script type="text/javascript" src="{{ site.BASE_PATH }}/js/classie.js"></script>
-	<script type="text/javascript" src="{{ site.BASE_PATH }}/js/menuTriggle.js"></script>
+	<script type="text/javascript">
+	    var url = "http://blog.yinwoods.com";
+	    var delay = "5000";
+	    window.onload = function ()
+	    {
+	        setTimeout(GoToURL, delay);
+	    }
+	    function GoToURL()
+	    {
+	        if(typeof IE_fix != "undefined") // IE8 and lower fix to pass the http referer
+	        {
+	            var referLink = document.createElement("a");
+	            referLink.href = url;
+	            document.body.appendChild(referLink);
+	            referLink.click();
+	        }
+	        else { window.location.replace(url); } // All other browsers
+	    }
+	</script>
+
+	<script type="text/javascript" src="{{ site.BASE_PATH }}/static/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="{{ site.BASE_PATH }}/static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{ site.BASE_PATH }}/static/js/classie.js"></script>
+	<!-- snap.svg -->
+	<script type="text/javascript" src="{{ site.BASE_PATH }}/static/js/snap.svg-min.js"></script>
+	<script type="text/javascript" src="{{ site.BASE_PATH }}/static/js/SVGButton.js"></script>
+	<!-- menu -->
+	<script type="text/javascript" src="{{ site.BASE_PATH }}/static/js/menuTriggle.js"></script>
 	<!--[if lte IE 8]>
 		<script type="text/javascript" src="{{ site.BASE_PATH }}/js/fuckie.js"></script>
 	<![endif]-->

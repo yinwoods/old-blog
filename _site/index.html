@@ -15,18 +15,18 @@
 	
 	<meta name="author" content="yinwoods">
 
-	<link rel="alternate" type="application/rss+xml" title="yinwoods Feed" href="/rss.xml" />
-	<link rel="shortcut icon" href="/img/icon-16.png" sizes="16x16" />
-	<link rel="apple-touch-icon-precomposed" href="/img/icon-16.png" sizes="16x16" />
-	<link rel="apple-touch-icon-precomposed" href="/img/icon-24.png" sizes="24x24" />
-	<link rel="apple-touch-icon-precomposed" href="/img/icon-32.png" sizes="32x32" />
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/prism.css">
+	<link rel="alternate" type="application/rss+xml" title="rss订阅" href="/feed.xml">
+	<link rel="shortcut icon" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-24.png" sizes="24x24" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-32.png" sizes="32x32" />
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/prism.css">
 
     <title>yinwoods</title>
   
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
 	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
@@ -43,26 +43,26 @@
 <body>
 	<div id="container" class="container modify">
 		<div id="content" class="content">
-						<nav class="navbar">
-				<div class="pull-left">
-					<button id="btnMenu" type="button" class="btn btn-default btn-sm btn-menu">
-						<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>	菜 单
-					</button>
-				</div>
-				<ul class="pull-center">
-					<li class="active"><a href="/">博客</a></li>
-                    <li><a href="/about.html">关于我</a></li>
-				</ul>
-				<div class="pull-right">
-					<button type="button" class="btn btn-default btn-sm btn-list">
-						<a href="/book-movie-list/booklist.html">
-							<span class="glyphicon glyphicon-list-alt"></span> 书单/影单  
-						</a>
-					</button>
-				</div>
-			</nav>
+			<nav class="navbar">
+	<div class="pull-left">
+		<button id="btnMenu" type="button" class="btn btn-default btn-sm btn-menu">
+			<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>	菜 单
+		</button>
+	</div>
+	<ul class="pull-center">
+		<li class="active"><a href="/">博客</a></li>
+        <li><a href="/category/about.html">关于我</a></li>
+	</ul>
+	<div class="pull-right">
+		<button type="button" class="btn btn-default btn-sm btn-list">
+			<a href="/category/book-movie-list/booklist.html">
+				<span class="glyphicon glyphicon-list-alt"></span> 书单/影单  
+			</a>
+		</button>
+	</div>
+</nav>
 			<header class="header">
-	<h1><img src="/img/betterman.png"></h1>
+	<h1><img src="/static/img/betterman.png"></h1>
 	<h2>欢迎来到我的个人博客</h2>
 	<iframe frameborder="no" border="1" width=350 height=86 src="http://music.163.com/outchain/player?type=2&id=1933598&auto=1&height=66"></iframe>
 	<div class="head-left"><div class="tag_cloud">
@@ -508,38 +508,25 @@
 
 		</div>
 
-		<footer class="footer">
-	<div class="row">
-		<div class="pull-left">
-			<a class="avatar" href="/" title="yinwoods">yinwoods</a>
-			<p class="copyright">2015 ALL RIGHTS RESERVED</p>
-		</div>
-		
-		<div class="pull-center">
-			<h4>Powered by <a target="_blank" href="https://github.com/yinwoods">github</a> && <a target="_blank" href="http://jekyllrb.com/">jekyll</a></h4>
-		</div>
-	</div>
-</footer>
-
 				<nav id="menu" class="menu">
 			<ul>
-				<li class="logo"><a href="about.html"><img  class="img-circle" height="100px" width="100px" src="/img/about/me.png"></a></li>
+				<li class="logo"><a href="about.html"><img  class="img-circle" height="100px" width="100px" src="/static/img/about/me.png"></a></li>
 
-				<li><a href="/index.html"><span class="glyphicon glyphicon-home"></span></i> 首页 </a></li>
+				<li><a href="/category/index.html"><span class="glyphicon glyphicon-home"></span></i> 首页 </a></li>
 				
-				<li><a href="/coding.html"><span class="glyphicon glyphicon-road"></span></i>  编程之路 </a></li>
+				<li><a href="/category/coding.html"><span class="glyphicon glyphicon-road"></span></i>  编程之路 </a></li>
 
-				<li><a href="/myshare.html"><span class="glyphicon glyphicon-gift"></span>  我的分享 </a></li>
+				<li><a href="/category/myshare.html"><span class="glyphicon glyphicon-gift"></span>  我的分享 </a></li>
 				
-				<li><a href="/diary.html"><span class="glyphicon glyphicon-calendar"></span></i>  生活日志 </a></li>
+				<li><a href="/category/diary.html"><span class="glyphicon glyphicon-calendar"></span></i>  生活日志 </a></li>
 				
-				<li><a href="/book-movie-list/booklist.html"><span class="glyphicon glyphicon-inbox"></span></i>  书单/影单  </a></li>
+				<li><a href="/category/book-movie-list/booklist.html"><span class="glyphicon glyphicon-inbox"></span></i>  书单/影单  </a></li>
 
-				<li><a href="/about.html"><span class="glyphicon glyphicon-sunglasses"></span></i>  关于博主 </a></li>
+				<li><a href="/category/about.html"><span class="glyphicon glyphicon-sunglasses"></span></i>  关于博主 </a></li>
 
-				<li><a href="/friend.html"><span class="glyphicon glyphicon-send"></span></i> 我的朋友 </a></li>
+				<li><a href="/category/friend.html"><span class="glyphicon glyphicon-send"></span></i> 我的朋友 </a></li>
 
-				<li><img class="img-rounded" height="100px" width="100%" src="/img/about/footer.png"></li>
+				<li><img class="img-rounded" height="100px" width="100%" src="/static/img/about/footer.png"></li>
 
 			</ul>
 			<button id="btnClose" class="btn-close"></button>
@@ -555,6 +542,37 @@
 		</nav>
 
 
+		<footer class="footer">
+	<div class="row">
+		<div class="pull-left">
+			<a class="avatar" href="/" title="yinwoods">yinwoods</a>
+			<p class="copyright">2015 ALL RIGHTS RESERVED</p>
+		</div>
+		
+		<div class="pull-center">
+			<ul class="list-inline">
+				<li>
+					<a href="http://weibo.com/yinwoods">
+						<img src="/static/img/footer/weibo.png">
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/yinwoods">
+						<img src="/static/img/footer/github.png">
+					</a>
+				</li>
+				<li>
+					<a href="/feed.xml">
+						<img src="/static/img/footer/rss.png">
+					</a>
+				</li>
+			</ul>
+			<br/>
+			<h4>Powered by <a target="_blank" href="https://github.com/yinwoods">github</a> && <a target="_blank" href="http://jekyllrb.com/">jekyll</a></h4>
+		</div>
+
+	</div>
+</footer>
 		<div id="totop">
     			<a title="返回顶部">返回顶部</a>
 		</div>
@@ -564,24 +582,14 @@
 	<!--[if lte IE 8]>
 		<script type="text/javascript" src="/js/fuckie.js"></script>
 	<![endif]-->
-	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/js/classie.js"></script>
+	<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/js/classie.js"></script>
 	<!-- snap.svg -->
-	<script type="text/javascript" src="/js/snap.svg-min.js"></script>
-	<script type="text/javascript" src="/js/SVGButton.js"></script>
+	<script type="text/javascript" src="/static/js/snap.svg-min.js"></script>
+	<script type="text/javascript" src="/static/js/SVGButton.js"></script>
 	<!-- menu -->
-	<script type="text/javascript" src="/js/menuTriggle.js"></script>
-	<script type="text/javascript" src="/js/totop.js"></script>
-	<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?eefd87bbdb3a5e21ecb7f319769dd8b9";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
+	<script type="text/javascript" src="/static/js/menuTriggle.js"></script>
+	<script type="text/javascript" src="/static/js/totop.js"></script>
 </body>
 </html>
