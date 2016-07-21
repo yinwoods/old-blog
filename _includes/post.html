@@ -1,6 +1,6 @@
 <header class="post-header">
         <div class="hd-img">
-                <img src="http://7xlh6u.com1.z0.glb.clouddn.com/bg{{ page.img }}.jpg" alt="背景图片">
+                <img src="{{ site.BASE_PATH }}/static/img/about/about_me.jpg" alt="背景图片">
         </div>
 
         <div class="title">
@@ -13,19 +13,6 @@
 	{% if page.subline %}
 		<p class="subline">{{ page.subline}}</p>
 	{% endif %}
-	<p>作者: <a target="_blank" href="{{ site.SITE_PATH }}/"><strong>{{ site.author.name }}</strong></a>&nbsp;&nbsp;&nbsp;
-		分类: <a target="_blank" href="{{ site.SITE_PATH }}/{{ page.categories }}.html"><strong>{{ page.categories }}</strong></a>&nbsp;&nbsp;&nbsp;
-		日期: <strong>{{ page.date | date: "%Y" }}年{{ page.date | date: "%m" }}月{{ page.date | date: "%d" }}日</strong>&nbsp;&nbsp;&nbsp;
-         <ul class="tags post-tags">
-            {{ cnt = 0 }}
-            {% for tmp in site.tags %}
-            {% for tag in page.tags %}
-                {% if tag == tmp[0] %}
-                    <li><a href="{{ site.BASE_PATH  }}/tags/{{ tag  }}/index.html">{{ tmp[0] }}<span>{{ tmp[1].size }}</span></a></li>
-                {% endif %}
-            {% endfor %}
-            {% endfor %}
-            </ul></p>
 </div>
     
 
