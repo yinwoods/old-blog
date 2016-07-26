@@ -1,6 +1,6 @@
 <header class="post-header">
         <div class="hd-img">
-            <img src="http://7xlh6u.com1.z0.glb.clouddn.com/bg{{ page.img }}.jpg" alt="背景图片">
+            <img src="{{ site.BASE_PATH }}/static/img/about/about_me.jpg" alt="背景图片">
         </div>
 
         <div class="title">
@@ -22,14 +22,6 @@
             {{ content }}
         </div>
         <hr class="post-end-left"><p class="post-end">结束</p><hr class="post-end-right"/>
-        <div class="post-footer">
-            {% if page.previous %}
-            <p class="post-footer-previous">上一篇 ： <a class="entry-more" href="{{ page.previous.url }}">{{ page.previous.title }}</a></p>
-            {% endif %}
-            {% if page.next %}
-            <p class="post-footer-next">下一篇 ： <a class="entry-more" href="{{ page.next.url }}">{{ page.next.title }}</a></p>
-            {% endif %}
-        </div>
     <!-- JiaThis Button BEGIN -->
     <div class="jiathis_style">
         <span style="font-family:sans-serif; color:#009966">分享到：</span>
