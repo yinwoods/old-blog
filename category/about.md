@@ -44,9 +44,9 @@ subline: 那个有理想的青年是多么轻松和自由
 
 对博文/博客有改进意见，欢迎通过以下方式联系我：
 
-- E-mail: yinwoods@gmail.com
+- E-mail: `yinwoods[#]gmail.com`(使用@替换[#])
 
-- QQ: 1252589309
+- QQ: `1252589309`
 
 ### 支持博主
 
