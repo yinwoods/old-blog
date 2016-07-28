@@ -10,7 +10,7 @@ img: 52
 
 小伙伴[崔崔](http://blog.csdn.net/cumtcyf)今天要爬取[北航ACT实验室的车联网](http://ucar.act.buaa.edu.cn/users/sign_in)的信息，已有账号密码。模拟登录使用的是python的requests.session().post(),通过chrome的network观察post的表单数据，发现有一个`authenticity_token`，这个数据是每次刷网页动态生成的，存放在页面header的meta标签中，问题不大，直接用beautifulsoup获取就可以了。
 
-问题出现在post之后，总是得到HTTP 422错误。通过查询了解到这里的422错误是指验证错误，可是token是即时获取的，其他信息也是完全按照表单要求填写，并且对提交数据进行了urlencode并使用`gbk`encode。然后通过神奇的谷歌居然搜到了相同问题的博客。。。连代码都写得和我的惊人的相似。。。我都开始怀疑是不是和我爬的同一个网站了。。。
+问题出现在post之后，总是得到HTTP 422错误。通过查询了解到这里的422错误是指验证错误，可是token是即时获取的，其他信息也是完全按照表单要求填写，并且对提交数据进行了urlencode并使用`gbk`encode，实在是想不通原因。然后通过神奇的谷歌居然搜到了相同问题的博客。。。连代码都写得和我的惊人的相似。。。我都开始怀疑是不是和我爬的同一个网站了。。。
 
 正确的爬取姿势是带着cookie验证，我猜这里的`authenticity_token`与cookie是相关联的，因为爬取时没带上cookie，所以无法验证成功。如果想要带上cookie只需使用`requests.Session()`来post即可。
 
