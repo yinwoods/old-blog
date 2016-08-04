@@ -1,0 +1,13 @@
+month: 七月
+books:
+  - book-name: learn c the hard way
+    book-poster: 39
+
+  - book-name: 操作系统思考
+    book-poster: 38
+
+  - book-name: 论持久战
+    book-poster: 37
+
+  - book-name: 行者无疆
+    book-poster: 36

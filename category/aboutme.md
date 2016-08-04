@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: aboutme
 title: 关于我
 subline: 那个有理想的青年是多么轻松和自由
 ---
@@ -34,13 +34,14 @@ subline: 那个有理想的青年是多么轻松和自由
 
 社交中多以id:`yinwoods`示人。
 
+
 下面是我发言相对活跃的一些小站：
 
-- Github: [yinwoods' github](https://github.com/yinwoods)
+- <i class="fa fa-github" style="color:#673AB7"></i> Github: [yinwoods' github](https://github.com/yinwoods)
 
-- weibo: [yinwoods' weibo](http://weibo.com/yinwoods)
+- <i class="fa fa-weibo" style="color:#F44336"></i> Weibo : [yinwoods' weibo](http://weibo.com/yinwoods)
 
-- linkedin: [yinwoods' linkedin](https://www.linkedin.com/in/yinwoods)
+- <i class="fa fa-linkedin" style="color:#536DFE"></i> Linkedin : [yinwoods' linkedin](https://www.linkedin.com/in/yinwoods)
 
 ### 博客
 

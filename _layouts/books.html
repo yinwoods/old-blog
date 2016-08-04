@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh" ng-app="movies">
+{% include head.html %}
+<link rel="stylesheet" type="text/css" href="{{ site.BASE_PATH }}/static/css/demo.css">
+<link rel="stylesheet" type="text/css" href="{{ site.BASE_PATH }}/static/css/default.css">
+<body>
+
+	<div class="container">
+		<header class="htmleaf-header">
+			<h1> 书单 <span>读过的书</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon" href="/index.html"><i class="fa fa-home fw"></i>博客</a>
+				<a class="htmleaf-icon" href="movies.html"><i class="fa fa-arrow-circle-right fw"></i> 影单</a>
+			</div>
+			<h1 class="book-movie-title"><img src="{{ site.BASE_PATH }}/static/img/bookmovies/booklist.png"></h1>
+		</header>
+		<div class="content bgcolor-1 gallery-wrapper">
+			<section id="content" class="gallery-container">
+	            <div class="span-30 column rounded">
+
+	            
+	            	{% assign sortedBooksByMonth = ((site.data.booksByMonth | sort) %}
+	            	{% for monthBooks in sortedBooksByMonth reversed %}
+					
+					{% assign month = monthBooks[1].month %}
+					{% assign books = monthBooks[1].books %}
+					
+					{% if books | size > 0 %}
+
+					<div class="span-30 column rounded">
+						<h3>
+							<span class="month">{{ month }}</span> 读书 | <span class="watch-movies-num">{ {{ books | size }} }</span>本
+						</h3>
+						<hr class="sep">
+					</div>
+					
+					    {% for book in books %}
+						    <div class="span-6 column rotated">
+						    	<a id="image{{ book.book-poster }}" class="cms-editable polaroid" rel="lightbox"> <img src="http://7xlh6a.com1.z0.glb.clouddn.com/b{{ book.book-poster }}.jpg"/><div class="mark">{{ book.book-name }}</div></a>
+							</div>
+						{% endfor %}
+					{% endif %}
+					{% endfor %}
+				</div>
+	    	</section>
+		</div>
+	</div>
+	
+	<footer class="htmleaf-footer">
+		<p class="htmleaf-small center">电影海报封面来自于<a href="https://www.google.com/imghp?hl=zh-CN&tab=wi" target="_blank">谷歌图片</a><br/>图片存储于<a href="http://www.qiniu.com/" target="_blank">七牛免费云空间</a>.</p>
+	</footer>
+
+	<div id="totop">
+		<a title="返回顶部">返回顶部</a>
+	</div>
+	
+	<script type='text/javascript' src='{{ site.BASE_PATH }}/static/js/jquery.min.js'></script>
+	<script type='text/javascript' src='{{ site.BASE_PATH }}/static/js/totop.js'></script>
+</body>
+</html>

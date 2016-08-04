@@ -48,7 +48,7 @@ a:hover,a:focus{color:#74777b;};
 .htmleaf-icon span {display: none;}
 .htmleaf-icon:before {margin: 0 5px;text-transform: none;font-weight: normal;font-style: normal;font-variant: normal;font-family: 'icomoon';line-height: 1;speak: none;-webkit-font-smoothing: antialiased;}
 /* footer */
-.htmleaf-footer{width: 100%;padding-top: 10px;}
+.htmleaf-footer{ margin-top: 20px; display:inline-block; left:0px; bottom:0px; height:40px; width: 100%;}
 .htmleaf-small{/*font-family: '微软雅黑';*/font-size: 0.8em;}
 .center{text-align: center;}
 /* icomoon */
