@@ -1,0 +1,10 @@
+month: 十一月
+books:
+  - book-name: Effective C++
+    book-poster: 20
+
+  - book-name: 丰臣秀吉
+    book-poster: 19
+
+  - book-name: 解忧杂货店
+    book-poster: 18

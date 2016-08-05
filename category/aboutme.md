@@ -37,11 +37,11 @@ subline: 那个有理想的青年是多么轻松和自由
 
 下面是我发言相对活跃的一些小站：
 
-- <i class="fa fa-github" style="color:#673AB7"></i> Github: [yinwoods' github](https://github.com/yinwoods)
+- <i class="fa fa-github" style="color:#673AB7"></i> : [yinwoods' github](https://github.com/yinwoods)
 
-- <i class="fa fa-weibo" style="color:#F44336"></i> Weibo : [yinwoods' weibo](http://weibo.com/yinwoods)
+- <i class="fa fa-weibo" style="color:#F44336"></i>  : [yinwoods' weibo](http://weibo.com/yinwoods)
 
-- <i class="fa fa-linkedin" style="color:#536DFE"></i> Linkedin : [yinwoods' linkedin](https://www.linkedin.com/in/yinwoods)
+- <i class="fa fa-linkedin" style="color:#536DFE"></i>  : [yinwoods' linkedin](https://www.linkedin.com/in/yinwoods)
 
 ### 博客
 

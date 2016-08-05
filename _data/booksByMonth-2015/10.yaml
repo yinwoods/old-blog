@@ -1,0 +1,19 @@
+month: 十月
+books:
+  - book-name: 希特勒传
+    book-poster: 17
+
+  - book-name: 计算机科学导论
+    book-poster: 16
+
+  - book-name: 小姨多鹤
+    book-poster: 15
+
+  - book-name: 信
+    book-poster: 14
+
+  - book-name: 三体
+    book-poster: 13
+
+  - book-name: 菊与刀
+    book-poster: 12 

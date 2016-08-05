@@ -1,0 +1,22 @@
+month: 十二月
+books:
+  - book-name: Git Community Book
+    book-poster: 27
+
+  - book-name: 枯枝败叶
+    book-poster: 26
+
+  - book-name: 追风筝的人
+    book-poster: 25
+
+  - book-name: 日本武士史
+    book-poster: 24
+
+  - book-name: 走出帝制
+    book-poster: 23
+
+  - book-name: 清华园日记
+    book-poster: 22
+
+  - book-name: 牛棚杂忆
+    book-poster: 21
