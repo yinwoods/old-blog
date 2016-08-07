@@ -1,4 +1,7 @@
 month: 八月
 books:
+  - book-name: Intermediate Python
+    book-poster: 41
+
   - book-name: Web Scraping with Pyhotn
     book-poster: 40
