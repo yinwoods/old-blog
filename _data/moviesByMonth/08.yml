@@ -1,5 +1,8 @@
 month: 八月
 movies:
+  - movie-name: 曾经
+    movie-poster: 179
+
   - movie-name: 偷拐抢骗
     movie-poster: 178
 
