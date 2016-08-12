@@ -1,5 +1,8 @@
 month: 八月
 books:
+  - book-name: Python Cookbook 3rd Edition
+    book-poster: 43
+
   - book-name: Code Like a Pythonista Idiomatic Python
     book-poster: 42
 
