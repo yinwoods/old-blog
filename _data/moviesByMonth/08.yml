@@ -1,5 +1,11 @@
 month: 八月
 movies:
+  - movie-name: 深海之歌
+    movie-poster: 181
+
+  - movie-name: 荒岛余生
+    movie-poster: 180
+
   - movie-name: 曾经
     movie-poster: 179
 
