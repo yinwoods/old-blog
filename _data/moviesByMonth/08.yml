@@ -1,5 +1,8 @@
 month: 八月
 movies:
+  - movie-name: 追击者
+    movie-poster: 182
+
   - movie-name: 深海之歌
     movie-poster: 181
 
