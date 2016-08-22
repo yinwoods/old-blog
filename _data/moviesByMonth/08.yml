@@ -1,5 +1,11 @@
 month: 八月
 movies:
+  - movie-name: 千钧一发
+    movie-poster: 184
+
+  - movie-name: 变脸
+    movie-poster: 183
+
   - movie-name: 追击者
     movie-poster: 182
 
