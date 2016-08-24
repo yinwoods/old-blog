@@ -1,5 +1,8 @@
 month: 八月
 books:
+  - book-name: Fluent Python
+    book-poster: 44
+
   - book-name: Python Cookbook 3rd Edition
     book-poster: 43
 
