@@ -1,5 +1,8 @@
 month: 八月
 movies:
+  - movie-name: 角斗士
+    movie-poster: 188
+
   - movie-name: 谍影重重3
     movie-poster: 187
 
