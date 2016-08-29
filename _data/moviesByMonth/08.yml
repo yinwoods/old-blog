@@ -1,5 +1,11 @@
 month: 八月
 movies:
+  - movie-name: 寿司之神
+    movie-poster: 190
+
+  - movie-name: 末路狂花
+    movie-poster: 189
+
   - movie-name: 角斗士
     movie-poster: 188
 
