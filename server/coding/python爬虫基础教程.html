@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<link rel="dns-prefetch" href="//hm.baidu.com"/>
+	<link rel="dns-prefetch" href="//disqus.com"/>
+	<link rel="dns-prefetch" href="//a.disquscdn.com"/>
+
+	<meta name="Keywords" content="yinwoods,殷成涛,个人博客,郑州大学,python,爬虫"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	
+	<meta name="author" content="yinwoods">
+
+	<link rel="alternate" type="application/rss+xml" title="rss订阅" href="/feed.xml">
+	<link rel="shortcut icon" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-24.png" sizes="24x24" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-32.png" sizes="32x32" />
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+
+    <title>python爬虫基础教程 | yinwoods</title>
+  
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+		e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+		})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+		_st('install','csxq-8xzb6tiaQ1dQaGs','2.0.0');
+	</script>
+</head>
+
+
+<body>
+	<div id="container" class="container">
+		<div id="content" class="content">
+			<nav class="navbar">
+	<div class="pull-left">
+		<button id="btnMenu" type="button" class="btn btn-default btn-sm btn-menu">
+			<i class="fa fa-bars"></i>	菜 单
+		</button>
+	</div>
+	<ul class="pull-center">
+		<li class="active"><a href="/">博客</a></li>
+        <li><a href="/category/aboutme.html">关于我</a></li>
+	</ul>
+	<div class="pull-right">
+		<button type="button" class="btn btn-default btn-sm btn-list">
+			<a href="/category/books.html">
+				<i class="fa fa-book fa-fw"></i>书单/影单  
+			</a>
+		</button>
+	</div>
+</nav>
+
+			<header class="post-header">
+        <div class="hd-img">
+            <img src="http://7xlh6u.com1.z0.glb.clouddn.com/bg25.jpg" alt="背景图片">
+        </div>
+
+        <div class="title">
+           <h1>python爬虫基础教程</h1>
+        </div>
+</header>
+<button id="btnArrow" class="btn-arrow" data-info="点击显示文章"><i class="icon icon-arrow-down">&#xe619;</i></button>
+<div class="post-title">
+	<h1>python爬虫基础教程</h1>
+	
+    <p>作者: <a target="_blank" href="http://blog.yinwoods.com/"><strong>yinwoods</strong></a>&nbsp;&nbsp;&nbsp;
+        分类: <a target="_blank" href="http://blog.yinwoods.com/coding.html"><strong>coding</strong></a>&nbsp;&nbsp;&nbsp;
+        日期: <strong>2015年09月03日</strong>&nbsp;&nbsp;&nbsp;
+         <ul class="tags post-tags">
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+                    <li><a href="/tags/爬虫/index.html">爬虫<span>8</span></a></li>
+                
+            
+            
+            
+                
+                    <li><a href="/tags/python/index.html">python<span>15</span></a></li>
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+        </ul>
+    </p>           
+</div>
+    
+
+    <article class="post-content">
+        <hr class="post-end-left"><p class="post-end">开始</p><hr class="post-end-right"/>
+        <div>
+            <h3 id="section">爬虫</h3>
+
+<p>首先上爬虫的定义：<code>网络爬虫是一种自动获取网页内容的程序，是搜索引擎的重要组成部分。</code></p>
+
+<p>嗯，按照我的理解就是爬虫程序就是能够提取网页中信息的程序</p>
+
+<p>我也是这两天才开始学爬虫，这篇教程参考了网上的很多资源，希望能给有需要的人以帮助。</p>
+
+<p>在各位看官开始学习之前想向大家介绍几篇文章，请大家认真阅读，这样上手<code>python</code>爬虫就会事半功倍了。</p>
+
+<blockquote>
+  <p>1、<a href="http://www.zhihu.com/question/20899988">如何入门Python爬虫 — from 知乎</a></p>
+</blockquote>
+
+<blockquote>
+  <p>2、<a href="http://www.zhihu.com/question/21358581">你是如何开始能写python爬虫？ — from 知乎</a></p>
+</blockquote>
+
+<blockquote>
+  <p>3、<a href="http://blog.jobbole.com/77821/">零基础自学用Python 3开发网络爬虫</a></p>
+</blockquote>
+
+<p>我很大程度上是按照上面介绍的第三篇博客入门<code>python</code>爬虫的。</p>
+
+<h3 id="python">Python介绍</h3>
+
+<p><code>Python</code>（英国发音：<code>/ˈpaɪθən/</code> 美国发音：<code>/ˈpaɪθɑːn/</code>），是一种面向对象、直译式的计算机程序语言，具有近二十年的发展历史。它包含了一组功能完备的标准库，能够轻松完成很多常见的任务。它的语法简单，与其它大多数程序设计语言使用大括号不一样，它使用缩进来定义语句块。<a href="https://zh.wikipedia.org/wiki/Python">— 来自于维基百科</a></p>
+
+<p>另外该篇博客适用于有高等语法基础（不需要必须是<code>python</code>）的朋友，没有语法基础的朋友可以去<a href="http://www.imooc.com/learn/177">慕课网</a>或<a href="https://www.codecademy.com/en/tracks/python">codecademy</a>学习下</p>
+
+<h3 id="section-1">工欲善其事必先利其器</h3>
+
+<p>在学习<code>python</code>的过程中，不得不面临<code>python 2.+</code>或<code>python 3.+</code>的选择，个人觉得既然是出于学习的目的，当然要学习新知识，因此我选择了<code>python 3.4</code>。</p>
+
+<p>个人使用体会：<code>python3.+</code>在<code>python2.+</code>的基础上对包又进行了一些整合，语法略有些变化，可能因为现在我涉及的层面还比较浅，并未感觉两个版本之间有太大的不同。</p>
+
+<p>可以通过<a href="https://www.python.org/">官网</a>安装<code>python 3.4</code>；附<a href="https://www.python.org/"><code>python</code>官方文档</a></p>
+
+<p>我们现在的目标是实现一个可以从一个链接开始爬取所有相关链接的爬虫</p>
+
+<p>思路：</p>
+
+<blockquote>
+  <ul>
+    <li>1、从给定链接开始，维持一个待爬取队列，以及一个已访问链接集合</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>2、每次从队列中弹出一条链接并打开，对于该链接对应页面，用正则表达式匹配页面内所有的链接，</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>3、对这些链接进行判断，如果已经被爬虫爬过，则跳过，否则加入待爬取队列</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>4、重复2,3步，直到队列为空，说明所有链接均已被爬取</li>
+  </ul>
+</blockquote>
+
+<p>话不多说，下面通过8个程序来学习<code>python</code>爬虫吧</p>
+
+<h4 id="python-11">python教程-1.1</h4>
+
+<p>python中使用<code>#</code>注释，多行注释使用快捷键<code>Alt+3</code>，消除多行注释使用快捷键<code>Alt+4</code></p>
+
+<p>下面这个小程序的功能是打开一个网页并读取网页源码</p>
+
+<div>
+  <pre><code class="python">import urllib
+import urllib.request
+
+url = &quot;http://baidu.com&quot;
+
+html = urllib.request.urlopen(url)	#打开url链接
+
+html = html.read().decode('utf-8')	#以utf-8编码格式对所读取页面进行解码
+
+print(html)		#打印网页源码</code></pre>
+</div>
+
+<h4 id="python-12">python教程-1.2</h4>
+
+<p>使用下面这个程序实现python中我们需要的队列
+deque的相关内容可参见C++或java中deque的定义</p>
+
+<div>
+  <pre><code class="python">#利用deque模拟Queue
+from collections import deque
+
+queue = deque([&quot;Eric&quot;, &quot;John&quot;, &quot;Michael&quot;])
+queue.append(&quot;Terry&quot;)
+queue.append(&quot;Graham&quot;)
+print(queue.popleft())
+print(queue.popleft())
+print(queue)</code></pre>
+</div>
+
+<h4 id="python-13">python教程-1.3</h4>
+
+<p>下面这个小程序是为了演示<code>set</code>功能，类似于数学中集合的定义，每个元素具有唯一性。</p>
+
+<div>
+  <pre><code class="python">#演示set功能
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+print(basket)
+
+print('orange' in basket)
+
+print('crabgrass' in basket)
+
+a = set('abracadabra')
+b = set('alacazam')
+
+print(a)
+print(a-b)
+print(a|b)
+print(a&amp;b)
+print(a^b)</code></pre>
+</div>
+
+<h4 id="python-14">python教程-1.4</h4>
+
+<p>程序演示python中正则表达式应用</p>
+
+<p><code>re.match(pattern, string, flags=0)</code>实现按照<code>pattern</code>的模式匹配<code>string</code>，<code>flags</code>是附加标志位；</p>
+
+<p>同理<code>re.search(pattern, string, flags=0)</code>实现搜索功能 ；</p>
+
+<p><code>re.sub(pattern, string, flags=0)</code>实现替换功能。</p>
+
+<p><code>re.match()</code>与<code>re.search()</code>区别在于</p>
+
+<blockquote>
+  <ul>
+    <li>如果<code>re.match()</code>在匹配字符串开始的过程中失败就会终止匹配</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code>re.search()</code>则会从字符串开始到结尾尝试匹配</li>
+  </ul>
+</blockquote>
+
+<p>有不懂或者遗忘正则表达式的朋友请点这里：</p>
+
+<blockquote>
+  <ul>
+    <li>1、<a href="http://blog.yinwoods.com/coding/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0.html">正则表达式教程</a></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>2、<a href="http://blog.jobbole.com/75188/"><code>python</code>正则表达式学习</a></li>
+  </ul>
+</blockquote>
+
+<p>flag含义:</p>
+
+<blockquote>
+  <p>1、 <code>re.I</code> 大小写不敏感</p>
+</blockquote>
+
+<blockquote>
+  <p>2、 <code>re.L</code> 本地化识别匹配</p>
+</blockquote>
+
+<blockquote>
+  <p>3、 <code>re.M</code> 多行匹配</p>
+</blockquote>
+
+<blockquote>
+  <p>4、 <code>re.S</code> 使.能够匹配换行符</p>
+</blockquote>
+
+<blockquote>
+  <p>5、 <code>re.U</code> 根据Unicode解析字符</p>
+</blockquote>
+
+<p>另外也可以使用<code>re.compile(pattern).findall(string)</code>来查找所有匹配，会返回所有匹配结果，并且结果保存在<code>列表</code>中（后面会有具体的栗子）</p>
+
+<div>
+  <pre><code class="python">#re.match(pattern, string, flags=0)
+import re
+
+line = &quot;Cats are smarter than dogs&quot;
+
+matchObj = re.match(r'(.*) are (.*?) .*', line, re.M|re.I)
+
+if matchObj:
+    print(matchObj.group())
+    print(matchObj.group(1))
+    print(matchObj.group(2))
+else:
+    print(&quot;No match!!&quot;)
+
+#演示python中正则表达式搜索应用
+#re.search(pattern, string, flags=0)
+matchObj = re.search(r'(.*) are (.*?) .*', line, re.M|re.I)
+if matchObj:
+    print(matchObj.group())
+    print(matchObj.group(1))
+    print(matchObj.group(2))
+else:
+    print(&quot;No match!!&quot;)
+
+#演示python中正则表达式替换应用
+#re.sub(pattern, repl, string, max=0)
+phone = &quot;2004-959-559 # This is Phone Number&quot;
+
+num = re.sub(r'#.*$', &quot;&quot;, phone)
+print(&quot;Phone Num : &quot;, num)
+
+num = re.sub(r'\D', &quot;&quot;, phone)
+print(&quot;Phone Num : &quot;, num)</code></pre>
+</div>
+
+<h4 id="python-15">python教程-1.5</h4>
+
+<p>目标的实现：下面的程序即实现了我们开始要求的功能，当然想把所有链接都爬取是需要时间的。。。当你觉得不需要再爬的时候可以中断程序</p>
+
+<div>
+  <pre><code class="python">#简单爬虫
+import re
+import urllib.request
+import urllib
+
+from collections import deque
+
+queue = deque()
+visited = set()
+
+url = &quot;http://www.baidu.com&quot;
+
+queue.append(url)
+cnt = 0
+
+while queue:	#当队列不为空
+    url = queue.popleft()
+    visited |= {url}	#加入visited集合中
+    print('I\'v got :' + str(cnt))
+    print('I\'m getting ' + url)
+    cnt += 1;
+    urlop = urllib.request.urlopen(url)
+    if 'html' not in urlop.getheader('Content-Type'):	#避免爬取非网页url的链接，比如文件地址
+        continue
+    try:
+        data = urlop.read().decode('utf-8')	#过滤掉不能正确读取的页面，避免程序异常中断
+    except:
+        continue
+
+    linkre = re.compile('href=\&quot;(.+?)\&quot;')
+    for x in linkre.findall(data):
+        if 'http' in x and x not in visited:	#找出匹配后未访问过的链接
+            queue.append(x)
+            print('appending ---&gt; ' + x)</code></pre>
+</div>
+
+<p>以上就是该篇博客所有内容了，如有未尽兴的朋友，请移步：</p>
+
+<blockquote>
+  <p>1、<a href="http://blog.yinwoods.com/coding/python%E5%AE%9E%E6%88%98%E4%B9%8B%E7%88%AC%E5%8F%96%E7%BD%91%E7%AB%99%E5%9B%BE%E7%89%87%E5%88%B0%E6%9C%AC%E5%9C%B0.html">python实战之爬取网站图片到本地</a></p>
+</blockquote>
+
+<blockquote>
+  <p>2、<a href="http://blog.yinwoods.com/coding/python%E5%AE%9E%E6%88%98%E4%B9%8B%E9%83%91%E5%B7%9E%E5%A4%A7%E5%AD%A6GPA%E8%AE%A1%E7%AE%97%E5%99%A8.html">python实战之郑州大学GPA计算器</a></p>
+</blockquote>
+
+        </div>
+        <hr class="post-end-left"><p class="post-end">结束</p><hr class="post-end-right"/>
+        <div class="post-footer">
+            
+            <p class="post-footer-previous">上一篇 ： <a class="entry-more" href="/coding/python%E5%AE%9E%E6%88%98%E4%B9%8B%E7%88%AC%E5%8F%96%E7%BD%91%E7%AB%99%E5%9B%BE%E7%89%87%E5%88%B0%E6%9C%AC%E5%9C%B0.html">python实战之爬取网站图片到本地</a></p>
+            
+            
+            <p class="post-footer-next">下一篇 ： <a class="entry-more" href="/coding/python%E5%AE%9E%E6%88%98%E4%B9%8B%E9%83%91%E5%B7%9E%E5%A4%A7%E5%AD%A6GPA%E8%AE%A1%E7%AE%97%E5%99%A8.html">python实战之郑州大学GPA计算器</a></p>
+            
+        </div>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span style="font-family:sans-serif; color:#009966">分享到：</span>
+        <a class="jiathis_button_weixin share_button" href="#"></a>
+        <a class="jiathis_button_tsina share_button" href="#"></a>
+        <a class="jiathis_button_qzone share_button" href="#"></a>
+        <a class="jiathis_button_evernote share_button" href="#"></a>
+        <a class="jiathis_button_ydnote share_button" href="#"></a>
+        <a class="jiathis_button_pocket share_button" href="#"></a>
+        <a class="jiathis_button_douban share_button" href="#"></a>
+        <a class="jiathis_button_renren share_button" href="#"></a>
+        <a class="jiathis_button_fb share_button" href="#"></a>
+        <a class="jiathis_button_linkedin share_button" href="#"></a>
+        <a class="jiathis_button_googleplus share_button" href="#"></a>
+        <a class="jiathis_button_tumblr share_button" href="#"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/js/totop.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<script type="text/javascript" src="/static/js/prism.js" charset="utf-8"></script>
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'yinwoods'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+
+
+		</div>
+
+				<nav id="menu" class="menu">
+			<ul>
+				<li class="logo"><a href="/category/aboutme.html"><img  class="img-circle" height="100px" width="100px" src="/static/img/about/me.jpg"></a></li>
+
+				<li><a href="/category/index.html"><i class="fa fa-home fa-fw"></i>首页</a></li>
+				
+				<li><a href="/category/coding.html"><i class="fa fa-road fa-fw"></i>编程之路</a></li>
+
+				<li><a href="/category/myshare.html"><i class="fa fa-share-alt fa-fw"></i>我的分享</a></li>
+				
+				<li><a href="/category/diary.html"><i class="fa fa-calculator fa-fw"></i>生活日志</a></li>
+				
+				<li><a href="/category/book-movie-list/booklist.html"><i class="fa fa-book fa-fw"></i>书单/影单</a></li>
+
+				<li><a href="/category/aboutme.html"><i class="fa fa-male fa-fw"></i>关于博主</a></li>
+
+				<li><a href="/category/friend.html"><i class="fa fa-send fa-fw"></i>我的朋友</a></li>
+
+				<li><img class="img-rounded" height="100px" width="100%" src="/static/img/about/footer.png"></li>
+
+			</ul>
+			<button id="btnClose" class="btn-close"></button>
+
+			<div id="SVGMenu" class="svg-menu" 
+                data-menu-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z" 
+                data-menu-close="M-6,0h101c0,0-90,153.603-90,396.167C2.167,627.579,100,800,100,800H-1V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+					<path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+				</svg>
+			</div>
+
+		</nav>
+
+
+		<footer class="footer">
+	<div class="row">
+		<div class="pull-left">
+			<a class="avatar" href="/" title="yinwoods">yinwoods</a>
+			<p class="copyright">2015 ALL RIGHTS RESERVED</p>
+		</div>
+		
+		<div class="pull-center">
+			<ul class="list-inline">
+				<li>
+					<a href="http://weibo.com/yinwoods">
+						<img src="/static/img/footer/weibo.png">
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/yinwoods">
+						<img src="/static/img/footer/github.png">
+					</a>
+				</li>
+				<li>
+					<a href="/feed.xml">
+						<img src="/static/img/footer/rss.png">
+					</a>
+				</li>
+			</ul>
+			<br/>
+			<h4>Powered by <a target="_blank" href="https://github.com/yinwoods">github</a> && <a target="_blank" href="http://jekyllrb.com/">jekyll</a></h4>
+		</div>
+
+	</div>
+</footer>
+		<div id="totop">
+			<a title="返回顶部">返回顶部</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/static/js/classie.js"></script>
+
+	<script type="text/javascript" src="/static/js/snap.svg-min.js"></script>
+	<script type="text/javascript" src="/static/js/menuTriggle.js"></script>
+	<script type="text/javascript" src="/static/js/SVGButton.js"></script>
+
+	<script type="text/javascript" src="/static/js/postTriggle.js"></script>
+
+	
+	<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/totop.js"></script>
+	<script type="text/javascript">
+		var content = document.querySelector('.content'),
+			footer = document.querySelector('.footer'),
+			footT  = footer.offsetTop,
+			footH  = footer.offsetHeight,
+			winH   = window.innerHeight,
+			post   = document.querySelectorAll('p');
+
+		if (footT - footH + 100 < winH) {
+			content.style.height = '100%';
+		};
+
+		for (var i = 0; i < post.length; i++) {
+			if (post.item(i).querySelector('img')) {
+				post.item(i).style.textIndent = 0;
+			};
+		};
+
+	</script>
+</body>
+</html>

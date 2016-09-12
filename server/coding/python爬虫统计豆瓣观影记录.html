@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<link rel="dns-prefetch" href="//hm.baidu.com"/>
+	<link rel="dns-prefetch" href="//disqus.com"/>
+	<link rel="dns-prefetch" href="//a.disquscdn.com"/>
+
+	<meta name="Keywords" content="yinwoods,殷成涛,个人博客,郑州大学,python,爬虫"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	
+	<meta name="author" content="yinwoods">
+
+	<link rel="alternate" type="application/rss+xml" title="rss订阅" href="/feed.xml">
+	<link rel="shortcut icon" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-24.png" sizes="24x24" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-32.png" sizes="32x32" />
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+
+    <title>python爬虫统计豆瓣观影记录 | yinwoods</title>
+  
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+		e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+		})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+		_st('install','csxq-8xzb6tiaQ1dQaGs','2.0.0');
+	</script>
+</head>
+
+
+<body>
+	<div id="container" class="container">
+		<div id="content" class="content">
+			<nav class="navbar">
+	<div class="pull-left">
+		<button id="btnMenu" type="button" class="btn btn-default btn-sm btn-menu">
+			<i class="fa fa-bars"></i>	菜 单
+		</button>
+	</div>
+	<ul class="pull-center">
+		<li class="active"><a href="/">博客</a></li>
+        <li><a href="/category/aboutme.html">关于我</a></li>
+	</ul>
+	<div class="pull-right">
+		<button type="button" class="btn btn-default btn-sm btn-list">
+			<a href="/category/books.html">
+				<i class="fa fa-book fa-fw"></i>书单/影单  
+			</a>
+		</button>
+	</div>
+</nav>
+
+			<header class="post-header">
+        <div class="hd-img">
+            <img src="http://7xlh6u.com1.z0.glb.clouddn.com/bg50.jpg" alt="背景图片">
+        </div>
+
+        <div class="title">
+           <h1>python爬虫统计豆瓣观影记录</h1>
+        </div>
+</header>
+<button id="btnArrow" class="btn-arrow" data-info="点击显示文章"><i class="icon icon-arrow-down">&#xe619;</i></button>
+<div class="post-title">
+	<h1>python爬虫统计豆瓣观影记录</h1>
+	
+    <p>作者: <a target="_blank" href="http://blog.yinwoods.com/"><strong>yinwoods</strong></a>&nbsp;&nbsp;&nbsp;
+        分类: <a target="_blank" href="http://blog.yinwoods.com/coding.html"><strong>coding</strong></a>&nbsp;&nbsp;&nbsp;
+        日期: <strong>2016年07月07日</strong>&nbsp;&nbsp;&nbsp;
+         <ul class="tags post-tags">
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+                    <li><a href="/tags/爬虫/index.html">爬虫<span>8</span></a></li>
+                
+            
+            
+            
+                
+                    <li><a href="/tags/python/index.html">python<span>15</span></a></li>
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+        </ul>
+    </p>           
+</div>
+    
+
+    <article class="post-content">
+        <hr class="post-end-left"><p class="post-end">开始</p><hr class="post-end-right"/>
+        <div>
+            <p>说来大四这一年真的看了好多电影啊。。。因为平时有用豆瓣电影记录自己已看电影的习惯，而且博客上也维护了一个影单，所以趁着这几天有时间就想着干脆写一个统计自己大四这一年观影记录的小程序吧！</p>
+
+<p>打算最终分三种方式统计信息：</p>
+
+<ul>
+  <li>
+    <p>统计不同类型的电影数目并绘制柱状图</p>
+  </li>
+  <li>
+    <p>统计不同语言的电影数目并绘制饼状图</p>
+  </li>
+  <li>
+    <p>统计每个月的观影数目并绘制趋势图</p>
+  </li>
+</ul>
+
+<p>因此需要获取的信息电影信息有：电影名、观影时间、电影类型、电影语言；另外后期可能还想统计其他信息，干脆把评分、自己的评论、电影导演和制片国家/地区都爬取下来。</p>
+
+<p>说干就干，首先设计一下程序的逻辑架构，具体分为以下几步：</p>
+
+<pre><code>1. 获取博客已看影单上的所有电影名，并存入数据库的movie表中；
+
+2. 利用爬虫爬取豆瓣电影上自己的观影记录，包括（电影名、评分、观影时间、自己的评论、电影类型、电影导演、制片国家/地区 以及 电影语言），获取这些信息后写入数据库的douban_movies表；
+
+3. 利用douban_movies表与movie表left join，并更新movie表出电影名以外的其他信息；
+
+4. 通过相关模块包把数据库中的数据写入excel表中并生成图表；
+
+5. 将生成的图表转换为图片并保存；
+</code></pre>
+
+<p>这个思路是通的，而且看起来操作起来难度也不大。在这里要解释一下为什么我不直接使用douban_movies表来统计，而要基于博客的观影记录来统计，原因在于我是去年十一月份才真正意义上开始使用豆瓣电影标记功能的，因此一些很久以前（like:小时候^_^）看过的电影也在豆瓣上标记下来了，所以这部分数据是要剔除的。</p>
+
+<p>当然对于很早之前就开始使用豆瓣电影的朋友来说，只需对程序稍加改造即可生成自己的观影记录了，当然后文也会提供改造后的代码链接。这里就展示下我的个人统计数据吧（个人豆瓣id:<a href="https://www.douban.com/people/yinwoods/">yinwoods</a>）：</p>
+
+<p><img src="http://7xlnl2.com1.z0.glb.clouddn.com/post50-Chart1.jpg" alt="观影时间统计" /></p>
+
+<p>这里2015年11月份观影指数暴涨是因为我标记了很多很早以前看过的电影。。。</p>
+
+<p><img src="http://7xlnl2.com1.z0.glb.clouddn.com/post50-Chart2.jpg" alt="观影语言统计" /></p>
+
+<p><img src="http://7xlnl2.com1.z0.glb.clouddn.com/post50-Chart3.jpg" alt="观影类型统计" /></p>
+
+<p>下面就按照逻辑架构开始编写程序吧！</p>
+
+<h4 id="movie">1. 获取博客上已看影单的所有电影名，并存入数据库中的movie表</h4>
+
+<p>虽然简单，但是还是要说下思路，以影单页面的url作为入口，爬虫访问后利用beautifulsoup解析文档树，提取所有的电影名并将电影名插入数据表中，为了防止每次运行程序不会插入重复数据，插入之前需要判重操作。代码如下：</p>
+
+<div>
+  <pre><code class="python">#获取url 对应 HTML 源码
+def get_html(self, url):
+    request = urllib.request.Request(url)
+
+    try: #代理：110.81.238.173:8088
+        proxy_support = urllib.request.ProxyHandler({'http': '110.81.238.173:8088'})
+        opener = urllib.request.build_opener(proxy_support)
+        urllib.request.install_opener(opener)
+
+        page = urllib.request.urlopen(request)
+
+        if page.headers.get('Content-Encoding') == 'gzip':
+            return zlib.decompress(page.read(), 16+zlib.MAX_WBITS).decode('gbk', 'ignore')
+        else:
+            return page.read().decode(page.headers.get_content_charset(), 'ignore')
+    #异常处理
+    except urllib.request.HTTPError as e:
+        print('HTTPERROR: ', str(e))
+        return urllib.request.HTTPError
+    except http.client.HTTPException as e:
+        print('http.client.HTTPException: ', str(e))
+        return http.client.HTTPException
+
+#获取电影名并写入数据库movie中
+def get_movies(self, url_lists):
+
+    for url in url_lists:
+        html_doc = BeautifulSoup(self.get_html(url), 'html.parser')
+        div_lists = html_doc.select('#content &gt; div &gt; div &gt; a &gt; div')
+        for div in div_lists:
+
+            movie_name = div.getText()
+
+            #查重
+            query = 'SELECT COUNT(*) FROM movie WHERE movie_name = %s'
+            self.cursor.execute(query, (movie_name,))
+            self.conn.commit()
+            res = self.cursor.fetchall()
+            if not res[0][0] == 0:
+                continue
+
+            print(movie_name)
+
+            #插入
+            query = 'INSERT INTO movie(movie_name) VALUES (%s)'
+            self.cursor.execute(query, (movie_name,))
+            self.conn.commit()</code></pre>
+</div>
+
+<h4 id="section">2. 利用爬虫爬取豆瓣电影上的观影信息</h4>
+
+<p>依然是同样的套路，首先找到这些信息的入口，找到url:https://movie.douban.com/people/用户名/collect?sort=time&amp;start=0&amp;filter=all&amp;mode=list&amp;tags_sort=count，发现链接中不包含页码，所以考虑每次获取下一页的url加入待爬队列直到队列为空（其实就是广度优先搜索~~~），代码如下：</p>
+
+<p>```python
+#从豆瓣上获取我的观影信息
+def get_douban_infos(self, username):</p>
+
+<pre><code>url_que = queue.Queue()
+url_que.put('https://movie.douban.com/people/' + username + '/collect?sort=time&amp;amp;start=0&amp;amp;filter=all&amp;amp;mode=list&amp;amp;tags_sort=count')
+while not url_que.empty():
+    url = url_que.get()
+    #爬取第一页
+    html_doc = BeautifulSoup(self.get_html(url), 'html.parser')
+
+    #获取下一页链接
+    next_url = html_doc.select('#content &gt; div.grid-16-8.clearfix &gt; div.article &gt; div.paginator &gt; span.next &gt; a')
+    
+    #如果有下一页则加入待爬队列
+    if len(next_url) &gt; 0:
+        next_url = next_url[0]['href']
+        url_que.put(next_url)
+
+    html_doc = BeautifulSoup(self.get_html(url), 'html.parser')
+    li_lists = html_doc.select('#content &gt; div')[1].select('div.article &gt; ul &gt; li')
+
+    for li in li_lists:
+
+        a_label = li.select('div.item-show &gt; div &gt; a')[0]
+
+        movie_name = a_label.getText().strip()
+        movie_name = movie_name.split('/')[0].strip()
+
+        #去重
+        query = 'SELECT COUNT(*) FROM douban_movie WHERE movie_name = (%s)'
+        self.cursor.execute(query, (movie_name,))
+        self.conn.commit()
+        res = self.cursor.fetchall()
+        if not res[0][0] == 0:
+            continue
+        
+        #电影类型等信息到详情页中获取更容易
+        movie_detail_url = a_label['href']
+        print(movie_detail_url)
+        try:
+            movie_info = self.get_movie_infos(movie_detail_url)
+        except TypeError as e:
+            print(str(e))
+            print(movie_name)
+            continue
+        
+        #利用正则表达式提取评分，注意有些电影未打评分的情况
+        rate = li.select('div.item-show &gt; div')[1].select('span')
+        if len(rate) == 0:
+            rate = ''
+        else:
+            rate = str(rate[0]['class'])
+            regx = re.compile('(\d)')
+            rate = regx.findall(rate)[0]
+
+        watch_time = li.select('div.item-show &gt; div')[1].getText().strip()
+
+        comment = li.select('div.comment')
+        #如果有评论
+        if len(comment) &gt; 0:
+            comment = comment[0].getText().strip()
+            if not comment.find('(1 有用)') == -1:
+                comment = comment.split(' ')[0].strip()
+        else:
+            comment = ''
+
+        print(movie_info)
+
+        movie_types = movie_info['类型']
+        movie_language = movie_info['语言']
+        movie_country = movie_info['制片国家/地区']
+        movie_director = movie_info['导演']
+
+        print(comment)
+        query = 'INSERT INTO douban_movie(movie_name, rate, watch_time, comment, movie_types, movie_language, movie_country, movie_director) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)'
+        self.cursor.execute(query, (movie_name, rate, watch_time, comment, movie_types, movie_language, movie_country, movie_director))
+        self.conn.commit()
+return ```
+</code></pre>
+
+<p>在从详情页获取信息的过程中，可以采用一些技巧方便我们提取出自己想要的信息（例如代码中把信息以dict的形式返回，方便解析），代码如下：</p>
+
+<p>```python
+#从电影详情页获取电影类型，结果返回一个dict
+def get_movie_infos(self, url):</p>
+
+<pre><code>html_doc = BeautifulSoup(self.get_html(url), 'html.parser')
+div_info = html_doc.select('#info')[0].getText().strip().split('\n')
+res_info = {}
+for div in div_info:
+    div = div.split(': ')
+    if div[0] == '导演':
+        res_info.update({'导演' : ','.join(div[1:])})
+    elif div[0] == '制片国家/地区':
+        res_info.update({'制片国家/地区' : ','.join(div[1:])})
+    elif div[0] == '语言':
+        res_info.update({'语言' : ','.join(div[1:])})
+    elif div[0] == '类型':
+        res_info.update({'类型' : ','.join(div[1:])})
+return res_info ```
+</code></pre>
+
+<h4 id="doubanmoviesmovieleft-joinmovie">3. 利用douban_movies表与movie表left join，并更新movie表出电影名以外的其他信息；</h4>
+
+<p>这一步操作就比较简单了，其实就是对数据表的操作，但是因为自己博客上电影命名不规范的原因，因此还要做一个匹配表来处理明明不规范的case；这里就不贴函数了。</p>
+
+<h4 id="excel">4. 通过相关模块包把数据库中的数据写入excel表中并生成图表；</h4>
+
+<p>现在我们已经获得了自己的观影数据并存入数据库中，后面要做的就是把数据统计信息写入excel表了，这里推荐<a href="http://xlsxwriter.readthedocs.io/#">xlsxwriter模块</a>（PS：其实最开始就是想通过这个程序学习下xlsxwriter模块23333），<a href="http://xlsxwriter.readthedocs.io/#">xlsxwriter模块</a>的主要功能是实现了python对excel表的操作。但是xlsxwriter的一个问题是不能读取excel的数据，往往需要结合pandas模块才能发挥最大作用。当然这里我们只需要写入功能，例如统计不同类型电影数目并制作柱状图的代码如下：</p>
+
+<p>```python
+#将电影类型分类展示在柱状图中并统计数量
+def show_types_in_column(self, workbook):</p>
+
+<pre><code>worksheet = workbook.add_worksheet()
+
+chart = workbook.add_chart({'type' : 'column'})
+
+query = 'SELECT movie_name, movie_types FROM movie'
+self.cursor.execute(query)
+self.conn.commit()
+movies_lists = self.cursor.fetchall()
+
+movie_types_dict = {}
+
+for movie in movies_lists:
+    movie_name, movie_types = movie
+    types = movie_types.split('/')
+    for type in types:
+        type = type.strip()
+        if type in movie_types_dict:
+            movie_types_dict[type] += 1
+        else:
+            movie_types_dict.update({type : 1})
+
+# Add table data
+table_data = [['类型', '片数'],]
+for key, val in movie_types_dict.items():
+    table_data.append([key, val])
+
+type = '类型'
+num = '数目'
+worksheet.write_column('A1', type)
+worksheet.write_column('B1', num)
+worksheet.write_column('A2', movie_types_dict.keys())
+worksheet.write_column('B2', movie_types_dict.values())
+
+chart.add_series({'name' : '影片数目',
+                  'categories' : ['Sheet1', 1, 0, 1+len(movie_types_dict.keys()), 0],
+                  'values' : ['Sheet1', 1, 1, 1+len(movie_types_dict.values()), 1],
+                  'color' : 'red',
+                  'data_labels' : {'value' : True}})
+
+#设置X轴属性
+chart.set_x_axis({
+    'name' : '影片类型',
+    'name_font' : {'size' : 14, 'bold' : False},
+    'num_font' : {'size' : 12},
+    'line' : {'none' : True},
+    'major_gridlines' : {
+        'visible' : True,
+        'line' : {'width' : 1.5, 'dash_type' : 'dash'}
+    },
+    'text_axis' : True
+})
+
+#设置长宽
+chart.set_size({
+    'x_scale' : 2.5,
+    'y_scale' : 2
+})
+
+#设置标题
+chart.set_title({
+    'name' : '15/07/01 - 16/06/30 观影类型统计'
+})
+
+#设置属性块
+chart.set_legend({
+    'position' : 'left'
+})
+
+#图下方显示表格
+chart.set_table({
+    'show_keys' : True,
+    'font' : {'size' : 12}
+})
+
+worksheet.insert_chart('C1', chart) ```
+</code></pre>
+
+<h4 id="section-1">5.将生成的图表转换为图片并保存；</h4>
+
+<p>这里把excel表中的chart转为图片通过VBA编程可以比较容易地实现，但是我们的目标是通过python来实现，经过搜索了解到可以使用windows的扩展包pywin32模块来实现这个功能，具体的代码源于网上的开源代码，其实难度倒是没有，主要难点在于api的使用。</p>
+
+<h3 id="section-2">总结</h3>
+
+<p>最后完整的代码在这里：<a href="https://github.com/yinwoods/show_movies_info">观影统计代码</a></p>
+
+<p>另外，也开发了删减版，只需输入豆瓣用户名即可生成相应的观影统计信息（对这个功能感兴趣的朋友应该更多吧）。</p>
+
+<p>说说存在的问题，因为是调用了微软的excel中的VBA所以一定要在windows下跑并且确保安装了pywin32模块（安装比较麻烦），如果有朋友对代码功能改进兴趣的话可以email我讨论（yinwoods@163.com）</p>
+
+<p>按照赋比兴的老套路，我也得放点感想在这里才显得逼格高啊hhhhh。</p>
+
+<p>想一想豆瓣作为一个典型的文艺青年聚集地曾经社区那么活跃，如今已经衰落到“门前冷落鞍马稀”了，我想在互联网行业日新月异的今天，豆瓣几年来几乎一成不变，呈现出一种拒绝变化的姿态很难说不是衰落的一方面原因，拥有那么多数据为什么不多多服务人民群众，拥抱一下大数据呢？</p>
+
+<p>最近在YY买台云主机，把博客搭建到服务器上，以后造出来的一些轮子也可以服务大众了，比如把这个做成一个小轮子，方便电影爱好者对自己的观影数据有一个直观的认知。</p>
+
+
+        </div>
+        <hr class="post-end-left"><p class="post-end">结束</p><hr class="post-end-right"/>
+        <div class="post-footer">
+            
+            <p class="post-footer-previous">上一篇 ： <a class="entry-more" href="/coding/python%E4%B8%AD%E7%9A%84%E5%8D%8F%E7%A8%8B.html">python中的协程</a></p>
+            
+            
+            <p class="post-footer-next">下一篇 ： <a class="entry-more" href="/diary/%E4%B8%80%E7%82%B9%E6%84%9F%E6%83%B3.html">一点感想</a></p>
+            
+        </div>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span style="font-family:sans-serif; color:#009966">分享到：</span>
+        <a class="jiathis_button_weixin share_button" href="#"></a>
+        <a class="jiathis_button_tsina share_button" href="#"></a>
+        <a class="jiathis_button_qzone share_button" href="#"></a>
+        <a class="jiathis_button_evernote share_button" href="#"></a>
+        <a class="jiathis_button_ydnote share_button" href="#"></a>
+        <a class="jiathis_button_pocket share_button" href="#"></a>
+        <a class="jiathis_button_douban share_button" href="#"></a>
+        <a class="jiathis_button_renren share_button" href="#"></a>
+        <a class="jiathis_button_fb share_button" href="#"></a>
+        <a class="jiathis_button_linkedin share_button" href="#"></a>
+        <a class="jiathis_button_googleplus share_button" href="#"></a>
+        <a class="jiathis_button_tumblr share_button" href="#"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/js/totop.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<script type="text/javascript" src="/static/js/prism.js" charset="utf-8"></script>
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'yinwoods'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+
+
+		</div>
+
+				<nav id="menu" class="menu">
+			<ul>
+				<li class="logo"><a href="/category/aboutme.html"><img  class="img-circle" height="100px" width="100px" src="/static/img/about/me.jpg"></a></li>
+
+				<li><a href="/category/index.html"><i class="fa fa-home fa-fw"></i>首页</a></li>
+				
+				<li><a href="/category/coding.html"><i class="fa fa-road fa-fw"></i>编程之路</a></li>
+
+				<li><a href="/category/myshare.html"><i class="fa fa-share-alt fa-fw"></i>我的分享</a></li>
+				
+				<li><a href="/category/diary.html"><i class="fa fa-calculator fa-fw"></i>生活日志</a></li>
+				
+				<li><a href="/category/book-movie-list/booklist.html"><i class="fa fa-book fa-fw"></i>书单/影单</a></li>
+
+				<li><a href="/category/aboutme.html"><i class="fa fa-male fa-fw"></i>关于博主</a></li>
+
+				<li><a href="/category/friend.html"><i class="fa fa-send fa-fw"></i>我的朋友</a></li>
+
+				<li><img class="img-rounded" height="100px" width="100%" src="/static/img/about/footer.png"></li>
+
+			</ul>
+			<button id="btnClose" class="btn-close"></button>
+
+			<div id="SVGMenu" class="svg-menu" 
+                data-menu-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z" 
+                data-menu-close="M-6,0h101c0,0-90,153.603-90,396.167C2.167,627.579,100,800,100,800H-1V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+					<path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+				</svg>
+			</div>
+
+		</nav>
+
+
+		<footer class="footer">
+	<div class="row">
+		<div class="pull-left">
+			<a class="avatar" href="/" title="yinwoods">yinwoods</a>
+			<p class="copyright">2015 ALL RIGHTS RESERVED</p>
+		</div>
+		
+		<div class="pull-center">
+			<ul class="list-inline">
+				<li>
+					<a href="http://weibo.com/yinwoods">
+						<img src="/static/img/footer/weibo.png">
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/yinwoods">
+						<img src="/static/img/footer/github.png">
+					</a>
+				</li>
+				<li>
+					<a href="/feed.xml">
+						<img src="/static/img/footer/rss.png">
+					</a>
+				</li>
+			</ul>
+			<br/>
+			<h4>Powered by <a target="_blank" href="https://github.com/yinwoods">github</a> && <a target="_blank" href="http://jekyllrb.com/">jekyll</a></h4>
+		</div>
+
+	</div>
+</footer>
+		<div id="totop">
+			<a title="返回顶部">返回顶部</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/static/js/classie.js"></script>
+
+	<script type="text/javascript" src="/static/js/snap.svg-min.js"></script>
+	<script type="text/javascript" src="/static/js/menuTriggle.js"></script>
+	<script type="text/javascript" src="/static/js/SVGButton.js"></script>
+
+	<script type="text/javascript" src="/static/js/postTriggle.js"></script>
+
+	
+	<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/totop.js"></script>
+	<script type="text/javascript">
+		var content = document.querySelector('.content'),
+			footer = document.querySelector('.footer'),
+			footT  = footer.offsetTop,
+			footH  = footer.offsetHeight,
+			winH   = window.innerHeight,
+			post   = document.querySelectorAll('p');
+
+		if (footT - footH + 100 < winH) {
+			content.style.height = '100%';
+		};
+
+		for (var i = 0; i < post.length; i++) {
+			if (post.item(i).querySelector('img')) {
+				post.item(i).style.textIndent = 0;
+			};
+		};
+
+	</script>
+</body>
+</html>

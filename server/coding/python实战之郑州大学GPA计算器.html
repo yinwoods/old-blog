@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<link rel="dns-prefetch" href="//hm.baidu.com"/>
+	<link rel="dns-prefetch" href="//disqus.com"/>
+	<link rel="dns-prefetch" href="//a.disquscdn.com"/>
+
+	<meta name="Keywords" content="yinwoods,殷成涛,个人博客,郑州大学,python,爬虫"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	
+	<meta name="author" content="yinwoods">
+
+	<link rel="alternate" type="application/rss+xml" title="rss订阅" href="/feed.xml">
+	<link rel="shortcut icon" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-24.png" sizes="24x24" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-32.png" sizes="32x32" />
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+
+    <title>python实战之郑州大学GPA计算器 | yinwoods</title>
+  
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+		e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+		})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+		_st('install','csxq-8xzb6tiaQ1dQaGs','2.0.0');
+	</script>
+</head>
+
+
+<body>
+	<div id="container" class="container">
+		<div id="content" class="content">
+			<nav class="navbar">
+	<div class="pull-left">
+		<button id="btnMenu" type="button" class="btn btn-default btn-sm btn-menu">
+			<i class="fa fa-bars"></i>	菜 单
+		</button>
+	</div>
+	<ul class="pull-center">
+		<li class="active"><a href="/">博客</a></li>
+        <li><a href="/category/aboutme.html">关于我</a></li>
+	</ul>
+	<div class="pull-right">
+		<button type="button" class="btn btn-default btn-sm btn-list">
+			<a href="/category/books.html">
+				<i class="fa fa-book fa-fw"></i>书单/影单  
+			</a>
+		</button>
+	</div>
+</nav>
+
+			<header class="post-header">
+        <div class="hd-img">
+            <img src="http://7xlh6u.com1.z0.glb.clouddn.com/bg27.jpg" alt="背景图片">
+        </div>
+
+        <div class="title">
+           <h1>python实战之郑州大学GPA计算器</h1>
+        </div>
+</header>
+<button id="btnArrow" class="btn-arrow" data-info="点击显示文章"><i class="icon icon-arrow-down">&#xe619;</i></button>
+<div class="post-title">
+	<h1>python实战之郑州大学GPA计算器</h1>
+	
+    <p>作者: <a target="_blank" href="http://blog.yinwoods.com/"><strong>yinwoods</strong></a>&nbsp;&nbsp;&nbsp;
+        分类: <a target="_blank" href="http://blog.yinwoods.com/coding.html"><strong>coding</strong></a>&nbsp;&nbsp;&nbsp;
+        日期: <strong>2015年09月05日</strong>&nbsp;&nbsp;&nbsp;
+         <ul class="tags post-tags">
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+                    <li><a href="/tags/爬虫/index.html">爬虫<span>8</span></a></li>
+                
+            
+            
+            
+                
+                    <li><a href="/tags/python/index.html">python<span>15</span></a></li>
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+        </ul>
+    </p>           
+</div>
+    
+
+    <article class="post-content">
+        <hr class="post-end-left"><p class="post-end">开始</p><hr class="post-end-right"/>
+        <div>
+            <p>最近在学习爬虫的过程中，读了不少相关博文，感觉收获良多。</p>
+
+<p>前两天刚刚动手写了一个爬取郑州大学个人成绩并计算平均绩点的程序，特意拿到这里来与大家分享。</p>
+
+<p>虽然写的是针对郑州大学教务系统的爬虫，但我相信只要稍作修改就可以应用于多数大学的教务系统了。</p>
+
+<p>首先说一下程序执行的过程：</p>
+
+<blockquote>
+  <p>1、打开教务系统登录界面，获取相应的<code>url</code>以及表单域需要填写选项的名称。</p>
+</blockquote>
+
+<blockquote>
+  <p>2、填写必要信息、设置<code>cookie</code>，模拟浏览器登录系统</p>
+</blockquote>
+
+<blockquote>
+  <p>3、利用正则表达式获取不同学期成绩页面对应的<code>url</code>，并保存。</p>
+</blockquote>
+
+<blockquote>
+  <p>4、循环打开刚刚保存的不同学期成绩页面的<code>url</code>，利用正则表达式匹配课程、成绩信息。</p>
+</blockquote>
+
+<blockquote>
+  <p>5、计算平均绩点并输出</p>
+</blockquote>
+
+<p>从上面的流程可以看出，整个过程涉及到的比较复杂的地方只有登录以及正则表达式的匹配，下面我们一步一步实现我们的需求。</p>
+
+<p>为了很好地讲解操作步骤，我们先设计一个类，名字叫做<code>ZZU</code></p>
+
+<p>并设置以下成员：</p>
+
+<div>
+  <pre><code class="python">#部分ZZU类成员
+		self.cookies 	#cookie
+		self.size = 0   #总课程数目
+		self.courses = []   #课程名称
+		self.courses_Attribute = []     #课程类型
+		self.credits = []    #课程学分
+		self.grades = []    #课程成绩
+		self.points = []    #课程绩点
+		self.urls_Set = []  #各学期成绩URL页面集合</code></pre>
+</div>
+
+<h3 id="url">第一步：获取登录页面<code>url</code>及表单信息</h3>
+
+<blockquote>
+  <ul>
+    <li>打开教务系统，进入登录界面，利用<code>F12</code>查看网页源码信息，提取表单域内容：</li>
+  </ul>
+</blockquote>
+
+<p><img src="http://7xlnl2.com1.z0.glb.clouddn.com/post27-教务1.png" alt="教务系统" /></p>
+
+<p><img src="http://7xlnl2.com1.z0.glb.clouddn.com/post27-教务2.png" alt="教务系统" /></p>
+
+<blockquote>
+  <ul>
+    <li>从上面的图片可以看出，我们需要填写的内容有：<code>nianji（年级）</code>、<code>xuehao（学号）</code>、<code>mima（密码）</code>、<code>selec（登录页面）</code>几个选项，在这里我们选择令<code>selec</code>为<code>http://jw.zzu.edu.cn/scripts/qscore.dll/search</code>即进入选课系统。</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>因此我们可以为<code>ZZU</code>添加一个变量叫做<code>postdata</code>用来存储以上信息，内容为：</li>
+  </ul>
+</blockquote>
+
+<div>
+  <pre><code class="python">#ZZU类登录表单信息
+	self.current_Url = http://jw.zzu.edu.cn/scripts/qscore.dll/search
+	self.postdata = urllib.parse.urlencode({
+            'nianji': '',
+            'xuehao': '',
+            'mima': '',
+            'selec': 'http://jw.zzu.edu.cn/scripts/qscore.dll/search'
+        }).encode()</code></pre>
+</div>
+
+<h3 id="cookie">第二步：设置<code>cookie</code>并登录</h3>
+
+<blockquote>
+  <ul>
+    <li>这里可能看起来比较难，其实只用调用相关函数即可</li>
+  </ul>
+</blockquote>
+
+<div>
+  <pre><code class="python">#ZZU类cookie
+	self.cookies = http.cookiejar.CookieJar()	#设置cookie
+	self.opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.cookies))
+	request = urllib.request.Request(
+        url = self.current_Url,
+        data = self.postdata
+    )
+    res = self.opener.open(request)	#提交表单内容，登录系统
+    print(res.read().decode('GBK'))	#可以发现打印的网页源码为登录后的源码，说明登录成功</code></pre>
+</div>
+
+<h3 id="url-1">第三步：利用正则表达式获取所有学期页面的<code>url</code></h3>
+
+<blockquote>
+  <ul>
+    <li>这里需要我们能够有效提取出所有学期页面<code>url</code>的共同特征，之后才能完成匹配</li>
+  </ul>
+</blockquote>
+
+<p><img src="http://7xlnl2.com1.z0.glb.clouddn.com/post27-教务3.png" alt="教务系统" /></p>
+
+<blockquote>
+  <ul>
+    <li>对于我校郑州大学的系统，可以发现不同学期<code>url</code>只是<code>search?userid=</code>后面的参数不同而已；因此我们可以利用<code>regx = re.compile('href="(http://jw.zzu.edu.cn/scripts/qscore.dll/search.*?)"&gt;')</code>来匹配所有的<code>url</code></li>
+  </ul>
+</blockquote>
+
+<div>
+  <pre><code class="python">regx = re.compile('href=&quot;(http://jw.zzu.edu.cn/scripts/qscore.dll/search.*?)&quot;&gt;')</code></pre>
+</div>
+
+<h3 id="section">第四步：利用正则表达式获取课程、成绩相关信息</h3>
+
+<blockquote>
+  <ul>
+    <li>同上一步，我们先来提取课程、成绩信息的特征，</li>
+  </ul>
+</blockquote>
+
+<p><img src="http://7xlnl2.com1.z0.glb.clouddn.com/post27-教务4.png" alt="教务系统成绩特征" /></p>
+
+<blockquote>
+  <ul>
+    <li>可以发现课程、成绩信息是分别被五个<code>&lt;td&gt;</code>标签包住的，因此我们可以这样匹配<code>re.compile('&lt;td.*?&gt;(.*?)&lt;/td&gt;&lt;td.*?&gt;(.*?)&lt;/td&gt;&lt;td.*?&gt;(.*?)&lt;/td&gt;&lt;td.*?&gt;(.*?)&lt;/td&gt;&lt;td.*?&gt;(.*?)&lt;/td&gt;', re.U)</code>,不了解<code>re.U</code>含义的可以移步这里<a href="http://blog.yinwoods.com/coding/python%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html">python爬虫基础教程</a>巩固下。</li>
+  </ul>
+</blockquote>
+
+<div>
+  <pre><code class="python">#ZZU类匹配课程、成绩信息
+	regx = re.compile('&lt;td.*?&gt;(.*?)&lt;/td&gt;&lt;td.*?&gt;(.*?)&lt;/td&gt;&lt;td.*?&gt;(.*?)&lt;/td&gt;&lt;td.*?&gt;(.*?)&lt;/td&gt;&lt;td.*?&gt;(.*?)&lt;/td&gt;', re.U)</code></pre>
+</div>
+
+<h3 id="section-1">第五步：计算平均绩点</h3>
+
+<blockquote>
+  <ul>
+    <li>想一下，如果我们能获得一学期的所有成绩，那么我们就一定可以获取所有学期成绩，从而计算<code>GPA</code></li>
+  </ul>
+</blockquote>
+
+<p>上面说的零零碎碎，可能不是很清楚，下面附上完整代码以及必要注释：</p>
+
+<div>
+  <pre><code class="python">import urllib
+import urllib.request
+import http.cookiejar
+import re
+
+from collections import deque
+
+class ZZU:
+    def __init__(self):
+        self.cookies = http.cookiejar.CookieJar()
+        self.postdata = urllib.parse.urlencode({
+            'nianji': '',    #填写你的年级
+            'xuehao': '',    #填写你的学号
+            'mima': '',      #填写你的密码
+            'selec': 'http://jw.zzu.edu.cn/scripts/qscore.dll/search'
+            }).encode()
+        self.size = 0   #课程数目
+        self.opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.cookies))
+        self.courses = []   #课程名称
+        self.courses_Attribute = []     #课程类型
+        self.credits = []    #课程学分
+        self.grades = []    #课程成绩
+        self.points = []    #课程绩点
+        self.urls_Set = []  #各学期成绩URL页面集合
+
+
+    def getPage(self):
+        request = urllib.request.Request(
+                url = self.current_Url,
+                data = self.postdata
+                )
+        res = self.opener.open(request)
+        return res.read().decode('GBK')
+
+
+    def getGrades(self):
+        self.size = 0
+        for url in zzu.urls_Set:
+            self.current_Url = url
+            page = self.getPage()
+
+            #提取成绩表每行信息
+            regx = re.compile('&lt;td.*?&gt;(.*?)&lt;/td&gt;&lt;td.*?&gt;(.*?)&lt;/td&gt;&lt;td.*?&gt;(.*?)&lt;/td&gt;&lt;td.*?&gt;(.*?)&lt;/td&gt;&lt;td.*?&gt;(.*?)&lt;/td&gt;', re.U)
+            myItems = regx.findall(page)
+            for item in myItems:
+                self.size += 1      #保存数量
+                self.courses.append(item[0])
+                self.courses_Attribute.append(item[1])
+                self.credits.append(item[2])
+                self.grades.append(item[3])
+                self.points.append(item[4])
+
+        cnt = 0
+        sum_credits = 0
+        sum_points = 0.0
+        while(cnt &lt; self.size):
+            if self.points[cnt] != '---': #没有绩点的课程不计在内
+                sum_credits += float(self.credits[cnt])
+                sum_points += float(self.credits[cnt])*float(self.points[cnt])
+            cnt += 1
+        print(&quot;大学期间总学分： &quot; + str(sum_credits))
+        print(&quot;大学期间总绩点：&quot; + str(sum_points))
+        print(&quot;大学期间平均绩点为：&quot; + str(sum_points/sum_credits))
+
+    def print_info(self):   #打印所有课程信息
+        regx = re.compile('姓名：(.*?)&amp;')
+        name = regx.findall(self.getPage())
+        print(&quot;我叫&quot; + name[0])
+        print(&quot;大学期间共学习&quot; + str(self.size) + &quot;门课程&quot;)
+        print(&quot;课程&quot;.ljust(14) + &quot;\t&quot; + &quot;类型&quot; + &quot;\t&quot; + &quot;学分&quot; + &quot;\t&quot; + &quot;成绩&quot; + &quot;\t&quot; + &quot;绩点&quot;)
+        for num in range(0, self.size):
+            print(self.courses[num][0:8].ljust(6) + &quot;\t&quot; + self.courses_Attribute[num] + &quot;\t&quot; + self.credits[num] + &quot;\t&quot; + self.grades[num].rjust(3) + &quot;\t&quot; + self.points[num])
+
+
+url = 'http://jw.zzu.edu.cn/scripts/qscore.dll/search'
+zzu = ZZU()
+zzu.current_Url = url
+regx = re.compile('href=&quot;(http://jw.zzu.edu.cn/scripts/qscore.dll/search.*?)&quot;&gt;')
+List = regx.search(zzu.getPage())
+url = List.group()[6:-2] #截取url
+
+zzu.urls_Set.append(url)
+
+zzu.current_Url = url
+page = zzu.getPage()
+regx = re.compile('href=&quot;(http://jw.zzu.edu.cn/scripts/qscore.dll/search.*?)&quot;&gt;')
+zzu.urls_Set += regx.findall(page)
+
+zzu.getGrades()
+#zzu.print_info()</code></pre>
+</div>
+
+<p>下面是我的GPA查询结果:</p>
+
+<p><img src="http://7xlnl2.com1.z0.glb.clouddn.com/post27-教务5.png" alt="教务系统" /></p>
+
+        </div>
+        <hr class="post-end-left"><p class="post-end">结束</p><hr class="post-end-right"/>
+        <div class="post-footer">
+            
+            <p class="post-footer-previous">上一篇 ： <a class="entry-more" href="/coding/python%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html">python爬虫基础教程</a></p>
+            
+            
+            <p class="post-footer-next">下一篇 ： <a class="entry-more" href="/coding/sublime%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE.html">sublime基本配置</a></p>
+            
+        </div>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span style="font-family:sans-serif; color:#009966">分享到：</span>
+        <a class="jiathis_button_weixin share_button" href="#"></a>
+        <a class="jiathis_button_tsina share_button" href="#"></a>
+        <a class="jiathis_button_qzone share_button" href="#"></a>
+        <a class="jiathis_button_evernote share_button" href="#"></a>
+        <a class="jiathis_button_ydnote share_button" href="#"></a>
+        <a class="jiathis_button_pocket share_button" href="#"></a>
+        <a class="jiathis_button_douban share_button" href="#"></a>
+        <a class="jiathis_button_renren share_button" href="#"></a>
+        <a class="jiathis_button_fb share_button" href="#"></a>
+        <a class="jiathis_button_linkedin share_button" href="#"></a>
+        <a class="jiathis_button_googleplus share_button" href="#"></a>
+        <a class="jiathis_button_tumblr share_button" href="#"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/js/totop.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<script type="text/javascript" src="/static/js/prism.js" charset="utf-8"></script>
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'yinwoods'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+
+
+		</div>
+
+				<nav id="menu" class="menu">
+			<ul>
+				<li class="logo"><a href="/category/aboutme.html"><img  class="img-circle" height="100px" width="100px" src="/static/img/about/me.jpg"></a></li>
+
+				<li><a href="/category/index.html"><i class="fa fa-home fa-fw"></i>首页</a></li>
+				
+				<li><a href="/category/coding.html"><i class="fa fa-road fa-fw"></i>编程之路</a></li>
+
+				<li><a href="/category/myshare.html"><i class="fa fa-share-alt fa-fw"></i>我的分享</a></li>
+				
+				<li><a href="/category/diary.html"><i class="fa fa-calculator fa-fw"></i>生活日志</a></li>
+				
+				<li><a href="/category/book-movie-list/booklist.html"><i class="fa fa-book fa-fw"></i>书单/影单</a></li>
+
+				<li><a href="/category/aboutme.html"><i class="fa fa-male fa-fw"></i>关于博主</a></li>
+
+				<li><a href="/category/friend.html"><i class="fa fa-send fa-fw"></i>我的朋友</a></li>
+
+				<li><img class="img-rounded" height="100px" width="100%" src="/static/img/about/footer.png"></li>
+
+			</ul>
+			<button id="btnClose" class="btn-close"></button>
+
+			<div id="SVGMenu" class="svg-menu" 
+                data-menu-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z" 
+                data-menu-close="M-6,0h101c0,0-90,153.603-90,396.167C2.167,627.579,100,800,100,800H-1V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+					<path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+				</svg>
+			</div>
+
+		</nav>
+
+
+		<footer class="footer">
+	<div class="row">
+		<div class="pull-left">
+			<a class="avatar" href="/" title="yinwoods">yinwoods</a>
+			<p class="copyright">2015 ALL RIGHTS RESERVED</p>
+		</div>
+		
+		<div class="pull-center">
+			<ul class="list-inline">
+				<li>
+					<a href="http://weibo.com/yinwoods">
+						<img src="/static/img/footer/weibo.png">
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/yinwoods">
+						<img src="/static/img/footer/github.png">
+					</a>
+				</li>
+				<li>
+					<a href="/feed.xml">
+						<img src="/static/img/footer/rss.png">
+					</a>
+				</li>
+			</ul>
+			<br/>
+			<h4>Powered by <a target="_blank" href="https://github.com/yinwoods">github</a> && <a target="_blank" href="http://jekyllrb.com/">jekyll</a></h4>
+		</div>
+
+	</div>
+</footer>
+		<div id="totop">
+			<a title="返回顶部">返回顶部</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/static/js/classie.js"></script>
+
+	<script type="text/javascript" src="/static/js/snap.svg-min.js"></script>
+	<script type="text/javascript" src="/static/js/menuTriggle.js"></script>
+	<script type="text/javascript" src="/static/js/SVGButton.js"></script>
+
+	<script type="text/javascript" src="/static/js/postTriggle.js"></script>
+
+	
+	<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/totop.js"></script>
+	<script type="text/javascript">
+		var content = document.querySelector('.content'),
+			footer = document.querySelector('.footer'),
+			footT  = footer.offsetTop,
+			footH  = footer.offsetHeight,
+			winH   = window.innerHeight,
+			post   = document.querySelectorAll('p');
+
+		if (footT - footH + 100 < winH) {
+			content.style.height = '100%';
+		};
+
+		for (var i = 0; i < post.length; i++) {
+			if (post.item(i).querySelector('img')) {
+				post.item(i).style.textIndent = 0;
+			};
+		};
+
+	</script>
+</body>
+</html>

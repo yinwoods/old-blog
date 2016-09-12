@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<link rel="dns-prefetch" href="//hm.baidu.com"/>
+	<link rel="dns-prefetch" href="//disqus.com"/>
+	<link rel="dns-prefetch" href="//a.disquscdn.com"/>
+
+	<meta name="Keywords" content="yinwoods,殷成涛,个人博客,郑州大学,python"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	
+	<meta name="author" content="yinwoods">
+
+	<link rel="alternate" type="application/rss+xml" title="rss订阅" href="/feed.xml">
+	<link rel="shortcut icon" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-24.png" sizes="24x24" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-32.png" sizes="32x32" />
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+
+    <title>python实现中英文字幕合并 | yinwoods</title>
+  
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+		e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+		})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+		_st('install','csxq-8xzb6tiaQ1dQaGs','2.0.0');
+	</script>
+</head>
+
+
+<body>
+	<div id="container" class="container">
+		<div id="content" class="content">
+			<nav class="navbar">
+	<div class="pull-left">
+		<button id="btnMenu" type="button" class="btn btn-default btn-sm btn-menu">
+			<i class="fa fa-bars"></i>	菜 单
+		</button>
+	</div>
+	<ul class="pull-center">
+		<li class="active"><a href="/">博客</a></li>
+        <li><a href="/category/aboutme.html">关于我</a></li>
+	</ul>
+	<div class="pull-right">
+		<button type="button" class="btn btn-default btn-sm btn-list">
+			<a href="/category/books.html">
+				<i class="fa fa-book fa-fw"></i>书单/影单  
+			</a>
+		</button>
+	</div>
+</nav>
+
+			<header class="post-header">
+        <div class="hd-img">
+            <img src="http://7xlh6u.com1.z0.glb.clouddn.com/bg46.jpg" alt="背景图片">
+        </div>
+
+        <div class="title">
+           <h1>python实现中英文字幕合并</h1>
+        </div>
+</header>
+<button id="btnArrow" class="btn-arrow" data-info="点击显示文章"><i class="icon icon-arrow-down">&#xe619;</i></button>
+<div class="post-title">
+	<h1>python实现中英文字幕合并</h1>
+	
+    <p>作者: <a target="_blank" href="http://blog.yinwoods.com/"><strong>yinwoods</strong></a>&nbsp;&nbsp;&nbsp;
+        分类: <a target="_blank" href="http://blog.yinwoods.com/coding.html"><strong>coding</strong></a>&nbsp;&nbsp;&nbsp;
+        日期: <strong>2016年05月21日</strong>&nbsp;&nbsp;&nbsp;
+         <ul class="tags post-tags">
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+                    <li><a href="/tags/python/index.html">python<span>15</span></a></li>
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+        </ul>
+    </p>           
+</div>
+    
+
+    <article class="post-content">
+        <hr class="post-end-left"><p class="post-end">开始</p><hr class="post-end-right"/>
+        <div>
+            <h3 id="section">背景</h3>
+
+<p>看了看上一篇文章是4月5号写的，离开学校了产能下降好多…</p>
+
+<p>说来中英文字幕合并是我上上周就想干的事了，说下写这个程序的动机：本人比较喜欢看电影，一般电影从<a href="http://www.bttiantang.com/">BT天堂</a>下载，很多时候电影没有内嵌字幕，就去<a href="http://assrt.net/">伪射手</a>下载，但对于有的电影伪射手上没有同时包含中英文的字幕，这个时候当然可以再去别的网站找字幕，或者通过播放器同时添加字幕、次字幕来满足需求。但我要用平板看电影，是用的nplayer播放器不支持添加两个字幕，而且觉得这种实际需求驱动的程序写起来也比较有意思，就借这个周六下午来实现了相应的代码。、</p>
+
+<p>下午想看的电影是<a href="https://movie.douban.com/subject/1397546/">追随</a>，去伪射手上搜，搜到的都是杀手信徒。。。囧，之后以豆瓣 + 追随的关键字才找到了相应的中文和英文字幕，根据下面截图中两个字幕的命名规则可以猜出应该是出自同一个字幕组，真想问问为什么不做个中英文合并版？（来自一个强迫症晚期患者的内心独白）</p>
+
+<p><img src="http://7xlnl2.com1.z0.glb.clouddn.com/post46-001.jpg" alt="" /></p>
+
+<h3 id="section-1">正文</h3>
+
+<p>废话少叙，先说下处理的思路，打开两个字幕文件可以发现每一段字幕组成具有如下规则：</p>
+
+<blockquote>
+  <p>行号（注意中英文序号不完全对应）</p>
+</blockquote>
+
+<blockquote>
+  <p>时间段</p>
+</blockquote>
+
+<blockquote>
+  <p>字幕内容</p>
+</blockquote>
+
+<p>因此要做的其实就是匹配中文字幕和英文字母中对应时间下的字幕内容，出于算法高效上的考虑，不考虑两层循环暴力，因为完全可以靠O(max(m, n))的算法实现，下面附第一版的合并代码：</p>
+
+<h4 id="version-01">Version 0.1</h4>
+
+<div>
+  <pre><code class="python">def first():
+    feng = open('eng.srt', 'r', encoding='utf-8')
+    fchs = open('chs.srt', 'r', encoding='gbk')
+    fmeg = open('merge.srt', 'a', encoding='utf-8')
+
+    engline = feng.readline()
+    chsline = fchs.readline()
+
+    engCurRow = chsCurRow = 0
+
+    #一行一行地读取字幕内容
+    while not engline == '' and not chsline == '':
+    	#获取相应的时间片
+        if not engline.find('--&gt;') == -1:
+            engCurRow = engline.strip()
+        if not chsline.find('--&gt;') == -1:
+            chsCurRow = chsline.strip()
+
+        #如果当前英文字母时间片早，说明还需要接着读英文字幕内容，反之读取中文字幕内容
+        if engCurRow &lt; chsCurRow:
+            engline = feng.readline()
+        if engCurRow &gt; chsCurRow:
+            chsline = fchs.readline()
+
+        #如果中文字幕、英文字母时间片匹配
+        if engCurRow == chsCurRow:
+        	#如果当前行是时间片或者相同的行号，只输出一个
+            if engline == chsline:
+                fmeg.write(engline.strip(), end='\n')
+            else:
+            	#如果二者均为行号，取较大者
+                if engline.strip().isdigit() and chsline.strip().isdigit():
+                    fmeg.write(str(max(int(engline.strip()), int(chsline.strip()))))
+                else:
+                    fmeg.write(engline.strip() + chsline.strip() + '\n' + '\n')
+            engline = feng.readline()
+            chsline = fchs.readline()</code></pre>
+</div>
+
+<p>上面的这份代码能够简单实现字幕合并，但是有一些特例无法处理，例如两行英文可能对应一行中文，一个时间片下展示的是对话字幕（包含多行），这就驱动了第二版的产生</p>
+
+<h4 id="version-02">Version 0.2</h4>
+
+<p>代码如下：</p>
+
+<div>
+  <pre><code class="python">def second():
+	#提取字幕文件特征，以'\n\n'分割字幕内容，获取每个时间片
+	with open('eng.srt', 'r', encoding='utf-8') as feng:
+        fengList = feng.read().split('\n\n')
+    with open('chs.srt', 'r', encoding='gbk') as fchs:
+        fchsList = fchs.read().split('\n\n')
+
+    #可以设置自己喜欢的字幕字体、颜色等等
+    fontStyle = '&lt;font color=#FFFFFF&gt;{\fn微软雅黑}'
+
+    #保存合并后的字幕文件
+    merge = open('merge.srt', 'a', encoding='utf-8')
+
+    #英文和中文字幕时间片下标
+    fengIdx = fchsIdx = 0
+
+    while not fengList[fengIdx] == '' and not fchsList[fchsIdx] == '':
+        engList = fengList[fengIdx].split('\n')
+        chsList = fchsList[fchsIdx].split('\n')
+
+        #提取行号，时间片以及字幕内容
+        #自我觉得这里的join用得比较巧妙
+        (engline, engtime, engval) = (int(engList[0]), engList[1].strip(), ' '.join(engList[2:]))
+        (chsline, chstime, chsval) = (int(chsList[0]), chsList[1].strip(), ' '.join(chsList[2:]))
+
+        #如果时间片相等
+        if engtime == chstime:
+        	#写入较大者的行号
+            merge.write(str(max(engline, chsline)))
+            merge.write('\n')
+
+            #val保存一个时间片下合并后的字幕内容
+            val = ''
+
+            #处理对话情况，对话字符串都以'- '开始
+            if chsval.startswith('-'):
+                engval = '\n-'.join(engval.split('- '))
+                chsval = '\n-'.join(chsval.split('- '))
+
+                #按行合并中英文字幕
+                for line in range(len(engval.split('\n'))):
+                    val += engval.split('\n')[line]
+                    val += '\n'
+                    val += chsval.split('\n')[line]
+                    val += '\n'
+            else:
+                val = engval + '\n' + chsval + '\n'
+
+            merge.write(engtime + '\n')
+            merge.write(fontStyle + val + '\n')
+
+            fengIdx += 1
+            fchsIdx += 1
+
+        #处理包含多余内容的情况
+        if engtime &lt; chstime:
+            merge.write(str(max(engline, chsline)))
+            merge.write('\n')
+            merge.write(engtime + '\n')
+            merge.write(fontStyle + engval + '\n')
+            fengIdx += 1
+        if engtime &gt; chstime:
+            merge.write(str(max(engline, chsline)))
+            merge.write('\n')
+            merge.write(chstime + '\n')
+            merge.write(fontStyle + chsval + '\n')
+            fchsIdx += 1</code></pre>
+</div>
+
+<p>这样就实现了中英文字幕合并的需求，当然这里处理的情况不能推广到所有情况，但是合并思路是一样的，对于其他需求合并的文件可以参考这个思路来实现。</p>
+
+<p>PS：马上就要回学校答辩了，想在回去的时候利用闲暇的时间多写一些有趣的脚本，争取高质量高产出。。。</p>
+
+        </div>
+        <hr class="post-end-left"><p class="post-end">结束</p><hr class="post-end-right"/>
+        <div class="post-footer">
+            
+            <p class="post-footer-previous">上一篇 ： <a class="entry-more" href="/coding/python%E7%88%AC%E8%99%AB%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93.html">python爬虫小技巧总结</a></p>
+            
+            
+            <p class="post-footer-next">下一篇 ： <a class="entry-more" href="/coding/python-challenge%E5%89%8D%E5%8D%81%E4%B8%89%E5%85%B3%E7%AD%94%E6%A1%88.html">python challenge前十三关答案</a></p>
+            
+        </div>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span style="font-family:sans-serif; color:#009966">分享到：</span>
+        <a class="jiathis_button_weixin share_button" href="#"></a>
+        <a class="jiathis_button_tsina share_button" href="#"></a>
+        <a class="jiathis_button_qzone share_button" href="#"></a>
+        <a class="jiathis_button_evernote share_button" href="#"></a>
+        <a class="jiathis_button_ydnote share_button" href="#"></a>
+        <a class="jiathis_button_pocket share_button" href="#"></a>
+        <a class="jiathis_button_douban share_button" href="#"></a>
+        <a class="jiathis_button_renren share_button" href="#"></a>
+        <a class="jiathis_button_fb share_button" href="#"></a>
+        <a class="jiathis_button_linkedin share_button" href="#"></a>
+        <a class="jiathis_button_googleplus share_button" href="#"></a>
+        <a class="jiathis_button_tumblr share_button" href="#"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/js/totop.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<script type="text/javascript" src="/static/js/prism.js" charset="utf-8"></script>
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'yinwoods'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+
+
+		</div>
+
+				<nav id="menu" class="menu">
+			<ul>
+				<li class="logo"><a href="/category/aboutme.html"><img  class="img-circle" height="100px" width="100px" src="/static/img/about/me.jpg"></a></li>
+
+				<li><a href="/category/index.html"><i class="fa fa-home fa-fw"></i>首页</a></li>
+				
+				<li><a href="/category/coding.html"><i class="fa fa-road fa-fw"></i>编程之路</a></li>
+
+				<li><a href="/category/myshare.html"><i class="fa fa-share-alt fa-fw"></i>我的分享</a></li>
+				
+				<li><a href="/category/diary.html"><i class="fa fa-calculator fa-fw"></i>生活日志</a></li>
+				
+				<li><a href="/category/book-movie-list/booklist.html"><i class="fa fa-book fa-fw"></i>书单/影单</a></li>
+
+				<li><a href="/category/aboutme.html"><i class="fa fa-male fa-fw"></i>关于博主</a></li>
+
+				<li><a href="/category/friend.html"><i class="fa fa-send fa-fw"></i>我的朋友</a></li>
+
+				<li><img class="img-rounded" height="100px" width="100%" src="/static/img/about/footer.png"></li>
+
+			</ul>
+			<button id="btnClose" class="btn-close"></button>
+
+			<div id="SVGMenu" class="svg-menu" 
+                data-menu-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z" 
+                data-menu-close="M-6,0h101c0,0-90,153.603-90,396.167C2.167,627.579,100,800,100,800H-1V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+					<path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+				</svg>
+			</div>
+
+		</nav>
+
+
+		<footer class="footer">
+	<div class="row">
+		<div class="pull-left">
+			<a class="avatar" href="/" title="yinwoods">yinwoods</a>
+			<p class="copyright">2015 ALL RIGHTS RESERVED</p>
+		</div>
+		
+		<div class="pull-center">
+			<ul class="list-inline">
+				<li>
+					<a href="http://weibo.com/yinwoods">
+						<img src="/static/img/footer/weibo.png">
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/yinwoods">
+						<img src="/static/img/footer/github.png">
+					</a>
+				</li>
+				<li>
+					<a href="/feed.xml">
+						<img src="/static/img/footer/rss.png">
+					</a>
+				</li>
+			</ul>
+			<br/>
+			<h4>Powered by <a target="_blank" href="https://github.com/yinwoods">github</a> && <a target="_blank" href="http://jekyllrb.com/">jekyll</a></h4>
+		</div>
+
+	</div>
+</footer>
+		<div id="totop">
+			<a title="返回顶部">返回顶部</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/static/js/classie.js"></script>
+
+	<script type="text/javascript" src="/static/js/snap.svg-min.js"></script>
+	<script type="text/javascript" src="/static/js/menuTriggle.js"></script>
+	<script type="text/javascript" src="/static/js/SVGButton.js"></script>
+
+	<script type="text/javascript" src="/static/js/postTriggle.js"></script>
+
+	
+	<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/totop.js"></script>
+	<script type="text/javascript">
+		var content = document.querySelector('.content'),
+			footer = document.querySelector('.footer'),
+			footT  = footer.offsetTop,
+			footH  = footer.offsetHeight,
+			winH   = window.innerHeight,
+			post   = document.querySelectorAll('p');
+
+		if (footT - footH + 100 < winH) {
+			content.style.height = '100%';
+		};
+
+		for (var i = 0; i < post.length; i++) {
+			if (post.item(i).querySelector('img')) {
+				post.item(i).style.textIndent = 0;
+			};
+		};
+
+	</script>
+</body>
+</html>

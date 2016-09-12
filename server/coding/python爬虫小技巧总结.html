@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<link rel="dns-prefetch" href="//hm.baidu.com"/>
+	<link rel="dns-prefetch" href="//disqus.com"/>
+	<link rel="dns-prefetch" href="//a.disquscdn.com"/>
+
+	<meta name="Keywords" content="yinwoods,殷成涛,个人博客,郑州大学,python,爬虫"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	
+	<meta name="author" content="yinwoods">
+
+	<link rel="alternate" type="application/rss+xml" title="rss订阅" href="/feed.xml">
+	<link rel="shortcut icon" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-24.png" sizes="24x24" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-32.png" sizes="32x32" />
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+
+    <title>python爬虫小技巧总结 | yinwoods</title>
+  
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+		e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+		})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+		_st('install','csxq-8xzb6tiaQ1dQaGs','2.0.0');
+	</script>
+</head>
+
+
+<body>
+	<div id="container" class="container">
+		<div id="content" class="content">
+			<nav class="navbar">
+	<div class="pull-left">
+		<button id="btnMenu" type="button" class="btn btn-default btn-sm btn-menu">
+			<i class="fa fa-bars"></i>	菜 单
+		</button>
+	</div>
+	<ul class="pull-center">
+		<li class="active"><a href="/">博客</a></li>
+        <li><a href="/category/aboutme.html">关于我</a></li>
+	</ul>
+	<div class="pull-right">
+		<button type="button" class="btn btn-default btn-sm btn-list">
+			<a href="/category/books.html">
+				<i class="fa fa-book fa-fw"></i>书单/影单  
+			</a>
+		</button>
+	</div>
+</nav>
+
+			<header class="post-header">
+        <div class="hd-img">
+            <img src="http://7xlh6u.com1.z0.glb.clouddn.com/bg45.jpg" alt="背景图片">
+        </div>
+
+        <div class="title">
+           <h1>python爬虫小技巧总结</h1>
+        </div>
+</header>
+<button id="btnArrow" class="btn-arrow" data-info="点击显示文章"><i class="icon icon-arrow-down">&#xe619;</i></button>
+<div class="post-title">
+	<h1>python爬虫小技巧总结</h1>
+	
+    <p>作者: <a target="_blank" href="http://blog.yinwoods.com/"><strong>yinwoods</strong></a>&nbsp;&nbsp;&nbsp;
+        分类: <a target="_blank" href="http://blog.yinwoods.com/coding.html"><strong>coding</strong></a>&nbsp;&nbsp;&nbsp;
+        日期: <strong>2016年04月05日</strong>&nbsp;&nbsp;&nbsp;
+         <ul class="tags post-tags">
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+                    <li><a href="/tags/爬虫/index.html">爬虫<span>8</span></a></li>
+                
+            
+            
+            
+                
+                    <li><a href="/tags/python/index.html">python<span>15</span></a></li>
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+        </ul>
+    </p>           
+</div>
+    
+
+    <article class="post-content">
+        <hr class="post-end-left"><p class="post-end">开始</p><hr class="post-end-right"/>
+        <div>
+            <p>之前在<a href="http://www.codeceo.com/article/python-spider-skills.html">码农网</a>看过python的爬虫小技巧，但是我认为总结地不够全面，而且在这段编写爬虫的过程中，也形成了自己的套路～</p>
+
+<p>特意在这里分享给大家，当然一方面也是以后忘记了留作参考。</p>
+
+<h3 id="section">1、基本网页抓取</h3>
+
+<blockquote>
+  <ul>
+    <li>包含伪装浏览器访问（解决403错误）</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>使用代理，避免长时间爬取被封本机IP</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>处理网页gzip压缩</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>HTTPError异常处理</li>
+  </ul>
+</blockquote>
+
+<div>
+  <pre><code class="python">#获取url 对应 HTML 源码
+def getHtml(url):
+	#伪装浏览器
+    header = dict({ 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/48.0.2564.116 Chrome/48.0.2564.116 Safari/537.36',
+                    'Accept-encoding': 'gzip',
+                    })
+    request = urllib.request.Request(url, headers=header)
+
+    
+    try: 
+    	#使用代理：117.135.252.227:80
+        proxy_support = urllib.request.ProxyHandler({'http': '117.135.252.227:80'})
+        opener = urllib.request.build_opener(proxy_support)
+        urllib.request.install_opener(opener)
+
+        page = urllib.request.urlopen(request)
+
+        #print(page.headers.get('Content-Encoding')) 'gzip'
+        #print(page.headers.get_content_charset()) 'utf8'
+
+        #如果使用了gzip压缩
+        if page.headers.get('Content-Encoding') == 'gzip':
+            return zlib.decompress(page.read(), 16+zlib.MAX_WBITS).decode('utf8')
+        else: 
+            return page.read().decode(page.headers.get_content_charset())
+
+    except urllib.request.HTTPError as e:
+        print('HTTPERROR: ', str(e))
+    return urllib.request.HTTPError</code></pre>
+</div>
+
+<h3 id="mysql">2、Mysql数据库操作</h3>
+
+<p>一般在类的构造函数__init__中完成数据库的连接，在析构函数中断开连接。</p>
+
+<p>示例如下：</p>
+
+<div>
+  <pre><code class="python">import mysql.connector
+
+class Example():
+	#构造函数
+	def __init__(self):
+		self.conn = mysql.connector.connect(user='root', password='root', host='localhost', database='test')
+		self.cursor = self.conn.cursor(buffered=True)
+
+	#析构函数
+	def __del__(self):
+		self.cursor.close()
+		self.conn.close()
+
+	#数据库操作
+	#查询table表中id=1的数据个数
+	def doSomething(self):
+		query = 'SELECT COUNT(*) FROM table WHERE id = %s'
+		data = (1, )
+
+		#执行查询
+		self.cursor.excute(query, data)
+		#确保查询提交
+		self.conn.commit()</code></pre>
+</div>
+
+<h3 id="json">3、把json格式数据插入表中</h3>
+
+<p>首先使用toJson()函数把我们要插入的数据项转为json格式，再使用jsonINTOMysql()函数将json格式数据插入mysql中。</p>
+
+<div>
+  <pre><code class="python">def toJson(**kwargs):
+	return kwargs
+
+#把json格式的rowdict插入table中
+def jsonINToMysql(table, rowdict):
+    self.cursor.execute('DESCRIBE %s' % table)
+    allowedKeys = set(row[0] for row in self.cursor.fetchall())
+
+    keys = allowedKeys.intersection(rowdict)
+
+    if len(rowdict) &gt; len(keys):
+        unknownKeys = set(rowdict)-allowedKeys
+        print(sys.stderr, &quot;skipping keys&quot;, &quot;,&quot;.join(unknownKeys))
+
+    columns = &quot;,&quot;.join(keys)
+    values_template = &quot;, &quot;.join([&quot;%s&quot;]*len(keys))
+
+    sql = &quot;INSERT INTO %s(%s) VALUES (%s)&quot; % (table, columns, values_template)
+
+    values = tuple(rowdict[key] for key in keys)
+    self.cursor.execute(sql, values)
+    self.conn.commit()
+
+def example():
+	#假设数据表table中有id、name、sex三项
+	json = toJson(id=id, name=name, sex=sex)
+	jsonINTOMysql('table', json)</code></pre>
+</div>
+
+<h3 id="section-1">4、对爬取数据的乱码进行解析</h3>
+
+<p>有时我们需要爬取的是单独的json格式数据(请参考<a href="http://blog.yinwoods.com/coding/%E5%88%A9%E7%94%A8%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96js%E7%94%9F%E6%88%90%E6%95%B0%E6%8D%AE.html">利用爬虫爬取js生成数据</a>)，可能会发现json中的数据是经过编码的，例如我爬取汽车之家车辆的详细参数配置时，会发现json中的数据为：</p>
+
+<p><code>
+{"SIP_C_119":"2645","SIP_C_250":"%2d","SIP_C_306":"%2d","SIP_T_LOGO":"http://i1.itc.cn/20130624/83e_01580269_5a5f_1526_74cc_c6bf0064c28e_1.jpg","SIP_C_114":"%2d%2d%2d","SIP_C_117":"7005","SIP_C_305":"%2d","SIP_C_304":"%2d%2d%2d","SIP_C_118":"2040","SIP_C_303":"%u67f4%u6cb9%u673a","SIP_C_115":"%u6574%u8f663%u5e74%2f6%u4e07%u516c%u91cc","SIP_C_116":"%2d%2d%2d","model_engine_type":2,"SIP_C_120":"3935","overseas":false,"SIP_T_PRICE":32.0,"SIP_C_261":"%u25cf","SIP_T_ID":127870,"SIP_T_GEAR":"M","SIP_C_124":"%u5ba2%u8f66","SIP_C_125":"2","SIP_C_126":"10%2d23","SIP_C_127":"90","SIP_C_170":"%2d","SIP_C_329":"120","SIP_C_171":"%u673a%u68b0%u6db2%u538b%u52a9%u529b%u8f6c%u5411","SIP_C_322":"%2d","SIP_T_MODELNAME":"%u5b89%u51ef%u5ba2%u8f66%20%u5b9d%u65af%u901a","SIP_C_321":"%2d","SIP_C_320":"%u624b%u52a8","SIP_C_185":"%u25cf","SIP_C_283":"%u25cf","SIP_C_318":"%u5364%u7d20","SIP_C_108":"5%u6863%u624b%u52a8","SIP_C_317":"%2d","SIP_C_285":"%u25cf","SIP_C_314":"%2d","SIP_C_104":"%u6c5f%u6dee%u6c7d%u8f66","SIP_C_313":"%2d","SIP_C_105":"%u5176%u4ed6%u8f66%u578b","SIP_C_316":"%2d","SIP_C_106":"2%u95e810%2d23%u5ea7%u5ba2%u8f66","SIP_C_315":"%2d","SIP_C_107":"3%2e0T%20163%u9a6c%u529bL4","SIP_C_310":"%2d","SIP_C_312":"%2d","SIP_C_102":"32%2e0%u4e07%u5143","SIP_C_103":"32%2e0%7e32%2e0%u4e07%u5143","SIP_C_150":"%u7f38%u5185%u76f4%u55b7","SIP_C_294":"%2d%2d%2f%2d%2d%2f%2d%2d","SIP_C_297":"163","SIP_C_291":"%2d%2d%2d","SIP_C_151":"%u94dd%u5408%u91d1","SIP_C_293":"7005x2040x2645","SIP_C_152":"%u94f8%u94c1","SIP_C_292":"%2d%2d%2d","SIP_T_DISPL":3.0,"SIP_C_158":"%u624b%u52a8","SIP_C_157":"5","SIP_C_156":"5%u6863%u624b%u52a8","SIP_C_155":"%u56fdIV","SIP_C_298":"120%2f3800","SIP_C_299":"362%2f1600%2d2200","SIP_C_159":"%u4e2d%u7f6e%u540e%u9a71","SIP_C_224":"%u771f%u76ae","SIP_C_160":"%u9ea6%u5f17%u900a%u5f0f%u72ec%u7acb%u60ac%u6302","SIP_C_161":"%u94a2%u677f%u5f39%u7c27%u7ed3%u6784","SIP_C_162":"%u627f%u8f7d%u5f0f%u8f66%u8eab","SIP_C_163":"7%2e00%20R16","SIP_C_164":"7%2e00%20R16","SIP_C_165":"%u94a2%u5236","nameDomain":"4094","SIP_C_167":"%u901a%u98ce%u76d8%u5f0f","SIP_C_166":"%u5168%u5c3a%u5bf8%u5907%u80ce","SIP_C_169":"%u624b%u5239%u5f0f%u5236%u52a8","SIP_C_168":"%u9f13%u5f0f","SIP_T_MODELID":4094,"SIP_T_STA":1,"SIP_C_335":"6%u4e07","SIP_C_333":"1600","SIP_C_334":"2200","SIP_C_332":"362","SIP_T_YEAR":2014,"SIP_C_330":"3800","SIP_C_139":"4","SIP_C_138":"%u6da1%u8f6e%u589e%u538b","SIP_C_137":"2968","SIP_C_136":"3%2e0","SIP_C_135":"NGD3%2e0%2dC3HA","SIP_C_134":"3%2e0T%20163%u9a6c%u529bL4","SIP_C_249":"0","SIP_C_140":"%u76f4%u5217","SIP_C_141":"4","SIP_C_347":"%u5364%u7d20","SIP_C_142":"%u53cc%u9876%u7f6e","brandNameDomain":"ak-2171","SIP_C_149":"%u67f4%u6cb9","SIP_C_148":"40%2e0","SIP_T_NAME":"3%2e0T%20VIP%u7248","SIP_C_241":"%u25cf"}
+</code></p>
+
+<p>这种编码相信大家看着很熟悉，就像我们把包含中文的url地址复制粘贴下来的结果，那么我们该怎么对这种数据进行解码呢？</p>
+
+<p>使用这种方式：</p>
+
+<div>
+  <pre><code class="python">#对str先进行unquote url解码，再进行eval unicode解码
+#处理数据时只需要我们把key-value对中的value依次作为参数传给deUnicode即可
+def deUnicode(str):
+    try:
+        ans = eval('&quot;%s&quot;' % unquote(str).replace('%', '\\'))
+        return ans
+    except SyntaxError as e:
+        return str</code></pre>
+</div>
+
+<h3 id="requestspost">5、requests通过post提交表单数据（一般用于模拟登录）</h3>
+
+<p>requests的post实现依赖于维持一个session，也就是说在session存在期间，我们可以以登录的身份来获取其他需要登录后才能获取的页面源码。</p>
+
+<p>简单使用如下：</p>
+
+<p>```python</p>
+
+<pre><code>url = ''
+datas = urllib.parse.urlencode({
+   'data-key' : 'data-value'
+})
+
+headers = dict({
+    'header-key' : 'header-value'
+})
+
+session = requests.session()
+session.post(url, datas, headers=headers)
+
+res = session.get(other url).text
+</code></pre>
+
+<p>```</p>
+
+        </div>
+        <hr class="post-end-left"><p class="post-end">结束</p><hr class="post-end-right"/>
+        <div class="post-footer">
+            
+            <p class="post-footer-previous">上一篇 ： <a class="entry-more" href="/coding/%E5%88%A9%E7%94%A8%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96js%E7%94%9F%E6%88%90%E6%95%B0%E6%8D%AE.html">利用爬虫爬取js生成数据</a></p>
+            
+            
+            <p class="post-footer-next">下一篇 ： <a class="entry-more" href="/coding/python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AD%97%E5%B9%95%E5%90%88%E5%B9%B6.html">python实现中英文字幕合并</a></p>
+            
+        </div>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span style="font-family:sans-serif; color:#009966">分享到：</span>
+        <a class="jiathis_button_weixin share_button" href="#"></a>
+        <a class="jiathis_button_tsina share_button" href="#"></a>
+        <a class="jiathis_button_qzone share_button" href="#"></a>
+        <a class="jiathis_button_evernote share_button" href="#"></a>
+        <a class="jiathis_button_ydnote share_button" href="#"></a>
+        <a class="jiathis_button_pocket share_button" href="#"></a>
+        <a class="jiathis_button_douban share_button" href="#"></a>
+        <a class="jiathis_button_renren share_button" href="#"></a>
+        <a class="jiathis_button_fb share_button" href="#"></a>
+        <a class="jiathis_button_linkedin share_button" href="#"></a>
+        <a class="jiathis_button_googleplus share_button" href="#"></a>
+        <a class="jiathis_button_tumblr share_button" href="#"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/js/totop.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<script type="text/javascript" src="/static/js/prism.js" charset="utf-8"></script>
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'yinwoods'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+
+
+		</div>
+
+				<nav id="menu" class="menu">
+			<ul>
+				<li class="logo"><a href="/category/aboutme.html"><img  class="img-circle" height="100px" width="100px" src="/static/img/about/me.jpg"></a></li>
+
+				<li><a href="/category/index.html"><i class="fa fa-home fa-fw"></i>首页</a></li>
+				
+				<li><a href="/category/coding.html"><i class="fa fa-road fa-fw"></i>编程之路</a></li>
+
+				<li><a href="/category/myshare.html"><i class="fa fa-share-alt fa-fw"></i>我的分享</a></li>
+				
+				<li><a href="/category/diary.html"><i class="fa fa-calculator fa-fw"></i>生活日志</a></li>
+				
+				<li><a href="/category/book-movie-list/booklist.html"><i class="fa fa-book fa-fw"></i>书单/影单</a></li>
+
+				<li><a href="/category/aboutme.html"><i class="fa fa-male fa-fw"></i>关于博主</a></li>
+
+				<li><a href="/category/friend.html"><i class="fa fa-send fa-fw"></i>我的朋友</a></li>
+
+				<li><img class="img-rounded" height="100px" width="100%" src="/static/img/about/footer.png"></li>
+
+			</ul>
+			<button id="btnClose" class="btn-close"></button>
+
+			<div id="SVGMenu" class="svg-menu" 
+                data-menu-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z" 
+                data-menu-close="M-6,0h101c0,0-90,153.603-90,396.167C2.167,627.579,100,800,100,800H-1V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+					<path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+				</svg>
+			</div>
+
+		</nav>
+
+
+		<footer class="footer">
+	<div class="row">
+		<div class="pull-left">
+			<a class="avatar" href="/" title="yinwoods">yinwoods</a>
+			<p class="copyright">2015 ALL RIGHTS RESERVED</p>
+		</div>
+		
+		<div class="pull-center">
+			<ul class="list-inline">
+				<li>
+					<a href="http://weibo.com/yinwoods">
+						<img src="/static/img/footer/weibo.png">
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/yinwoods">
+						<img src="/static/img/footer/github.png">
+					</a>
+				</li>
+				<li>
+					<a href="/feed.xml">
+						<img src="/static/img/footer/rss.png">
+					</a>
+				</li>
+			</ul>
+			<br/>
+			<h4>Powered by <a target="_blank" href="https://github.com/yinwoods">github</a> && <a target="_blank" href="http://jekyllrb.com/">jekyll</a></h4>
+		</div>
+
+	</div>
+</footer>
+		<div id="totop">
+			<a title="返回顶部">返回顶部</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/static/js/classie.js"></script>
+
+	<script type="text/javascript" src="/static/js/snap.svg-min.js"></script>
+	<script type="text/javascript" src="/static/js/menuTriggle.js"></script>
+	<script type="text/javascript" src="/static/js/SVGButton.js"></script>
+
+	<script type="text/javascript" src="/static/js/postTriggle.js"></script>
+
+	
+	<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/totop.js"></script>
+	<script type="text/javascript">
+		var content = document.querySelector('.content'),
+			footer = document.querySelector('.footer'),
+			footT  = footer.offsetTop,
+			footH  = footer.offsetHeight,
+			winH   = window.innerHeight,
+			post   = document.querySelectorAll('p');
+
+		if (footT - footH + 100 < winH) {
+			content.style.height = '100%';
+		};
+
+		for (var i = 0; i < post.length; i++) {
+			if (post.item(i).querySelector('img')) {
+				post.item(i).style.textIndent = 0;
+			};
+		};
+
+	</script>
+</body>
+</html>

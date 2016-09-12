@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<link rel="dns-prefetch" href="//hm.baidu.com"/>
+	<link rel="dns-prefetch" href="//disqus.com"/>
+	<link rel="dns-prefetch" href="//a.disquscdn.com"/>
+
+	<meta name="Keywords" content="yinwoods,殷成涛,个人博客,郑州大学,爬虫,python"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	
+	<meta name="author" content="yinwoods">
+
+	<link rel="alternate" type="application/rss+xml" title="rss订阅" href="/feed.xml">
+	<link rel="shortcut icon" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-24.png" sizes="24x24" />
+	<link rel="apple-touch-icon-precomposed" href="/static/img/icon-32.png" sizes="32x32" />
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+
+    <title>利用爬虫爬取js生成数据 | yinwoods</title>
+  
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+		e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+		})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+		_st('install','csxq-8xzb6tiaQ1dQaGs','2.0.0');
+	</script>
+</head>
+
+
+<body>
+	<div id="container" class="container">
+		<div id="content" class="content">
+			<nav class="navbar">
+	<div class="pull-left">
+		<button id="btnMenu" type="button" class="btn btn-default btn-sm btn-menu">
+			<i class="fa fa-bars"></i>	菜 单
+		</button>
+	</div>
+	<ul class="pull-center">
+		<li class="active"><a href="/">博客</a></li>
+        <li><a href="/category/aboutme.html">关于我</a></li>
+	</ul>
+	<div class="pull-right">
+		<button type="button" class="btn btn-default btn-sm btn-list">
+			<a href="/category/books.html">
+				<i class="fa fa-book fa-fw"></i>书单/影单  
+			</a>
+		</button>
+	</div>
+</nav>
+
+			<header class="post-header">
+        <div class="hd-img">
+            <img src="http://7xlh6u.com1.z0.glb.clouddn.com/bg44.jpg" alt="背景图片">
+        </div>
+
+        <div class="title">
+           <h1>利用爬虫爬取js生成数据</h1>
+        </div>
+</header>
+<button id="btnArrow" class="btn-arrow" data-info="点击显示文章"><i class="icon icon-arrow-down">&#xe619;</i></button>
+<div class="post-title">
+	<h1>利用爬虫爬取js生成数据</h1>
+	
+    <p>作者: <a target="_blank" href="http://blog.yinwoods.com/"><strong>yinwoods</strong></a>&nbsp;&nbsp;&nbsp;
+        分类: <a target="_blank" href="http://blog.yinwoods.com/coding.html"><strong>coding</strong></a>&nbsp;&nbsp;&nbsp;
+        日期: <strong>2016年03月09日</strong>&nbsp;&nbsp;&nbsp;
+         <ul class="tags post-tags">
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+                    <li><a href="/tags/爬虫/index.html">爬虫<span>8</span></a></li>
+                
+            
+                
+            
+            
+            
+                
+            
+                
+                    <li><a href="/tags/python/index.html">python<span>15</span></a></li>
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+        </ul>
+    </p>           
+</div>
+    
+
+    <article class="post-content">
+        <hr class="post-end-left"><p class="post-end">开始</p><hr class="post-end-right"/>
+        <div>
+            <p>最近实习任务就是各种爬东西，先后爬取了<a href="http://www.carking001.com/ershouche/">车王二手车</a>、<a href="http://www.che300.com/">车300网站</a></p>
+
+<p>基本都是用python的<code>urllib.request</code> + <code>BeautifulSoup</code>完成，其中因为车300的数据规格不统一，采取了先把所有数据爬下来保存为json格式再整理的方法。而且车300的汽车属性值太多，爬取过慢，采用了多线程的方式爬取（其实是同时运行多个程序。。。囧）。车王的爬取就要简单多了，不再一一赘述。</p>
+
+<p>昨天BOSS给我布置的任务是爬取<a href="http://chinaafc.miit.gov.cn/n2257/n2263/index.html?searchId=yhcx">工信部中国汽车燃料消耗量网站</a>，本来以为把之前的代码随便改改就可以用了，没想到这个网站的数据是js生成的，也就是说我直接获取html页面源码的话是得不到想要的数据的。</p>
+
+<p>参考了下网上的资料，发现这个比较有用：<a href="https://www.zhihu.com/question/21471960#answer-27853222">Python 爬虫如何获取 JS 生成的 URL 和网页内容？</a></p>
+
+<p>但我刚读的时候没读懂，因为说的不够详细，我是在自己摸索出来后才发现我所做的就是答案所描述的内容。</p>
+
+<p>下面以图示的方法详细说一下怎么爬取想要的内容：</p>
+
+<blockquote>
+  <p>1、在<a href="http://chinaafc.miit.gov.cn/n2257/n2263/index.html?searchId=yhcx">工信部中国汽车燃料消耗量网站</a>界面按下F12，选择NetWork选项，并按下F5按键。</p>
+</blockquote>
+
+<p><img src="http://7xlnl2.com1.z0.glb.clouddn.com/post44-step1.png" alt="" /></p>
+
+<blockquote>
+  <p>2、刷新后观察NetWork变化，找到相应发送请求的文件，在这里是一个名为<code>searchIndex.jsp</code>的文件，鼠标左键单击查看请求详细信息，可以观察到这个GET请求发送了一个param参数，从而我们可以猜想正是由于浏览器向服务器发送了param参数我们得以获得该页的数据。</p>
+</blockquote>
+
+<p><img src="http://7xlnl2.com1.z0.glb.clouddn.com/post44-step2.png" alt="" /></p>
+
+<blockquote>
+  <p>3、要想证实我们的猜想，我们先来看一下访问Request URL，访问的结果如下：</p>
+</blockquote>
+
+<p><img src="http://7xlnl2.com1.z0.glb.clouddn.com/post44-step3.png" alt="" /></p>
+
+<blockquote>
+  <p>可以发现恰好是我们当前页面数据的json格式，那之后的工作很容易想到就是获取每一页数据的json格式，我们再对数据进行整理即可。</p>
+</blockquote>
+
+<blockquote>
+  <p>4、现在我们来尝试对param进行解析，在这里使用<a href="http://tool.chinaz.com/Tools/URLEncode.aspx">UrlEncode编码/UrlDecode解码 - 站长工具</a>进行解析，解析后的结果如下：</p>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>param值为<code>%7B%22goPage%22%3A1%2C%22orderBy%22%3A%5B%7B%22orderBy%22%3A%22pl%22%2C%22reverse%22%3Afalse%7D%5D%2C%22pageSize%22%3A10%2C%22queryParam%22%3A%5B%7B%22type%22%3A%22number%22%2C%22shortName%22%3A%22sqgk%22%2C%22min%22%3A0%2C%22max%22%3A1000000%7D%2C%7B%22type%22%3A%22number%22%2C%22shortName%22%3A%22sjgk%22%2C%22min%22%3A0%2C%22max%22%3A1000000%7D%2C%7B%22type%22%3A%22number%22%2C%22shortName%22%3A%22zhgk%22%2C%22min%22%3A0%2C%22max%22%3A1000000%7D%5D%7D</code></p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>解析后为<code>{"goPage":1,"orderBy":[{"orderBy":"pl","reverse":false}],"pageSize":10,"queryParam":[{"type":"number","shortName":"sqgk","min":0,"max":1000000},{"type":"number","shortName":"sjgk","min":0,"max":1000000},{"type":"number","shortName":"zhgk","min":0,"max":1000000}]}</code></p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <p>可以注意到一个goPage的属性，可以猜想其后面的值即为对应的页码。再比较第二页的param值可以很容易定位到页码的位置是<code>%7B%22goPage%22%3A</code> + page + <code>...</code></p>
+</blockquote>
+
+<p>到这里我们就完成了基本的分析工作，后面要做的就是coding啦。</p>
+
+<h3 id="section">最后附上我的代码：</h3>
+
+<div>
+  <pre><code class="python">import urllib
+import urllib.request
+import json
+import mysql.connector
+
+#工信部燃油爬虫类
+class chinaafcCrawler:
+
+    #建立数据库连接
+    def __init__(self):
+        self.id = 0
+        self.conn = mysql.connector.connect(user='root', password='root', host='localhost', database='chinaafc')
+        self.cursor = self.conn.cursor(buffered=True)
+    
+    #释放数据库连接
+    def __del__(self):
+        self.cursor.close()
+        self.conn.close()
+
+    #获取url对应的HTML源码
+    def getHtml(self, url):
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/48.0.2564.116 Chrome/48.0.2564.116 Safari/537.36',
+            'Host': 'chaxun.miit.gov.cn',
+            'Request Method': 'GET',
+        }
+        headers = dict(headers)
+        request = urllib.request.Request(url, headers=headers)
+
+        #使用代理，避免被封IP
+        try:
+            proxy_support = urllib.request.ProxyHandler({'http' : '120.198.231.22:82'})
+            opener = urllib.request.build_opener(proxy_support)
+            urllib.request.install_opener(opener)
+
+            page = urllib.request.urlopen(request)
+            return page.read().decode('utf8')
+
+        except urllib.request.HTTPError as e:
+            print(&quot;HTTPERROR: &quot; + str(e))
+
+        return
+
+    #在获取的json中取出所有页面数目和所有条目数目，这里借用了json操作
+    def getPageAndContentNum(self, url):
+        str = self.getHtml(url).rstrip()
+        str = &quot;{&quot; + str[str.find('totalContentNum')-1:-2]
+        dataJson = json.loads(str)
+        return (dataJson['totalContentNum'], dataJson['totalPageNum'])
+
+    #截取我们想要的内容保存为json并进行解析，插入数据库
+    def getHtmlDocSoup(self, html):
+        total = html.rstrip()
+        left = total.find('[')
+        right = total.rfind(']')
+        item = total[left:right+1]
+
+        total = total[left:right+1]
+
+        while True:
+            left = total.find('{')
+            if left == -1:
+                break
+            right = total.find('}')
+            item = total[left:right+1]
+
+            total = total[right+1:]
+
+            dataJson = json.loads(item)
+
+            keyLists = ['scqy', 'clzl', 'clxh', 'tymc', 'fdjxh', 'rllx', 'pl', 'tgrq',
+                        'edgl', 'bsqlx', 'qdxs', 'zczbzl', 'zdsjzzl', 'sqgk', 'zhgk',
+                        'sjgk', 'baID', 'sygjbz', 'sjlrsj', 'bz']
+
+            for key in keyLists:
+                if key not in dataJson.keys():
+                    dataJson[key] = ''
+
+            self.id += 1;
+            query = &quot;SELECT COUNT(*) FROM ryxhl WHERE id = %s&quot;
+            self.cursor.execute(query, (self.id,))
+            res = self.cursor.fetchall()
+
+            #去重
+            if res[0][0] == 1:
+                continue
+
+
+            query = &quot;INSERT INTO ryxhl(id, scqy, clzl, clxh, tymc, fdjxh, rllx, pl, tgrq, edgl, &quot; \
+                    &quot;bsqlx, qdxs, zczbzl, zdsjzzl, sqgk, zhgk, sjgk, baID, sygjbz, sjlrsj, bz&quot; \
+                    &quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)&quot;
+
+            print(self.id)
+            data = (self.id, dataJson['scqy'], dataJson['clzl'], dataJson['clxh'], dataJson['tymc'], dataJson['fdjxh'],
+                    dataJson['rllx'], dataJson['pl'], dataJson['tgrq'], dataJson['edgl'], dataJson['bsqlx'],
+                    dataJson['qdxs'], dataJson['zczbzl'], dataJson['zdsjzzl'], dataJson['sqgk'], dataJson['zhgk'],
+                    dataJson['sjgk'], dataJson['baID'], dataJson['sygjbz'], dataJson['sjlrsj'], dataJson['bz'], )
+
+            self.cursor.execute(query, data)
+            self.conn.commit()
+
+            '''
+            print(&quot;\n\n\n生产企业：&quot; + dataJson['scqy'] +
+                  &quot;\n车辆种类：&quot; + dataJson['clzl'] +
+                  &quot;\n车辆型号：&quot; + dataJson['clxh'] +
+                  &quot;\n通用名称：&quot; + dataJson['tymc'] +
+                  &quot;\n发动机型号：&quot; + dataJson['fdjxh'] +
+                  &quot;\n燃料类型：&quot; + dataJson['rllx'] +
+                  &quot;\n排量：&quot; + dataJson['pl'] +
+                  &quot;\n通告日期：&quot; + dataJson['tgrq'] +
+                  &quot;\n额定功率：&quot; + dataJson['edgl'] +
+                  &quot;\n变速器类型：&quot; + dataJson['bsqlx'] +
+                  &quot;\n驱动型式：&quot; + dataJson['qdxs'] +
+                  &quot;\n整车整备质量：&quot; + dataJson['zczbzl'] +
+                  &quot;\n最大设计总质量：&quot; + dataJson['zdsjzzl'] +
+                  &quot;\n市区工况：&quot; + dataJson['sqgk'] +
+                  &quot;\n综合工况：&quot; + dataJson['zhgk'] +
+                  &quot;\n市郊工况：&quot; + dataJson['sjgk'] +
+                  &quot;\n备案号：&quot; + dataJson['baID'] +
+                  &quot;\nXX国际标准：&quot; + dataJson['sygjbz'] +
+                  &quot;\nXXXX时间：&quot; + dataJson['sjlrsj'] +
+                  &quot;\n备注：&quot; + dataJson['bz']
+                  )
+            '''
+
+def main():
+
+    crawler = chinaafcCrawler()
+
+    url = &quot;http://chaxun.miit.gov.cn/asopCmsSearch/searchIndex.jsp?params=%257B%2522goPage%2522%253A1%252C%2522orderBy%2522%253A%255B%257B%2522orderBy%2522%253A%2522pl%2522%252C%2522reverse%2522%253Afalse%257D%255D%252C%2522pageSize%2522%253A10%252C%2522queryParam%2522%253A%255B%257B%2522shortName%2522%253A%2522allRecord%2522%252C%2522value%2522%253A%25221%2522%257D%255D%257D&amp;callback=jsonp1457489227664&amp;_=1457489227689&quot;
+    (totalContentNum, totalPageNum) = crawler.getPageAndContentNum(url)
+    print(&quot;共有&quot;, totalPageNum, &quot;页,&quot;, totalContentNum, &quot;条信息&quot;)
+    for page in range(1, totalPageNum+1):
+        url = &quot;http://chaxun.miit.gov.cn/asopCmsSearch/searchIndex.jsp?params=%257B%2522goPage%2522%253A&quot; + str(page) + &quot;%252C%2522orderBy%2522%253A%255B%257B%2522orderBy%2522%253A%2522pl%2522%252C%2522reverse%2522%253Afalse%257D%255D%252C%2522pageSize%2522%253A10%252C%2522queryParam%2522%253A%255B%257B%2522shortName%2522%253A%2522allRecord%2522%252C%2522value%2522%253A%25221%2522%257D%255D%257D&amp;callback=jsonp1457489227664&amp;_=1457489227689&quot;
+        crawler.getHtmlDocSoup(crawler.getHtml(url))
+
+if __name__  == &quot;__main__&quot;:
+    main()</code></pre>
+</div>
+
+
+        </div>
+        <hr class="post-end-left"><p class="post-end">结束</p><hr class="post-end-right"/>
+        <div class="post-footer">
+            
+            <p class="post-footer-previous">上一篇 ： <a class="entry-more" href="/coding/%E5%9F%BA%E7%A1%80%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93.html">基础排序算法总结</a></p>
+            
+            
+            <p class="post-footer-next">下一篇 ： <a class="entry-more" href="/coding/python%E7%88%AC%E8%99%AB%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93.html">python爬虫小技巧总结</a></p>
+            
+        </div>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span style="font-family:sans-serif; color:#009966">分享到：</span>
+        <a class="jiathis_button_weixin share_button" href="#"></a>
+        <a class="jiathis_button_tsina share_button" href="#"></a>
+        <a class="jiathis_button_qzone share_button" href="#"></a>
+        <a class="jiathis_button_evernote share_button" href="#"></a>
+        <a class="jiathis_button_ydnote share_button" href="#"></a>
+        <a class="jiathis_button_pocket share_button" href="#"></a>
+        <a class="jiathis_button_douban share_button" href="#"></a>
+        <a class="jiathis_button_renren share_button" href="#"></a>
+        <a class="jiathis_button_fb share_button" href="#"></a>
+        <a class="jiathis_button_linkedin share_button" href="#"></a>
+        <a class="jiathis_button_googleplus share_button" href="#"></a>
+        <a class="jiathis_button_tumblr share_button" href="#"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/js/totop.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<script type="text/javascript" src="/static/js/prism.js" charset="utf-8"></script>
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'yinwoods'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+
+
+		</div>
+
+				<nav id="menu" class="menu">
+			<ul>
+				<li class="logo"><a href="/category/aboutme.html"><img  class="img-circle" height="100px" width="100px" src="/static/img/about/me.jpg"></a></li>
+
+				<li><a href="/category/index.html"><i class="fa fa-home fa-fw"></i>首页</a></li>
+				
+				<li><a href="/category/coding.html"><i class="fa fa-road fa-fw"></i>编程之路</a></li>
+
+				<li><a href="/category/myshare.html"><i class="fa fa-share-alt fa-fw"></i>我的分享</a></li>
+				
+				<li><a href="/category/diary.html"><i class="fa fa-calculator fa-fw"></i>生活日志</a></li>
+				
+				<li><a href="/category/book-movie-list/booklist.html"><i class="fa fa-book fa-fw"></i>书单/影单</a></li>
+
+				<li><a href="/category/aboutme.html"><i class="fa fa-male fa-fw"></i>关于博主</a></li>
+
+				<li><a href="/category/friend.html"><i class="fa fa-send fa-fw"></i>我的朋友</a></li>
+
+				<li><img class="img-rounded" height="100px" width="100%" src="/static/img/about/footer.png"></li>
+
+			</ul>
+			<button id="btnClose" class="btn-close"></button>
+
+			<div id="SVGMenu" class="svg-menu" 
+                data-menu-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z" 
+                data-menu-close="M-6,0h101c0,0-90,153.603-90,396.167C2.167,627.579,100,800,100,800H-1V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+					<path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+				</svg>
+			</div>
+
+		</nav>
+
+
+		<footer class="footer">
+	<div class="row">
+		<div class="pull-left">
+			<a class="avatar" href="/" title="yinwoods">yinwoods</a>
+			<p class="copyright">2015 ALL RIGHTS RESERVED</p>
+		</div>
+		
+		<div class="pull-center">
+			<ul class="list-inline">
+				<li>
+					<a href="http://weibo.com/yinwoods">
+						<img src="/static/img/footer/weibo.png">
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/yinwoods">
+						<img src="/static/img/footer/github.png">
+					</a>
+				</li>
+				<li>
+					<a href="/feed.xml">
+						<img src="/static/img/footer/rss.png">
+					</a>
+				</li>
+			</ul>
+			<br/>
+			<h4>Powered by <a target="_blank" href="https://github.com/yinwoods">github</a> && <a target="_blank" href="http://jekyllrb.com/">jekyll</a></h4>
+		</div>
+
+	</div>
+</footer>
+		<div id="totop">
+			<a title="返回顶部">返回顶部</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/static/js/classie.js"></script>
+
+	<script type="text/javascript" src="/static/js/snap.svg-min.js"></script>
+	<script type="text/javascript" src="/static/js/menuTriggle.js"></script>
+	<script type="text/javascript" src="/static/js/SVGButton.js"></script>
+
+	<script type="text/javascript" src="/static/js/postTriggle.js"></script>
+
+	
+	<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/totop.js"></script>
+	<script type="text/javascript">
+		var content = document.querySelector('.content'),
+			footer = document.querySelector('.footer'),
+			footT  = footer.offsetTop,
+			footH  = footer.offsetHeight,
+			winH   = window.innerHeight,
+			post   = document.querySelectorAll('p');
+
+		if (footT - footH + 100 < winH) {
+			content.style.height = '100%';
+		};
+
+		for (var i = 0; i < post.length; i++) {
+			if (post.item(i).querySelector('img')) {
+				post.item(i).style.textIndent = 0;
+			};
+		};
+
+	</script>
+</body>
+</html>
