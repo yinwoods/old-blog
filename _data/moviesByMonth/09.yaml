@@ -1,5 +1,11 @@
 month: 九月
 movies: 
+    - movie-name: 釜山行 
+      movie-poster: 196
+
+    - movie-name: 误杀瞒天记
+      movie-poster: 195
+
     - movie-name: 砚床
       movie-poster: 194
 
