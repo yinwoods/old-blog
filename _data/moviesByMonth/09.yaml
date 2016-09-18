@@ -1,5 +1,8 @@
 month: 九月
 movies: 
+    - movie-name: 死寂
+      movie-poster: 197
+
     - movie-name: 釜山行 
       movie-poster: 196
 
