@@ -1,5 +1,8 @@
 month: 九月
 movies: 
+    - movie-name: 通灵男孩诺曼
+      movie-poster: 198
+
     - movie-name: 死寂
       movie-poster: 197
 
