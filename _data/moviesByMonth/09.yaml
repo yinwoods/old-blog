@@ -1,5 +1,8 @@
 month: 九月
 movies: 
+    - movie-name: 千面谍
+      movie-poster: 199
+
     - movie-name: 通灵男孩诺曼
       movie-poster: 198
 
