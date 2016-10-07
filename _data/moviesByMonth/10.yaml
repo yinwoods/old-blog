@@ -1,4 +1,10 @@
 month: 十月
 movies: 
+    - movie-name: 无耻混蛋
+      movie-poster: 202
+
+    - movie-name: 湄公河行动
+      movie-poster: 201
+
     - movie-name: 血钻
       movie-poster: 200
