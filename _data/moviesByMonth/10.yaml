@@ -1,5 +1,8 @@
 month: 十月
 movies: 
+    - movie-name: 瑞士军刀男
+      movie-poster: 204
+
     - movie-name: 你看起来很好吃
       movie-poster: 203
 
