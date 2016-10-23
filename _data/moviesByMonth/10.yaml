@@ -1,5 +1,8 @@
 month: 十月
 movies: 
+    - movie-name: 我爱你
+      movie-poster: 205
+
     - movie-name: 瑞士军刀男
       movie-poster: 204
 
