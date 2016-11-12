@@ -1,6 +1,9 @@
 month: 十一月
 movies:
 
+    - movie-name: 中央车站
+      movie-poster: 209
+
     - movie-name: 奇异博士
       movie-poster: 208
 
