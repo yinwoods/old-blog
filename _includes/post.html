@@ -8,6 +8,7 @@
         </div>
 </header>
 <button id="btnArrow" class="btn-arrow" data-info="点击显示文章"><i class="icon icon-arrow-down">&#xe619;</i></button>
+<div class="all">
 <div class="post-title">
 	<h1>{{ page.title }}</h1>
 	{% if page.subline %}
@@ -30,20 +31,20 @@
 </div>
     
 
-    <article class="post-content">
-        <hr class="post-end-left"><p class="post-end">开始</p><hr class="post-end-right"/>
-        <div>
-            {{ content }}
-        </div>
-        <hr class="post-end-left"><p class="post-end">结束</p><hr class="post-end-right"/>
-        <div class="post-footer">
-            {% if page.previous %}
-            <p class="post-footer-previous">上一篇 ： <a class="entry-more" href="{{ page.previous.url }}">{{ page.previous.title }}</a></p>
-            {% endif %}
-            {% if page.next %}
-            <p class="post-footer-next">下一篇 ： <a class="entry-more" href="{{ page.next.url }}">{{ page.next.title }}</a></p>
-            {% endif %}
-        </div>
+<article class="post-content">
+    <hr class="post-end-left"><p class="post-end">开始</p><hr class="post-end-right"/>
+    <div>
+        {{ content }}
+    </div>
+    <hr class="post-end-left"><p class="post-end">结束</p><hr class="post-end-right"/>
+    <div class="post-footer">
+        {% if page.previous %}
+        <p class="post-footer-previous">上一篇 ： <a class="entry-more" href="{{ page.previous.url }}">{{ page.previous.title }}</a></p>
+        {% endif %}
+        {% if page.next %}
+        <p class="post-footer-next">下一篇 ： <a class="entry-more" href="{{ page.next.url }}">{{ page.next.title }}</a></p>
+        {% endif %}
+    </div>
     <!-- JiaThis Button BEGIN -->
     <div class="jiathis_style">
         <span style="font-family:sans-serif; color:#009966">分享到：</span>
@@ -66,4 +67,5 @@
 <!-- JiaThis Button END -->
 <script type="text/javascript" src="{{ site.BASE_PATH }}/static/js/prism.js" charset="utf-8"></script>
 </article>
+</div>
 {% include disqus %}

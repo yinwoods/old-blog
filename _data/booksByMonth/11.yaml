@@ -1,4 +1,7 @@
 month: 十一月
 books: 
+    - book-name: The Linux Command Line
+      book-poster: 48
+
     - book-name: Pro Git
       book-poster: 47
