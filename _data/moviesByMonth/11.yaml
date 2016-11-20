@@ -1,6 +1,9 @@
 month: 十一月
 movies:
 
+    - movie-name: 看见恶魔
+      movie-poster: 210
+
     - movie-name: 中央车站
       movie-poster: 209
 
