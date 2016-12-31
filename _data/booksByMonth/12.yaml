@@ -1,8 +1,2 @@
 month: 十二月
-books: 
-
-    - book-name: Learning the Vi and Vim
-      book-poster: 50
-
-    - book-name: Hadoop with Python
-      book-poster: 49
+books:

@@ -7,10 +7,10 @@
 
 	<div class="container">
 		<header class="htmleaf-header">
-			<h1> 影单 <span>看过的电影</span></h1>
+			<h1> 2016年影单 <span>看过的电影</span></h1>
 			<div class="htmleaf-links">
 				<a class="htmleaf-icon" href="/index.html"><i class="fa fa-home fw"></i>博客</a>
-				<a class="htmleaf-icon" href="books.html"><i class="fa fa-arrow-circle-left fw"></i>书单</a>
+				<a class="htmleaf-icon" href="books-2016.html"><i class="fa fa-arrow-circle-left fw"></i>书单</a>
 			</div>
 			<h1 class="book-movie-title"><img src="{{ site.BASE_PATH }}/static/img/bookmovies/movielist.png"></h1>
 		</header>
@@ -19,7 +19,7 @@
 	            <div class="span-30 column rounded">
 
 	            
-	            	{% assign sortedMoviesByMonth = ((site.data.moviesByMonth | sort) %}
+	            	{% assign sortedMoviesByMonth = ((site.data.moviesByMonth-2016 | sort) %}
 	            	{% for monthMovies in sortedMoviesByMonth reversed %}
 					
 					{% assign month = monthMovies[1].month %}
@@ -43,8 +43,6 @@
 					{% endif %}
 
 					{% endfor %}
-					<div class="span-30 column rounded"><a href="movies-2016.html"><h3>2016年观影</h3></a><hr class="sep"></div>
-					<div class="span-30 column rounded"><a href="movies-2015.html"><h3>2015年观影</h3></a><hr class="sep"></div>
 				</div>
 	    	</section>
 		</div>
