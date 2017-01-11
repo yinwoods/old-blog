@@ -1,5 +1,12 @@
 month: 一月
 movies:    
+
+    - movie-name: 洛丽塔
+      movie-poster: 220
+
+    - movie-name: 火影忍者剧场版：博人传
+      movie-poster: 219
+
     - movie-name: 女子高校拷问部
       movie-poster: 218
 
