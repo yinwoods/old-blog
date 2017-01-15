@@ -1,6 +1,12 @@
 month: 一月
 movies:    
 
+    - movie-name: 女王旅途
+      movie-poster: 222
+
+    - movie-name: 高地战
+      movie-poster: 221
+
     - movie-name: 洛丽塔
       movie-poster: 220
 
