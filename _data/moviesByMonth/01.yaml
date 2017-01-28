@@ -1,6 +1,12 @@
 month: 一月
 movies:    
 
+    - movie-name: 爱 回家
+      movie-poster: 226
+
+    - movie-name: 未麻的部屋
+      movie-poster: 225
+
     - movie-name: 与狼共舞
       movie-poster: 224
 
