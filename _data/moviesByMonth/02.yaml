@@ -1,6 +1,9 @@
 month: 二月
 movies:    
 
+    - movie-name: 比利林恩的中场战事
+      movie-poster: 229
+
     - movie-name: 我们的世界
       movie-poster: 228
 
