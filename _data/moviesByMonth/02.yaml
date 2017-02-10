@@ -1,6 +1,9 @@
 month: 二月
 movies:    
 
+    - movie-name: 海边的曼彻斯特
+      movie-poster: 230
+
     - movie-name: 比利林恩的中场战事
       movie-poster: 229
 
