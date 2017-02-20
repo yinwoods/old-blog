@@ -1,14 +1,17 @@
 month: 二月
 movies:    
 
+    - movie-name: 地球上的星星
+      movie-poster: 234
+
     - movie-name: 比海更深
-      movie-name: 233
+      movie-poster: 233
 
     - movie-name: 荒蛮故事
-      movie-name: 232
+      movie-poster: 232
 
     - movie-name: 朗读者
-      movie-name: 231
+      movie-poster: 231
 
     - movie-name: 海边的曼彻斯特
       movie-poster: 230
