@@ -1,6 +1,12 @@
 month: 三月
 movies:    
 
+    - movie-name: 流浪猫鲍勃
+      movie-poster: 236
+
+    - movie-name: 哈利与魔法石
+      movie-poster: 237
+
     - movie-name: 金刚狼3:殊死一战
       movie-poster: 236
 
