@@ -1,6 +1,15 @@
 month: 三月
 movies:    
 
+    - movie-name: 金福南杀人事件始末
+      movie-poster: 239
+
+    - movie-name: 流浪猫鲍勃
+      movie-poster: 238
+
+    - movie-name: 哈利波特与魔法石
+      movie-poster: 237
+
     - movie-name: 金刚狼3:殊死一战
       movie-poster: 236
 
